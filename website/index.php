@@ -7,9 +7,11 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Roboto+Condensed:400,700|Roboto:300,400,700" >
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="views/assets/css/loader.css">
       <link rel="stylesheet" href="views/assets/css/index.css">
   </head>
   <body>
+      <div id="fakeLoader"></div>
       <main class="main-container">
         <header class="header-container">
           <div class="header--navbar">
@@ -350,6 +352,7 @@
         </section> 
       </main>
       <script src="views/assets/js/jquery.min.js"></script>
+      <script src="views/assets/js/loader.min.js"></script>
       <script src="views/assets/js/tether.min.js"></script>
       <script src="views/assets/js/bootstrap.min.js"></script>
       <script src="views/assets/js/index.js"></script>
