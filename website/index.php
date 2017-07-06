@@ -7,7 +7,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Roboto+Condensed:400,700|Roboto:300,400,700" >
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
-      <link rel="stylesheet" href="views/assets/css/loader.css">
+      <!-- <link rel="stylesheet" href="views/assets/css/loader.css"> -->
       <link rel="stylesheet" href="views/assets/css/index.css">
   </head>
   <body>
@@ -100,7 +100,7 @@
                 <div class="twitter--body">
                   <i class="fa fa-twitter fa-2x twitter--icon"></i>
                   <h2 class="twitter--name">@julianosoriomusic</h2>
-                  <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloribus inventore nihil quisquam tenetur iure aperiam consequatur.</p>
+                  <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloribus inve.</p>
                   <h4 class="twitter--date">Publicado 12 de Noviembre</h4>
                 </div>
               </div>
@@ -130,7 +130,7 @@
           <div class="about-me-body">
              <div class="about-me-content">
               <div class="about-me--image">
-                <img src="views/assets/img/Recursos/images/julian-infinito.png" alt="">
+                <img class="about--img" src="views/assets/img/Recursos/images/julian-infinito.png" alt="">
               </div>
               <div class="about-me--principal">
                 <h4 class="about-me--text">
@@ -141,7 +141,7 @@
                 </h6>
               </div>
               <div class="about-me--section">
-                <p class="about-me--pharagraf">
+                <p class="about-me--paragraph">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor purus quis bibendum elementum. Nulla luctus, velit vel dignissim volutpat, elit neque ullamcorper eros, vel commodo enim ex vel erat. Etiam nisi odio, dictum in scelerisque ut, accumsan in tortor. Etiam consequat nibh sit amet varius posuere. Integer pulvinar justo sed ante egestas, sit amet molestie velit lacinia. 
 
                   Donec at nulla quis massa egestas tempor at eget est. Maecenas eget laoreet ante, ut egestas turpis. Maecenas sed elit vel arcu sagittis suscipit. Aliquam erat volutpat. Sed sit amet arcu et elit congue bibendum eget in ante. Nunc ligula augue, aliquam et nulla non, bibendum imperdiet diam. Phasellus semper, nisi at fringilla rhoncus, mauris diam dapibus purus, eu varius odio mi vitae mauris. Aenean pellentesque diam luctus augue dapibus luctus.
@@ -173,7 +173,7 @@
                 </div>
               </div>
               <div class="blog--card__body">
-                <div class="blog--card__pharagraf">
+                <div class="blog--card__paragraph">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
                 </div>
               </div>
@@ -208,7 +208,7 @@
                 </div>
               </div>
               <div class="blog--card__body">
-                <div class="blog--card__pharagraf">
+                <div class="blog--card__paragraph">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
                 </div>
               </div>
@@ -243,7 +243,7 @@
                 </div>
               </div>
               <div class="blog--card__body">
-                <div class="blog--card__pharagraf">
+                <div class="blog--card__paragraph">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
                 </div>
               </div>
@@ -352,7 +352,7 @@
         </section> 
       </main>
       <script src="views/assets/js/jquery.min.js"></script>
-      <script src="views/assets/js/loader.min.js"></script>
+      <!-- <script src="views/assets/js/loader.min.js"></script> -->
       <script src="views/assets/js/tether.min.js"></script>
       <script src="views/assets/js/bootstrap.min.js"></script>
       <script src="views/assets/js/index.js"></script>
