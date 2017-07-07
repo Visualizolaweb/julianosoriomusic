@@ -21,19 +21,20 @@
                 <img src="views/assets/img/Recursos/logo/Logo.png" alt="" class="img--logo">
             </div>
             <i class="header--icon">
-              <img class="image--icon" src="views/assets/img/Recursos/icons/menu.svg" alt="">
+              <img class="image--icon icon--main" src="views/assets/img/Recursos/icons/menu.svg" alt="">
             </i>
             <div class="navbar-container">
                 <nav class="navbar--contain">
+                    <img class="image--icon icon--menu" src="views/assets/img/Recursos/icons/clear.svg" alt="">
                     <ul class="navbar--items">
                         <li class="navbar--item">
                             <a href="#" class="navbar--link">Inicio</a>
                         </li>
                         <li class="navbar--item">
-                            <a href="#" class="navbar--link">Infinito</a>
+                            <a href="#" class="navbar--link">Discografía</a>
                         </li>
                         <li class="navbar--item">
-                            <a href="#" class="navbar--link">Sobre mí</a>
+                            <a href="#about-me" class="navbar--link">Sobre mí</a>
                         </li>
                         <li class="navbar--item">
                             <a href="#" class="navbar--link">Blog</a>
@@ -45,7 +46,7 @@
                             <a href="#" class="navbar--link">Galeria</a>
                         </li>
                         <li class="navbar--item">
-                            <a href="#" class="navbar--link">Contáctame</a>
+                            <a href="#footer" class="navbar--link">Contáctame</a>
                         </li>
                     </ul>
                 </nav>
@@ -66,49 +67,41 @@
           </section>
         </header>
         <section class="twitter-container">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active">
-                <div class="twitter--body">
-                  <i class="fa fa-twitter fa-2x twitter--icon"></i>
-                  <h2 class="twitter--name">@julianosoriomusic</h2>
-                  <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
-                  <h4 class="twitter--date">Publicado 12 de Junio</h4>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                  <div class="twitter--body">
+                    <i class="fa fa-twitter fa-2x twitter--icon"></i>
+                    <h2 class="twitter--name">@julianosoriomusic</h2>
+                    <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
+                    <h4 class="twitter--date">Publicado 12 de Junio</h4>
+                  </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <div class="twitter--body">
-                  <i class="fa fa-twitter fa-2x twitter--icon"></i>
-                  <h2 class="twitter--name">@julianosoriomusic</h2>
-                  <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
-                  <h4 class="twitter--date">Publicado 12 de Agosto</h4>
+                <div class="item">
+                  <div class="twitter--body">
+                    <i class="fa fa-twitter fa-2x twitter--icon"></i>
+                    <h2 class="twitter--name">@julianosoriomusic</h2>
+                    <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
+                    <h4 class="twitter--date">Publicado 12 de Junio</h4>
+                  </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <div class="twitter--body">
-                  <i class="fa fa-twitter fa-2x twitter--icon"></i>
-                  <h2 class="twitter--name">@julianosoriomusic</h2>
-                  <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
-                  <h4 class="twitter--date">Publicado 12 de Septiembre</h4>
+                <div class="item">
+                  <div class="twitter--body">
+                    <i class="fa fa-twitter fa-2x twitter--icon"></i>
+                    <h2 class="twitter--name">@julianosoriomusic</h2>
+                    <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
+                    <h4 class="twitter--date">Publicado 12 de Junio</h4>
+                  </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <div class="twitter--body">
-                  <i class="fa fa-twitter fa-2x twitter--icon"></i>
-                  <h2 class="twitter--name">@julianosoriomusic</h2>
-                  <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloribus inve.</p>
-                  <h4 class="twitter--date">Publicado 12 de Noviembre</h4>
+                <div class="item">
+                  <div class="twitter--body">
+                    <i class="fa fa-twitter fa-2x twitter--icon"></i>
+                    <h2 class="twitter--name">@julianosoriomusic</h2>
+                    <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloribus inve.</p>
+                    <h4 class="twitter--date">Publicado 12 de Junio</h4>
+                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </section>  
+        </section>
         <section class="infinito-container">
           <div class="infinito--header">
             <img src="views/assets/img/Recursos/header/header-Music.png" alt="">
@@ -117,14 +110,14 @@
           </div>
           <div class="infinito--player">
              <div class="player--songs">
-               
+
              </div>
              <div class="player--album">
-               
+
              </div>
           </div>
         </section>
-        <section class="about-me--container">
+        <section class="about-me--container" id="about-me">
           <div class="about-me--header">
             <img src="views/assets/img/Recursos/header/header-about.png" alt="">
             <h2 class="about-me--title">Sobre Mí</h2>
@@ -144,7 +137,7 @@
               </div>
               <div class="about-me--section">
                 <p class="about-me--paragraph">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor purus quis bibendum elementum. Nulla luctus, velit vel dignissim volutpat, elit neque ullamcorper eros, vel commodo enim ex vel erat. Etiam nisi odio, dictum in scelerisque ut, accumsan in tortor. Etiam consequat nibh sit amet varius posuere. Integer pulvinar justo sed ante egestas, sit amet molestie velit lacinia. 
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor purus quis bibendum elementum. Nulla luctus, velit vel dignissim volutpat, elit neque ullamcorper eros, vel commodo enim ex vel erat. Etiam nisi odio, dictum in scelerisque ut, accumsan in tortor. Etiam consequat nibh sit amet varius posuere. Integer pulvinar justo sed ante egestas, sit amet molestie velit lacinia.
                 </p>
                 <p class="about-me--paragraph">
                   Donec at nulla quis massa egestas tempor at eget est. Maecenas eget laoreet ante, ut egestas turpis. Maecenas sed elit vel arcu sagittis suscipit. Aliquam erat volutpat. Sed sit amet arcu et elit congue bibendum eget in ante. Nunc ligula augue, aliquam et nulla non, bibendum imperdiet diam. Phasellus semper, nisi at fringilla rhoncus, mauris diam dapibus purus, eu varius odio mi vitae mauris. Aenean pellentesque diam luctus augue dapibus luctus.
@@ -266,14 +259,39 @@
             </article>
           </div>
         </section>
-        <div class="events-container">
+        <section class="events-container">
           <div class="events--1">
-            <h6 class="events--1__subtitle">
-              Conoce los proximos
-            </h6>
-            <h2 class="events--1__title">
-              Eventos
-            </h2>
+              <div class="events--1__text">
+                  <h6 class="events--1__subtitle">
+                      Conoce los proximos
+                  </h6>
+                  <h2 class="events--1__title">
+                      Eventos
+                  </h2>
+              </div>
+          </div>
+          <div class="events--links__container">
+              <div class="events--links">
+                  <a class="events--link" href="#">
+                    <span class="links--month">Agosto</span>
+                    <span class="links--day">15</span>
+                    <span class="links--year">2017</span>
+                  </a>
+              </div>
+              <div class="events--links">
+                  <a class="events--link active--link" href="#">
+                    <span class="links--month">Agosto</span>
+                    <span class="links--day">15</span>
+                    <span class="links--year">2017</span>
+                  </a>
+              </div>
+              <div class="events--links">
+                  <a class="events--link" href="#">
+                    <span class="links--month">Agosto</span>
+                    <span class="links--day">15</span>
+                    <span class="links--year">2017</span>
+                  </a>
+              </div>
           </div>
           <div class="events--2">
              <div class="events--2__section">
@@ -288,69 +306,57 @@
                </p>
              </div>
           </div>
-        </div>
+      </section>
         <section class="gallery-container">
-          <div class="gallery--items owl-theme">
-            <div class="gallery--item">
-              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-            </div>
-            <div class="gallery--item">
-              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-            </div>
-            <div class="gallery--item">
-              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-            </div>
-            <div class="gallery--item">
-              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-            </div>
-            <div class="gallery--item">
-              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-            </div>
-            <div class="gallery--item">
-              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-            </div>
-            <div class="gallery--item">
-              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-            </div>
-            <div class="gallery--item">
-              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-            </div>
-            <div class="gallery--item">
-              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-            </div>
-            <div class="gallery--item">
-              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-            </div>
-            <div class="gallery--item">
-              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-            </div>
-          </div>
+            <section class="owl-carousel owl-theme">
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
+                <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
+                <a class="item gallery-item" href="#">Ver más</a>
+            </section>
         </section>
-        <section class="contact-container">
+        <section class="contact-container" id="footer">
           <div class="contact--header">
             <img src="views/assets/img/Recursos/header/header-contact.png" alt="">
             <h2 class="contact--title">Contáctame</h2>
           </div>
           <div class="contact--body">
             <div class="form-container">
-              <form action="">
+              <form action="" class="form--contact">
                 <div class="inputs-container-50">
-                  <label for="">Nombre Completo</label>
-                  <input type="text">
+                  <label class="label--form" for="">Nombre Completo</label>
+                  <input type="text" class="input--form">
                 </div>
                 <div class="inputs-container-50">
-                  <label for="">Correo Electrónico</label>
-                  <input type="email">
+                  <label class="label--form" for="">Correo Electrónico</label>
+                  <input type="email" class="input--form">
                 </div>
                 <div class="inputs-container-100">
-                  <label for="">Deja tu Mensajes</label>
-                  <textarea name="" id=""></textarea>
+                  <label class="label--form" for="">Deja tu Mensajes</label>
+                  <textarea name="" id="" class="input--form"></textarea>
                 </div>
               </form>
             </div>
             <div class="info-container">
               <img src="views/assets/img/Recursos/logo/LogoGray.png" alt="">
-              <span class="info--title">Correo Electrónico</span>
+              <span class="info--title info--title__padding">Correo Electrónico</span>
               <span class="info--subtitle">manager@julianosoriomusic</span>
               <span class="info--title">Número Móvil</span>
               <span class="info--subtitle">(57) 300 610 0192</span>
@@ -360,38 +366,20 @@
             <div class="footer--copyright">
               <h6 class="footer-text">
                 <i class="fa fa-copyright"></i>
-                2017 - 2018 Julian Osorio - Todos los derechos reservados.
+                2017 - 2018 Julián Osorio - Todos los derechos reservados.
               </h6>
             </div>
             <div class="footer-logo">
               <img src="views/assets/img/Recursos/logo/PoweredBy.png" alt="">
             </div>
           </footer>
-        </section> 
+        </section>
       </main>
       <script src="views/assets/js/jquery.min.js"></script>
       <script src="views/assets/js/owl.carousel.min.js"></script>
       <!-- <script src="views/assets/js/loader.min.js"></script> -->
       <script src="views/assets/js/tether.min.js"></script>
       <script src="views/assets/js/bootstrap.min.js"></script>
-      <!-- <script src="views/assets/js/index.js"></script> -->
-      <script>
-        $('.gallery--items').owlCarousel({
-    loop:true,
-    margin:0,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
-    }
-})
-      </script>
+      <script src="views/assets/js/index.js"></script>
   </body>
 </html>
