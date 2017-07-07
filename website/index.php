@@ -4,9 +4,11 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
       <title>Julian Osorio Music</title>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Roboto+Condensed:400,700|Roboto:300,400,700" >
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Roboto+Condensed:400,700|Roboto:300,400,700|Anton" >
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="views/assets/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="views/assets/css/owl.theme.default.min.css">
       <!-- <link rel="stylesheet" href="views/assets/css/loader.css"> -->
       <link rel="stylesheet" href="views/assets/css/index.css">
   </head>
@@ -143,7 +145,8 @@
               <div class="about-me--section">
                 <p class="about-me--paragraph">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor purus quis bibendum elementum. Nulla luctus, velit vel dignissim volutpat, elit neque ullamcorper eros, vel commodo enim ex vel erat. Etiam nisi odio, dictum in scelerisque ut, accumsan in tortor. Etiam consequat nibh sit amet varius posuere. Integer pulvinar justo sed ante egestas, sit amet molestie velit lacinia. 
-
+                </p>
+                <p class="about-me--paragraph">
                   Donec at nulla quis massa egestas tempor at eget est. Maecenas eget laoreet ante, ut egestas turpis. Maecenas sed elit vel arcu sagittis suscipit. Aliquam erat volutpat. Sed sit amet arcu et elit congue bibendum eget in ante. Nunc ligula augue, aliquam et nulla non, bibendum imperdiet diam. Phasellus semper, nisi at fringilla rhoncus, mauris diam dapibus purus, eu varius odio mi vitae mauris. Aenean pellentesque diam luctus augue dapibus luctus.
                 </p>
               </div>
@@ -158,7 +161,7 @@
           <div class="blog--body">
             <article class="blog--card">
               <div class="blog--card__header">
-                <img src="views/assets/img/Recursos/images/img-blog-1.png" alt="">
+                <img class="blog--card__image" src="views/assets/img/Recursos/images/img-blog-1.png" alt="">
                 <div class="blog--date">
                   <h4 class="blog--date__title">
                     13
@@ -168,32 +171,32 @@
                   </h6>
                 </div>
                 <div class="blog--card__title">
-                  <h6>130 Lecturas</h6>
-                  <h6>2 Comentarios</h6>
+                  <h6 class="blog--card__subtitle">130 Lecturas</h6>
+                  <h6 class="blog--card__subtitle">2 Comentarios</h6>
                 </div>
               </div>
               <div class="blog--card__body">
                 <div class="blog--card__paragraph">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
                 </div>
-              </div>
-              <div class="blog--card__footer">
-                <div class="blog--button">
-                  <a href="#">
-                    Leer Más
-                    <i class="fa fa-chevron-right"></i>
-                  </a>
-                </div>
-                <div class="blog--social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                <div class="blog--card__footer">
+                  <div class="blog--button__container">
+                    <a class="blog--button__text" href="#">
+                      Leer Más
+                      <i class="fa fa-chevron-right blog--button__icon"></i>
+                    </a>
+                  </div>
+                  <div class="blog--social">
+                    <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
+                    <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
+                    <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
+                  </div>
                 </div>
               </div>
             </article>
             <article class="blog--card">
               <div class="blog--card__header">
-                <img src="views/assets/img/Recursos/images/img-blog-2.png" alt="">
+                <img class="blog--card__image" src="views/assets/img/Recursos/images/img-blog-2.png" alt="">
                 <div class="blog--date">
                   <h4 class="blog--date__title">
                     13
@@ -203,32 +206,32 @@
                   </h6>
                 </div>
                 <div class="blog--card__title">
-                  <h6>130 Lecturas</h6>
-                  <h6>2 Comentarios</h6>
+                  <h6 class="blog--card__subtitle">130 Lecturas</h6>
+                  <h6 class="blog--card__subtitle">2 Comentarios</h6>
                 </div>
               </div>
               <div class="blog--card__body">
                 <div class="blog--card__paragraph">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
                 </div>
-              </div>
-              <div class="blog--card__footer">
-                <div class="blog--button">
-                  <a href="#">
-                    Leer Más
-                    <i class="fa fa-chevron-right"></i>
-                  </a>
-                </div>
-                <div class="blog--social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                <div class="blog--card__footer">
+                  <div class="blog--button__container">
+                    <a class="blog--button__text" href="#">
+                      Leer Más
+                      <i class="fa fa-chevron-right blog--button__icon"></i>
+                    </a>
+                  </div>
+                  <div class="blog--social">
+                    <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
+                    <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
+                    <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
+                  </div>
                 </div>
               </div>
             </article>
             <article class="blog--card">
               <div class="blog--card__header">
-                <img src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+                <img class="blog--card__image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
                 <div class="blog--date">
                   <h4 class="blog--date__title">
                     13
@@ -238,26 +241,26 @@
                   </h6>
                 </div>
                 <div class="blog--card__title">
-                  <h6>130 Lecturas</h6>
-                  <h6>2 Comentarios</h6>
+                  <h6 class="blog--card__subtitle">130 Lecturas</h6>
+                  <h6 class="blog--card__subtitle">2 Comentarios</h6>
                 </div>
               </div>
               <div class="blog--card__body">
                 <div class="blog--card__paragraph">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
                 </div>
-              </div>
-              <div class="blog--card__footer">
-                <div class="blog--button">
-                  <a href="#">
-                    Leer Más
-                    <i class="fa fa-chevron-right"></i>
-                  </a>
-                </div>
-                <div class="blog--social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                <div class="blog--card__footer">
+                  <div class="blog--button__container">
+                    <a class="blog--button__text" href="#">
+                      Leer Más
+                      <i class="fa fa-chevron-right blog--button__icon"></i>
+                    </a>
+                  </div>
+                  <div class="blog--social">
+                    <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
+                    <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
+                    <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
+                  </div>
                 </div>
               </div>
             </article>
@@ -287,26 +290,41 @@
           </div>
         </div>
         <section class="gallery-container">
-          <ul class="gallery--items">
-            <li class="gallery-item">
-              <img src="" alt="">
-            </li>
-            <li class="gallery-item">
-              <img src="" alt="">
-            </li>
-            <li class="gallery-item">
-              <img src="" alt="">
-            </li>
-            <li class="gallery-item">
-              <img src="" alt="">
-            </li>
-            <li class="gallery-item">
-              <img src="" alt="">
-            </li>
-            <li class="gallery-item">
-              <img src="" alt="">
-            </li>
-          </ul>
+          <div class="gallery--items owl-theme">
+            <div class="gallery--item">
+              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+            </div>
+            <div class="gallery--item">
+              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+            </div>
+            <div class="gallery--item">
+              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+            </div>
+            <div class="gallery--item">
+              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+            </div>
+            <div class="gallery--item">
+              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+            </div>
+            <div class="gallery--item">
+              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+            </div>
+            <div class="gallery--item">
+              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+            </div>
+            <div class="gallery--item">
+              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+            </div>
+            <div class="gallery--item">
+              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+            </div>
+            <div class="gallery--item">
+              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+            </div>
+            <div class="gallery--item">
+              <img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
+            </div>
+          </div>
         </section>
         <section class="contact-container">
           <div class="contact--header">
@@ -352,9 +370,28 @@
         </section> 
       </main>
       <script src="views/assets/js/jquery.min.js"></script>
+      <script src="views/assets/js/owl.carousel.min.js"></script>
       <!-- <script src="views/assets/js/loader.min.js"></script> -->
       <script src="views/assets/js/tether.min.js"></script>
       <script src="views/assets/js/bootstrap.min.js"></script>
-      <script src="views/assets/js/index.js"></script>
+      <!-- <script src="views/assets/js/index.js"></script> -->
+      <script>
+        $('.gallery--items').owlCarousel({
+    loop:true,
+    margin:0,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+      </script>
   </body>
 </html>

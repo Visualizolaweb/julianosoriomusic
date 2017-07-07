@@ -4,6 +4,7 @@
     --family-robotoC: 'Roboto Condensed', sans-serif;
     --family-roboto: 'Roboto', sans-serif;
     --family-lato: 'Lato', sans-serif;
+    --family-anton: 'Anton', sans-serif;
     --bg-dark: #1b223f;
     --bg-normal: #202a4e;
     --bg-light: #37426f;
@@ -299,13 +300,154 @@ h1, h2, h3, h4, h5, h6, p{
     text-align: justify-all;
 }
 
+.about-me--paragraph:last-child{
+    padding-top: 20px;
+}
+
 /*BLOG*/
+
+.blog--container{
+    background-color: #eaeaea;
+}
 
 .blog--title{
     line-height: 1;
     color: #141414;
 }
 
+.blog--body{
+    padding-top: 30px;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.blog--card__body,.blog--card__footer,.blog--card__header{
+    background-color: #ffffff;
+}
+
+.blog--card__header,.blog--card__footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.blog--card__footer{
+    align-items: center;
+}
+
+.blog--card__image{
+    width: 100%;
+    height: auto;
+}
+
+.blog--date{
+    background-color: #ed2b45;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    top: -60px;
+    left: -10px;
+}
+
+.blog--date__title{
+    font-size: 60px;
+    font-family: var(--family-anton);
+}
+
+.blog--date__subtitle{
+    font-size: 16px;
+    font-family: var(--family-robotoC);
+}
+
+.blog--card__title{
+    display: flex;
+    font-family: var(--family-robotoC);
+    color: #ed2b45;
+    font-size: 16px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -25px;
+}
+
+.blog--card__subtitle{
+    padding-right: 12px;
+}
+
+.blog--card__subtitle:first-child{
+    padding-right: 8px;
+}
+
+.blog--card__body{
+    padding: 0 16px;
+    position: relative;
+    top: -40px;
+}
+
+.blog--card__footer{
+    padding: 16px 0;
+}
+
+.blog--button__text{
+    background-color: #343434;
+    color: #ffffff;
+    font-family: var(--family-robotoC);
+    padding: 10px 20px;
+}
+
+.blog--button__icon{
+    font-size: 14px;
+    padding: 0 10px 0 20px;
+}
+
+.blog--social{
+    display: flex;
+    align-items: center;
+}
+
+.blog--social__icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    border: 1px solid transparent;
+    padding: 2px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+}
+
+.fa-facebook{
+    background-color: #3c5a98;
+
+}
+
+.fa-twitter{
+    background-color: #56acee;
+    margin-left: 5px;
+}
+
+.fa-google-plus{
+    background-color: #dc4f42;
+    margin-left: 5px; 
+}
+
+.gallery-container{
+    max-width: 100%;
+}
+
+.gallery-item{
+    background-color: green;
+    height: 200px;
+    width: calc(100% / 6);
+}
+
+.gallery--image{
+    width: 100%;
+}
 
 @media (max-width: 575px) {
     .header--logo{
@@ -332,6 +474,16 @@ h1, h2, h3, h4, h5, h6, p{
 
     .carousel-indicators{
         margin-top: 30px;
+    }
+}
+
+@media (min-width: 340px) {
+    .blog--card__subtitle{
+        padding-right: 30px;
+    }
+
+    .blog--card__subtitle:first-child{
+        padding-right: 15px;
     }
 }
 
@@ -429,6 +581,26 @@ h1, h2, h3, h4, h5, h6, p{
     .about-me--section{
         width: 100%;
     }
+
+    .blog--body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .blog--card{
+        width: 46%;
+    }
+
+    .blog--card:first-child{
+        margin-right: 2%;
+    }
+
+    .blog--card:nth-child(2){
+        margin-left: 2%;
+    }
+
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -537,6 +709,17 @@ h1, h2, h3, h4, h5, h6, p{
 
     .about-me--text{
         font-size: 30px;
+    }
+
+    .blog--body{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .blog--card{
+        width: 30%;
     }
 
 }
@@ -652,5 +835,16 @@ h1, h2, h3, h4, h5, h6, p{
 
     .about-me--paragraph{
         padding: 0;
+    }
+
+    .blog--body{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .blog--card{
+        width: 30%;
     }
 }
