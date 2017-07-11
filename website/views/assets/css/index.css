@@ -51,8 +51,8 @@ h1, h2, h3, h4, h5, h6, p{
 /* SCROLL */
 
 ::-webkit-scrollbar {
-  width: 0.5em;
-  height: 0.5em;
+  width: 0.3em;
+  height: 0.3em;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -587,7 +587,7 @@ textarea.input--form{
     color: #ed2b45;
     font-family: var(-family-lato);
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;

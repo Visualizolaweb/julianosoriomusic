@@ -1,51 +1,32 @@
-<nav class="menu-container">
-    <ul class="menu--items">
-        <li class="menu--item first--item">
-            <a href="#" class="menu--link">
-                <img class="menu--img"src="views/assets/img/Logo.png" alt="">
-            </a>
-        </li>
-        <li class="menu--item active">
-            <a href="#" class="menu--link">
-                <i class="material-icons menu--icon">insert_photo</i>
-                Banner
-            </a>
-        </li>
-        <li class="menu--item">
-            <a href="#" class="menu--link">
-                <i class="material-icons menu--icon">music_video</i>
-                Infinito
-            </a>
-        </li>
-        <li class="menu--item">
-            <a href="#" class="menu--link">
-                <i class="material-icons menu--icon">person</i>
-                Sobre mí
-            </a>
-        </li>
-        <li class="menu--item">
-            <a href="#" class="menu--link">
-                <i class="material-icons menu--icon">person</i>
-                Blog
-            </a>
-        </li>
-        <li class="menu--item">
-            <a href="#" class="menu--link">
-                <i class="material-icons menu--icon">event</i>
-                Eventos
-            </a>
-        </li>
-        <li class="menu--item">
-            <a href="#" class="menu--link">
-                <i class="material-icons menu--icon">collections</i>
-                Galeria
-            </a>
-        </li>
-        <li class="menu--item">
-            <a href="#" class="menu--link">
-                <i class="material-icons menu--icon">email</i>
-                Contáctame
-            </a>
-        </li>
-    </ul>
-</nav>
+<div class="navbar-container">
+    <nav class="navbar--contain">
+        <img class="image--icon icon--menu" src="views/assets/img/Recursos/icons/clear.svg" alt="">
+        <img class="image--icon icon--menu" src="views/assets/img/Recursos/icons/menu.svg" alt="">
+        <ul class="navbar--items">
+            <li class="navbar--item">
+                <img src="views/assets/img/Recursos/logo/Logo.png" alt="Logo Julián Osorio Music">
+            </li>
+            <li class="navbar--item">
+                <a href="#" class="navbar--link">Inicio</a>
+            </li>
+            <li class="navbar--item">
+                <a href="#about-me" class="navbar--link">Banner</a>
+            </li>
+            <li class="navbar--item">
+                <a href="#" class="navbar--link">Discografía</a>
+            </li>
+            <li class="navbar--item">
+                <a href="#" class="navbar--link">Blog</a>
+            </li>
+            <li class="navbar--item">
+                <a href="#" class="navbar--link">Eventos</a>
+            </li>
+            <li class="navbar--item">
+                <a href="#" class="navbar--link">Galeria</a>
+            </li>
+            <li class="navbar--item">
+                <a href="#footer" class="navbar--link">Contáctame</a>
+            </li>
+        </ul>
+    </nav>
+</div>
