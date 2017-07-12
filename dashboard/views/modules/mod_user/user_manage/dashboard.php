@@ -3,33 +3,33 @@
         <div class="row no-gutters">
             <header class="col-12 dashboard--menu">
                 <?php require_once 'views/include/navbar.php'; ?>
-                <div class="settings-container">
-                    <h3 class="settings-title">Daniel Cardona</h3>
-                </div>
             </header>
             <div class="col-12">
                 <div class="banner--container">
-                    <div class="row no-gutters banner-items">
-                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 banner-item">
-                            <a class="banner-link" href="#">Banner</a>
+                    <div class="banner-items">
+                        <div class="banner-item banner-item-30">
+                            <a class="banner-link banner" href="banner">Banner</a>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 banner-item">
-                            <a class="banner-link" href="#">Discografía</a>
+                        <div class="banner-item banner-item-30">
+                            <a class="banner-link discografia" href="#">Discografía</a>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 banner-item">
-                            <a class="banner-link" href="#">Blog</a>
+                        <div class="banner-item banner-item-30">
+                            <a class="banner-link blog" href="#">Blog</a>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 banner-item">
-                            <a class="banner-link" href="#">Eventos</a>
+                        <div class="banner-item banner-item-30">
+                            <a class="banner-link eventos" href="#">Eventos</a>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 banner-item">
-                            <a class="banner-link" href="#">Galeria</a>
+                        <div class="banner-item banner-item-30">
+                            <a class="banner-link galeria" href="#">Galeria</a>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 banner-item">
-                            <a class="banner-link" href="#">Contáctame</a>
+                        <div class="banner-item banner-item-30">
+                            <a class="banner-link contactame" href="#">Contáctame</a>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 banner-item">
-                            <a class="banner-link" href="#">Mi perfil</a>
+                        <div class="banner-item banner-item-30">
+                            <a class="banner-link mi_perfil" href="#">Mi perfil</a>
+                        </div>
+                        <div class="banner-item banner-item-30">
+                            <a class="banner-link ver_pagina" href="#">Ver página</a>
                         </div>
                     </div>
                 </div>

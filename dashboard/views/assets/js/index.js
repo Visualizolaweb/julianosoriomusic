@@ -11,10 +11,10 @@ $(document).ready(function(){
             "search" : "Buscar",
             "zeroRecords": "No se encontró ningún resultado",
             "paginate" : {
-                "first" : "<<",
-                "last" : ">>",
-                "next" : "<i class='material-icons'>navigate_next</i>",
-                "previous" : "<i class='material-icons'>navigate_before</i>"
+                "first" : "",
+                "last" : "",
+                "next" : "<i class='material-icons table--icon'>navigate_next</i>",
+                "previous" : "<i class='material-icons table--icon'>navigate_before</i>"
             }
         }
     });

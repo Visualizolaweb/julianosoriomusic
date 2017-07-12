@@ -4,28 +4,34 @@
             <img class="navbar-image" src="views/assets/img/Recursos/logo/Logo.png" alt="Logo Julián Osorio Music">
         </li>
         <li class="navbar-item">
-            <a href="#" class="navbar-link">Inicio</a>
+            <a href="dashboard" class="navbar-link">Inicio</a>
         </li>
         <li class="navbar-item">
-            <a href="#about-me" class="navbar-link">Banner</a>
+            <a href="banner" class="navbar-link">Banner</a>
         </li>
         <li class="navbar-item">
-            <a href="#" class="navbar-link">Discografía</a>
+            <a href="discografia" class="navbar-link">Discografía</a>
         </li>
         <li class="navbar-item">
-            <a href="#" class="navbar-link">Blog</a>
+            <a href="blog" class="navbar-link">Blog</a>
         </li>
         <li class="navbar-item">
-            <a href="#" class="navbar-link">Eventos</a>
+            <a href="eventos" class="navbar-link">Eventos</a>
         </li>
         <li class="navbar-item">
-            <a href="#" class="navbar-link">Galeria</a>
+            <a href="galeria" class="navbar-link">Galeria</a>
         </li>
         <li class="navbar-item">
-            <a href="#" class="navbar-link">Contáctame</a>
+            <a href="contactame" class="navbar-link">Contáctame</a>
         </li>
         <li class="navbar-item">
-            <a href="#" class="navbar-link">Mi perfil</a>
+            <a href="mi-perfil" class="navbar-link">Mi perfil</a>
+        </li>
+        <li class="navbar-item">
+            <a href="mi-perfil" class="navbar-link">Ver página</a>
+        </li>
+        <li class="navbar-item">
+            <a href="mi-perfil" class="navbar-link">Cerrar sesión</a>
         </li>
     </ul>
 </nav>

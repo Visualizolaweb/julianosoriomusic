@@ -1,3 +1,4 @@
 RewriteEngine on
 RewriteRule ^home$               index.php
 RewriteRule ^dashboard$          index.php?c=user&a=dashboard
+RewriteRule ^banner$             index.php?c=banner
