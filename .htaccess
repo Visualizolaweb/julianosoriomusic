@@ -1,0 +1,12 @@
+RewriteEngine on
+RewriteRule ^inicio$               index.php
+RewriteRule ^dashboard$          index.php?c=user&a=dashboard
+RewriteRule ^login$          index.php?c=user&a=signIn
+RewriteRule ^banner$             index.php?c=banner
+RewriteRule ^eventos$             index.php?c=eventos
+RewriteRule ^blog$             index.php?c=blog
+RewriteRule ^discografia$             index.php?c=discografia
+RewriteRule ^galeria$             index.php?c=galeria
+RewriteRule ^contacto$             index.php?c=contactame
+RewriteRule ^mi-perfil$             index.php?c=perfil
+RewriteRule ^inicio$             index.php?c=pagina
