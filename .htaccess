@@ -1,7 +1,7 @@
 RewriteEngine on
 RewriteRule ^inicio$               index.php
-RewriteRule ^admin$          index.php?c=user&a=dashboard
-RewriteRule ^login$          index.php?c=user&a=signIn
+RewriteRule ^dashboard$          index.php?c=user&a=dashboard
+RewriteRule ^admin$          index.php?c=user&a=signIn
 RewriteRule ^banner$             index.php?c=banner
 RewriteRule ^eventos$             index.php?c=eventos
 RewriteRule ^blog$             index.php?c=blog
