@@ -22,16 +22,16 @@
             <a href="galeria" class="navbar-link">Galeria</a>
         </li>
         <li class="navbar-item">
-            <a href="contactame" class="navbar-link">Contáctame</a>
+            <a href="contacto" class="navbar-link">Contáctame</a>
         </li>
         <li class="navbar-item">
             <a href="mi-perfil" class="navbar-link">Mi perfil</a>
         </li>
         <li class="navbar-item">
-            <a href="mi-perfil" class="navbar-link">Ver página</a>
+            <a href="pagina" class="navbar-link">Ver página</a>
         </li>
         <li class="navbar-item">
-            <a href="mi-perfil" class="navbar-link">Cerrar sesión</a>
+            <a href="cerrar-sesion" class="navbar-link">Cerrar sesión</a>
         </li>
     </ul>
 </nav>

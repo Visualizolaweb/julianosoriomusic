@@ -39,6 +39,10 @@ img{
     border: 0;
 }*/
 
+textarea{
+    resize: none;
+}
+
 h1, h2, h3, h4, h5, h6{
     margin: 0;
 }
@@ -272,7 +276,8 @@ table, th{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 600px;
+    height: 500px;
+    margin-top: 60px;
 }
 
 .form--container{
@@ -286,8 +291,15 @@ table, th{
     /*margin-right: auto;*/
 }
 
+.form--content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .table--container{
-    width: 40%;
+    width: 60%;
 }
 
 .icon--form{
@@ -328,9 +340,29 @@ table, th{
     font-family: var(--family-lato);
 }
 
+.input-container, .button-container, .text--form__container{
+    width: 100%;
+}
+
+.input-container-25{
+    width: 28%;
+}
+
+.input-container-20{
+    width: 18%;
+}
+
+.textarea--form{
+    height: 80px;
+}
+
 .input--form:focus, .dataTables_wrapper .dataTables_filter input:focus{
     outline: 0;
     border-color: var(--bg-accent);
+}
+
+.dataTables_wrapper{
+    width: 45%;
 }
 
 .dataTables_wrapper .dataTables_filter input{
@@ -356,6 +388,7 @@ table.dataTable tbody th, table.dataTable tbody td{
     color: rgba(0, 0, 0, 0.8);
     font-family: var(--family-lato);
     text-align: center;
+    border: 0.2px solid rgba(0, 0, 0, 0.1);
 }
 
 .paging_simple_numbers{
