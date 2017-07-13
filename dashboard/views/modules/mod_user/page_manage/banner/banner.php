@@ -7,10 +7,10 @@
             <div class="col-12">
                 <div class="container--content">
                     <div class="form--container">
-                        <i class="material-icons icon--form">image</i>
+                        <i class="material-icons icon--form">book</i>
                         <form class="form--content" action="index.html" method="post">
                             <div class="text--form__container">
-                                <h3 class="text--form">Modificar banner</h3>
+                                <h3 class="text--form">Modificar información</h3>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Subtitulo</label>
@@ -20,77 +20,26 @@
                                 <label for="" class="label--form">Titulo</label>
                                 <input class="input--form" type="text" name="" value="">
                             </div>
-                            <div class="input-container">
-                                <label for="" class="label--form">Imagen</label>
-                                <input class="input--form" type="file" name="" value="">
-                            </div>
-                            <div class="">
+                            <div class="button-container">
                                 <button class="button--form">Modificar</button>
                             </div>
                         </form>
                     </div>
-                    <!-- <table id="table" class="table--container">
-                        <thead class="table--header">
-                            <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table--body">
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                        </tbody>
-                    </table> -->
+                    <div class="form--container">
+                        <i class="material-icons icon--form">image</i>
+                        <form class="form--content" action="index.html" method="post">
+                            <div class="text--form__container">
+                                <h3 class="text--form">Modificar banner</h3>
+                            </div>
+                            <div class="input-container">
+                                <label for="" class="label--form">Imagen</label>
+                                <input class="input--form" type="file" name="" value="">
+                            </div>
+                            <div class="button-container">
+                                <button class="button--form">Modificar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

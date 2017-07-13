@@ -20,7 +20,7 @@
                                 <label for="" class="label--form">Cancion</label>
                                 <input class="input--form" type="file" name="" value="">
                             </div>
-                            <div class="">
+                            <div class="button-container">
                                 <button class="button--form">Ingresar</button>
                             </div>
                         </form>

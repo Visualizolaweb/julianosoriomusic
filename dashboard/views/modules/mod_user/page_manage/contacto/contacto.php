@@ -24,7 +24,7 @@
                                 <label for="" class="label--form">Imagen</label>
                                 <input class="input--form" type="file" name="" value="">
                             </div>
-                            <div class="">
+                            <div class="button-container">
                                 <button class="button--form">Modificar</button>
                             </div>
                         </form>
