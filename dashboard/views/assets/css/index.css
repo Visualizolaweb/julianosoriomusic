@@ -175,8 +175,7 @@ table, th{
     border: 1px solid transparent;
     border-radius: 50%;
     background: linear-gradient(to left, #e53935, #e35d5b);
-    transition: .4s all;
-    transition .2s content;
+    transition: .3s all;
 }
 
 .banner-link:before{
