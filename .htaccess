@@ -1,6 +1,8 @@
 RewriteEngine on
 RewriteRule ^inicio$               index.php
 RewriteRule ^dashboard$          index.php?c=user&a=dashboard
+RewriteRule ^login$               index.php?c=user&a=login
+RewriteRule ^valid-email$               index.php?c=user&a=valid
 RewriteRule ^admin$          index.php?c=user&a=signIn
 RewriteRule ^banner$             index.php?c=banner
 RewriteRule ^eventos$             index.php?c=eventos

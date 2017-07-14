@@ -10,17 +10,22 @@
             }
         }
 
-        public function createUser($data){
+        /*public function createUser(){
             try {
-                $sql = "INSERT INTO user VALUES (?,?,?,?)";
+                $data[0]=randomAlpha('30');
+                $data[1]="Julian Osorio";
+                $data[2]="manager@julianosoriomusic";
+                $data[3]="julianosorio123";
+                $data[3]=password_hash($data[3],PASSWORD_DEFAULT);
+                $sql = "INSERT INTO usuario VALUES (?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[3],$data[0],$data[1],$data[2]));
+                $query->execute(array($data[0],$data[1],$data[2],$data[3]));
                 $result = "Datos ingresados correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $result;
-        }
+        }*/
 
         public function readUser(){
             try {
@@ -48,9 +53,9 @@
 
         public function readUserByEmail($data){
             try {
-                $sql = "SELECT * FROM user WHERE user_email = ?";
+                $sql = "SELECT * FROM usuario WHERE usu_email = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
+                $query->execute(array($data[0]));
                 $result = $query->fetch(PDO::FETCH_BOTH);
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
