@@ -10,16 +10,14 @@
             }
         }
 
-        public function createUser($data){
+        public function createGaleria($id,$imageName){
             try {
-                $sql = "INSERT INTO user VALUES (?,?,?,?)";
+                $sql = "INSERT INTO galeria VALUES (?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[3],$data[0],$data[1],$data[2]));
-                $result = "Datos ingresados correctamente";
+                $query->execute(array($id,$imageName));
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
-            return $result;
         }
 
         public function readUser(){
