@@ -8,24 +8,24 @@
                 <div class="container--content">
                     <div class="form--container">
                         <i class="material-icons icon--form">person</i>
-                        <form class="form--content" action="index.html" method="post">
+                        <form id="frm_perfil" class="form--content" action="" method="post">
                             <div class="text--form__container">
                                 <h3 class="text--form">Mi información</h3>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Correo</label>
-                                <input class="input--form" type="text" name="" value="">
+                                <input class="input--form" type="text" name="data" value="">
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Nueva Contraseña</label>
-                                <input class="input--form" type="password" name="" value="">
+                                <input class="input--form" type="password" name="data" value="">
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Confirmar contraseña</label>
-                                <input class="input--form" type="password" name="" value="">
+                                <input class="input--form" type="password" name="data" value="">
                             </div>
                             <div class="button-container">
-                                <button class="button--form">Modificar</button>
+                                <button type="submit" class="button--form">Modificar</button>
                             </div>
                         </form>
                     </div>

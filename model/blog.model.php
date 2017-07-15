@@ -9,77 +9,94 @@
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
         }
-
-        public function createUser($data){
-            try {
-                $sql = "INSERT INTO user VALUES (?,?,?,?)";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[3],$data[0],$data[1],$data[2]));
-                $result = "Datos ingresados correctamente";
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
+        public function createImg($id,$imageName,$fecha){
+          try {
+            $sql="INSERT INTO blog_imagen VALUES(?,?,?,?)";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($id,$imageName,$fecha,'NO'));
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
         }
-
-        public function readUser(){
-            try {
-                $sql = "SELECT * FROM user";
-                $query = $this->pdo->prepare($sql);
-                $query->execute();
-                $result = fetchALL(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
+        public function createForm($data){
+          try {
+            $sql="INSERT INTO blog VALUES(?,?,?,?)";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($data[2],$data[0],$data[1],$data[3]));
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
         }
-
-        public function readUserByCode($data){
-            try {
-                $sql = "SELECT * FROM user WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = $query->fetch(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
+        public function readFecha(){
+          try {
+            $sql="SELECT * FROM blog_imagen ORDER BY bli_fecha DESC LIMIT 1";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array());
+            $result=$query->fetch(PDO::FETCH_BOTH);
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+          return $result;
         }
-
-        public function readUserByEmail($data){
-            try {
-                $sql = "SELECT * FROM user WHERE user_email = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = $query->fetch(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
+        public function readBlog(){
+          try {
+            $sql="SELECT * FROM blog INNER JOIN blog_imagen ON(blog.bli_id=blog_imagen.bli_id) ";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array());
+            $result=$query->fetchALL(PDO::FETCH_BOTH);
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+          return $result;
         }
-
-        public function updateUser($data){
-            try {
-                $sql = "UPDATE user SET user_name = ?, user_email = ? WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[2],$data[0],$data[1]));
-                $result = "Datos actualizados correctamente";
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
+        public function readBlogaById($field){
+          try {
+            $sql="SELECT * FROM blog INNER JOIN blog_imagen ON(blog.bli_id=blog_imagen.bli_id) WHERE blog_imagen.bli_id = ?";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($field));
+            $result=$query->fetch(PDO::FETCH_BOTH);
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+          return $result;
         }
-
-        public function deleteUser($data){
-            try {
-                $sql = "DELETE FROM user WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = "Datos eliminados correctamente";
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
+        public function updateFormImg($data){
+          try {
+            $sql="UPDATE blog_imagen SET bli_formulario = 'SI' WHERE bli_id = ?";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($data[3]));
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+        }
+        public function readImgDelete(){
+          try {
+            $sql="SELECT * FROM blog_imagen WHERE bli_formulario!='SI'";
+            $query=$this->pdo->prepare($sql);
+            $query->execute();
+            $result=$query->fetchALL(PDO::FETCH_BOTH);
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+          return $result;
+        }
+        public function deleteImg($p,$w){
+          try {
+            $sql="DELETE FROM blog_imagen WHERE bli_id = ?";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($p[$w]));
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+        }
+        public function deleteBlog($field){
+          try {
+            $sql="DELETE FROM blog_imagen WHERE bli_id = ?";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($field));
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
         }
         public function __DESTRUCT(){
             DataBase::disconnect();
