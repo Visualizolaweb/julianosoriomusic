@@ -31,6 +31,24 @@ $("#frm_log").submit(function(e){
           }
       });
 });
+$("#frm_perfil").submit(function(e){
+      e.preventDefault();
+      var JsonObj=[];
+      $("input[name=data]").each(function(){
+        var structure = {};
+        structure = $(this).val();
+        JsonObj.push(structure);
+      });
+      $.post("update-user",{data:JsonObj},function(data){
+          var data = JSON.parse(data);
+          if (data[0] == true) {
+            document.location.href = data[1];
+            alert(data[2]);
+          }else{
+            alert(data[1]);
+          }
+      });
+});
 $("#frm_ban").submit(function(e){
       e.preventDefault();
       var data = [$("#ban_tit").val(),
@@ -42,6 +60,32 @@ $("#frm_ban").submit(function(e){
               document.location.href = data[1];
           }else{
               alert(data[1]);
+          }
+      });
+});
+$("#frm_blog").submit(function(e){
+      e.preventDefault();
+      var data = [$("#tit_blo").val(),
+                  $("#des_blo").val()];
+      $.post("crear-blog",{data:data},function(data){
+          var data = JSON.parse(data);
+          if (data[0] == true) {
+              alert(data[2]);
+              document.location.href = data[1];
+          }
+      });
+});
+$("#frm_contacto").submit(function(e){
+      e.preventDefault();
+      var data = [$("#ema_con").val(),
+                  $("#tel_con").val()];
+      $.post("update-contacto",{data:data},function(data){
+          var data = JSON.parse(data);
+          if (data[0] == true) {
+              alert(data[2]);
+              document.location.href = data[1];
+          }else{
+            alert(data[1]);
           }
       });
 });

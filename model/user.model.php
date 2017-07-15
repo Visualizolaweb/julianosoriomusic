@@ -65,14 +65,12 @@
 
         public function updateUser($data){
             try {
-                $sql = "UPDATE user SET user_name = ?, user_email = ? WHERE user_code = ?";
+                $sql = "UPDATE usuario SET usu_email = ?,usu_password = ? WHERE usu_id = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[2],$data[0],$data[1]));
-                $result = "Datos actualizados correctamente";
+                $query->execute(array($data[0],$data[1],$data[3]));
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
-            return $result;
         }
 
         public function deleteUser($data){

@@ -21,14 +21,16 @@
 
         public function imagen(){
           $data = $_POST['image'];
+          $id="mek0YRcGTvUsfIGnhGDUf6ExBOecKV";
+          $result = $this->EventosM->readImagenById($id);
+          $ruta = $result["evi_ruta"];
+          unlink("views/assets/img/eventos/$ruta");
           list($type, $data) = explode(';', $data);
           list(, $data)      = explode(',', $data);
           $data = base64_decode($data);
           $imageName = time().'.png';
           file_put_contents('views/assets/img/eventos/'.$imageName, $data);
-          $id=randomAlpha('30');
-          $this->EventosM->createImagen($id,$imageName);
-          header("Location:eventos");
+          $this->EventosM->updateImagen($id,$imageName);
         }
     }
 

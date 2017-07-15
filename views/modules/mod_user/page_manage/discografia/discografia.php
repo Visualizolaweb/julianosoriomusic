@@ -34,78 +34,23 @@
                             </tr>
                         </thead>
                         <tbody class="table--body">
+                          <?php $item=1;
+                            foreach ($this->DiscografiaM->readDiscografia() as $row) {
+
+                              ?>
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
+                                <td><?php echo $item++; ?></td>
+                                <td><?php echo $row["dis_titulo"]; ?></td>
                                 <td>
                                     <a href="#">
                                         <i class="material-icons">mode_edit</i>
                                     </a>
-                                    <a href="#">
+                                    <a onclick="return confirm('Esta Seguro De Eliminar Este Archivo?');" href="index.php?c=discografia&a=delete&discod=<?php echo $row['dis_id'];?>">
                                         <i class="material-icons">delete</i>
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
+                            <?php  } ?>
                         </tbody>
                     </table>
                 </div>

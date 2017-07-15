@@ -121,6 +121,3 @@ $('.upload-result').on('click', function (ev) {
 </script>
 </body>
 </html>
-
-</body>
-</html>

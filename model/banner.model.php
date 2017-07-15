@@ -14,7 +14,7 @@
             try {
                 $sql = "SELECT * FROM banner WHERE ban_id = '2VXe2DUcj3I4KnfeF33CFCfrWREs32'";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array());
+                $query->execute();
                 $result = $query->fetch(PDO::FETCH_BOTH);
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
