@@ -20,23 +20,23 @@
             }
         }
 
-        public function readUser(){
+        public function readGaleria(){
             try {
-                $sql = "SELECT * FROM user";
+                $sql = "SELECT * FROM galeria";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
-                $result = fetchALL(PDO::FETCH_BOTH);
+                $result = $query->fetchALL(PDO::FETCH_BOTH);
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $result;
         }
 
-        public function readUserByCode($data){
+        public function readGaleriaById($field){
             try {
-                $sql = "SELECT * FROM user WHERE user_code = ?";
+                $sql = "SELECT * FROM galeria WHERE gal_id = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
+                $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -44,40 +44,14 @@
             return $result;
         }
 
-        public function readUserByEmail($data){
+        public function deleteGaleria($field){
             try {
-                $sql = "SELECT * FROM user WHERE user_email = ?";
+                $sql = "DELETE FROM galeria WHERE gal_id = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = $query->fetch(PDO::FETCH_BOTH);
+                $query->execute(array($field));
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
-            return $result;
-        }
-
-        public function updateUser($data){
-            try {
-                $sql = "UPDATE user SET user_name = ?, user_email = ? WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[2],$data[0],$data[1]));
-                $result = "Datos actualizados correctamente";
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
-        }
-
-        public function deleteUser($data){
-            try {
-                $sql = "DELETE FROM user WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = "Datos eliminados correctamente";
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
         }
         public function __DESTRUCT(){
             DataBase::disconnect();

@@ -31,7 +31,7 @@
                                   </div>
                                   <div class="modal-footer">
                                       <input class="input--form" type="file" id="upload" style="display: block; width: 100%;">
-                                      <button class="button--form upload-result">Recortar Imagen</button>
+                                      <button onclick="document.location.href='galeria'" class="button--form upload-result">Recortar Imagen</button>
                                   </div>
                                 </div>
                               </div>
@@ -42,83 +42,25 @@
                         <thead class="table--header">
                             <tr>
                                 <th>Número</th>
-                                <th>Ruta</th>
+                                <th>Imagen</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody class="table--body">
+                          <?php
+                            $item=1;
+                            foreach ($this->GaleriaM->readGaleria() as $row) {
+                            ?>
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
+                                <td><?php echo $item++; ?></td>
+                                <td><img src=views/assets/img/galeria/<?php echo $row['gal_ruta']; ?>></td>
                                 <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
+                                    <a onclick="return confirm('Esta Seguro De Eliminar Este Archivo?');" href="index.php?c=galeria&a=delete&galcod=<?php echo $row['gal_id'];?>">
                                         <i class="material-icons">delete</i>
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
+                            <?php  }   ?>
                         </tbody>
                     </table>
                 </div>
