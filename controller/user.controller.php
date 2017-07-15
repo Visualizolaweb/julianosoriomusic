@@ -48,6 +48,10 @@
           }
           echo json_encode($return);
      }
+     public function close(){
+       session_destroy();
+       header("Location:inicio");
+     }
   }
 
 ?>

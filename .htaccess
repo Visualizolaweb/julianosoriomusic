@@ -1,14 +1,16 @@
 RewriteEngine on
-RewriteRule ^inicio$               index.php
+RewriteRule ^inicio$             index.php?c=pagina
+RewriteRule ^cerrar-sesion$             index.php?c=user&a=close
 RewriteRule ^dashboard$          index.php?c=user&a=dashboard
 RewriteRule ^login$               index.php?c=user&a=login
 RewriteRule ^valid-email$               index.php?c=user&a=valid
 RewriteRule ^admin$          index.php?c=user&a=signIn
 RewriteRule ^banner$             index.php?c=banner
+RewriteRule ^update-banner$             index.php?c=banner&a=update
 RewriteRule ^eventos$             index.php?c=eventos
 RewriteRule ^blog$             index.php?c=blog
 RewriteRule ^discografia$             index.php?c=discografia
+RewriteRule ^crear-discografia$             index.php?c=discografia&a=create
 RewriteRule ^galeria$             index.php?c=galeria
 RewriteRule ^contacto$             index.php?c=contactame
 RewriteRule ^mi-perfil$             index.php?c=perfil
-RewriteRule ^inicio$             index.php?c=pagina

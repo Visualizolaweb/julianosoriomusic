@@ -8,20 +8,20 @@
                 <div class="container--content">
                     <div class="form--container">
                         <i class="material-icons icon--form">album</i>
-                        <form class="form--content" action="index.html" method="post">
+                        <form class="form--content" action="crear-discografia" method="post" enctype="multipart/form-data">
                             <div class="text--form__container">
                                 <h3 class="text--form">Ingresar canciones</h3>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Titulo</label>
-                                <input class="input--form" type="text" name="" value="">
+                                <input class="input--form" type="text" name="data" value="">
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Cancion</label>
-                                <input class="input--form" type="file" name="" value="">
+                                <input class="input--form" type="file" name="cancion" value="">
                             </div>
                             <div class="button-container">
-                                <button class="button--form">Ingresar</button>
+                                <button type="submit" class="button--form">Ingresar</button>
                             </div>
                         </form>
                     </div>

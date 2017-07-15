@@ -173,12 +173,12 @@
 $uploadCrop = $('#wrap-upload').croppie({
     enableExif: true,
     viewport: {
-        width: 200,
-        height: 200
+        width: 500,
+        height: 400
     },
     boundary: {
-        width: 300,
-        height: 300
+        width: 500,
+        height: 400
     }
 });
 
@@ -214,8 +214,5 @@ $('.upload-result').on('click', function (ev) {
     });
 });
 </script>
-</body>
-</html>
-
 </body>
 </html>

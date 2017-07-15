@@ -1,3 +1,4 @@
+
 $("#pas_log").focus(function(){
   $("#ema_log").siblings("span").remove();
   var email = $("#ema_log").val();
@@ -27,6 +28,20 @@ $("#frm_log").submit(function(e){
               document.location.href = data[1];
           }else{
               $("#pas_log").after("<span>"+data[1]+"</span>");
+          }
+      });
+});
+$("#frm_ban").submit(function(e){
+      e.preventDefault();
+      var data = [$("#ban_tit").val(),
+                  $("#ban_sub").val()];
+      $.post("update-banner",{data:data},function(data){
+          var data = JSON.parse(data);
+          if (data[0] == true) {
+              alert(data[2]);
+              document.location.href = data[1];
+          }else{
+              alert(data[1]);
           }
       });
 });

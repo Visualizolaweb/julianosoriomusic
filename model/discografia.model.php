@@ -10,11 +10,11 @@
             }
         }
 
-        public function createUser($data){
+        public function createDiscografia($data){
             try {
-                $sql = "INSERT INTO user VALUES (?,?,?,?)";
+                $sql = "INSERT INTO discografia VALUES (?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[3],$data[0],$data[1],$data[2]));
+                $query->execute(array($data[2],$data[0],$data[1]));
                 $result = "Datos ingresados correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
