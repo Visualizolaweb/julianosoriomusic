@@ -10,6 +10,27 @@
             }
         }
 
+        public function updateImagen($id,$imageName){
+            try {
+                $sql = "UPDATE eventos_imagen SET evi_ruta = ? WHERE evi_id = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($imageName,$id));
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+        }
+        public function readImagenById($id){
+          try {
+            $sql = "SELECT * FROM eventos_imagen WHERE evi_id = ?";
+            $query = $this->pdo->prepare($sql);
+            $query->execute(array($id));
+            $result = $query->fetch(PDO::FETCH_BOTH);
+          } catch (PDOException $e) {
+            die($e->getMessage()."".$e->getLine()."".$e->getFile());
+          }
+          return $result;
+        }
+
         public function createUser($data){
             try {
                 $sql = "INSERT INTO user VALUES (?,?,?,?)";
@@ -34,17 +55,6 @@
             return $result;
         }
 
-        public function readUserByCode($data){
-            try {
-                $sql = "SELECT * FROM user WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = $query->fetch(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
-        }
 
         public function readUserByEmail($data){
             try {

@@ -1,7 +1,7 @@
 <?php
     class DataBase{
         private static $db_host = "localhost";
-        private static $db_name = "test";
+        private static $db_name = "julianosorio";
         private static $db_user = "root";
         private static $db_pass = "";
         private static $db_conn = null;

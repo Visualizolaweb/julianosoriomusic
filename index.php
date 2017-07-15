@@ -1,7 +1,7 @@
 <?php
     date_default_timezone_set('America/Bogota');
     require_once 'model/db.model.php';
-    // require_once 'views/assets/random/random.php';
+    require_once 'views/assets/random/random.php';
     session_start();
     if (isset($_REQUEST["c"])) {
         $controller = strtolower($_REQUEST["c"]);
