@@ -35,6 +35,10 @@ img{
     max-width: 100%;
 }
 
+button:focus{
+    outline: 0;
+    outline: none !important;
+}
 /*input, input:focus, input:active, input:hover, button, button:focus, button:active, button:hover{
     outline: 0;
     border: 0;
@@ -469,6 +473,9 @@ table.dataTable tbody th, table.dataTable tbody td{
     background-color: #e53935
 }
 
+.upload-result{
+    margin-top: 0 !important;
+}
 
 @media (max-width: 575px) {
     .banner-items{

@@ -1,3 +1,4 @@
+<?php $contacto = $this->ContactameM->readContactoById(); ?>
 <div class="container--dashboard">
     <div class="container-fluid">
         <div class="row no-gutters">
@@ -8,85 +9,23 @@
                 <div class="container--content">
                     <div class="form--container">
                         <i class="material-icons icon--form">email</i>
-                        <form class="form--content" action="index.html" method="post">
+                        <form class="form--content" action="" id="frm_contacto" method="post">
                             <div class="text--form__container">
                                 <h3 class="text--form">Modificar contáctame</h3>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Correo</label>
-                                <input class="input--form" type="text" name="" value="">
+                                <input id="ema_con" class="input--form" type="email" name="" value="<?php echo $contacto['con_email']; ?>" required>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Telefono</label>
-                                <input class="input--form" type="text" name="" value="">
+                                <input id="tel_con" class="input--form" type="text" name="" value="<?php echo $contacto['con_telefono']; ?>" required>
                             </div>
                             <div class="button-container">
-                                <button class="button--form">Modificar</button>
+                                <button type="submit" class="button--form">Modificar</button>
                             </div>
                         </form>
                     </div>
-                    <!-- <table id="table" class="table--container">
-                        <thead class="table--header">
-                            <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table--body">
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                        </tbody>
-                    </table> -->
                 </div>
             </div>
         </div>

@@ -10,11 +10,11 @@
             }
         }
 
-        public function createUser($data){
+        public function createDiscografia($data){
             try {
-                $sql = "INSERT INTO user VALUES (?,?,?,?)";
+                $sql = "INSERT INTO discografia VALUES (?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[3],$data[0],$data[1],$data[2]));
+                $query->execute(array($data[2],$data[0],$data[1]));
                 $result = "Datos ingresados correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -22,35 +22,23 @@
             return $result;
         }
 
-        public function readUser(){
+        public function readDiscografia(){
             try {
-                $sql = "SELECT * FROM user";
+                $sql = "SELECT * FROM discografia";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
-                $result = fetchALL(PDO::FETCH_BOTH);
+                $result = $query->fetchALL(PDO::FETCH_BOTH);
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $result;
         }
 
-        public function readUserByCode($data){
+        public function readDiscografiaById($field){
             try {
-                $sql = "SELECT * FROM user WHERE user_code = ?";
+                $sql = "SELECT * FROM discografia WHERE dis_id = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = $query->fetch(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
-        }
-
-        public function readUserByEmail($data){
-            try {
-                $sql = "SELECT * FROM user WHERE user_email = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
+                $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -70,16 +58,14 @@
             return $result;
         }
 
-        public function deleteUser($data){
+        public function deleteDiscografia($field){
             try {
-                $sql = "DELETE FROM user WHERE user_code = ?";
+                $sql = "DELETE FROM discografia WHERE dis_id = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = "Datos eliminados correctamente";
+                $query->execute(array($field));
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
-            return $result;
         }
         public function __DESTRUCT(){
             DataBase::disconnect();
