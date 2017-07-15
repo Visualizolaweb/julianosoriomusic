@@ -10,6 +10,16 @@
             }
         }
 
+        public function createImagen($id,$imageName){
+            try {
+                $sql = "INSERT INTO eventos_imagen VALUES (?,?)";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($id,$imageName));
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+        }
+
         public function createUser($data){
             try {
                 $sql = "INSERT INTO user VALUES (?,?,?,?)";

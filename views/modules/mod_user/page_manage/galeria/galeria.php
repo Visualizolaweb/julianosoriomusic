@@ -8,7 +8,7 @@
                 <div class="container--content">
                     <div class="form--container">
                         <i class="material-icons icon--form">collections</i>
-                        <div class="form--content" method="post">
+                        <div class="form--content">
                             <div class="text--form__container">
                                 <h3 class="text--form">Ingresar imagen</h3>
                             </div>
