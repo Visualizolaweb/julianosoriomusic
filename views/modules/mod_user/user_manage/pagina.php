@@ -53,38 +53,7 @@
   </header>
   <section class="twitter-container">
       <div class="owl-carousel owl-theme">
-          <div class="item">
-            <div class="twitter--body">
-              <i class="fa fa-twitter fa-2x twitter--icon"></i>
-              <h2 class="twitter--name">@julianosoriomusic</h2>
-              <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
-              <h4 class="twitter--date">Publicado 12 de Junio</h4>
-            </div>
-          </div>
-          <div class="item">
-            <div class="twitter--body">
-              <i class="fa fa-twitter fa-2x twitter--icon"></i>
-              <h2 class="twitter--name">@julianosoriomusic</h2>
-              <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
-              <h4 class="twitter--date">Publicado 12 de Junio</h4>
-            </div>
-          </div>
-          <div class="item">
-            <div class="twitter--body">
-              <i class="fa fa-twitter fa-2x twitter--icon"></i>
-              <h2 class="twitter--name">@julianosoriomusic</h2>
-              <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
-              <h4 class="twitter--date">Publicado 12 de Junio</h4>
-            </div>
-          </div>
-          <div class="item">
-            <div class="twitter--body">
-              <i class="fa fa-twitter fa-2x twitter--icon"></i>
-              <h2 class="twitter--name">@julianosoriomusic</h2>
-              <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloribus inve.</p>
-              <h4 class="twitter--date">Publicado 12 de Junio</h4>
-            </div>
-          </div>
+        <?php $this->getTwitter(); ?>
       </div>
   </section>
   <section class="infinito-container">
@@ -294,27 +263,16 @@
 </section>
   <section class="gallery-container">
       <section class="owl-carousel owl-theme">
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <a class="item gallery-item" href="#">Ver más</a>
+          <?php
+            foreach ($this->PaginaM->readGaleria() as $row) {
+            ?>
+                <div class="item">
+                    <img class="gallery--image" src="views/assets/img/galeria/<?php echo $row['gal_ruta'];?>" alt="">
+                </div>
+          <?php } ?>
+          <a class="item gallery-item" href="#">
+              <img src="views/assets/img/galeria/ver_mas.jpg" alt="">
+          </a>
       </section>
   </section>
   <section class="contact-container" id="footer">

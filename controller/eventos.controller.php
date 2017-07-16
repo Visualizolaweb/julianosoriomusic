@@ -19,6 +19,12 @@
             require_once 'views/include/footer.php';
         }
 
+        public function update(){
+            require_once 'views/include/header.php';
+            require_once 'views/modules/mod_user/page_manage/eventos/eventos.update.php';
+            require_once 'views/include/footer.php';
+        }
+
         public function imagen(){
           $data = $_POST['image'];
           $id="mek0YRcGTvUsfIGnhGDUf6ExBOecKV";
@@ -31,6 +37,28 @@
           $imageName = time().'.png';
           file_put_contents('views/assets/img/eventos/'.$imageName, $data);
           $this->EventosM->updateImagen($id,$imageName);
+        }
+
+        public function createEvents(){
+            $data = $_POST["data"];
+            $data[7] = randomAlpha('15');
+            $eventos = $this->EventosM->createEvents($data);
+            $return = array(true,"eventos", "Datos ingresados correctamente");
+            echo json_encode($return);
+        }
+
+        public function updateData(){
+            $data = $_POST["data"];
+            $data[7] = $_SESSION["event_code"];
+            $result = $this->EventosM->updateEvents($data);
+            $return = array(true,"eventos", "Datos actualizados correctamente");
+            echo json_encode($return);
+        }
+
+        public function delete(){
+            $field = $_GET["token"];
+            $this->EventosM->deleteEvent($field);
+            header("Location: eventos");
         }
     }
 
