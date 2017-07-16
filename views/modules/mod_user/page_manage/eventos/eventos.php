@@ -8,38 +8,38 @@
                 <div class="container--content">
                     <div class="form--container">
                         <i class="material-icons icon--form">event</i>
-                        <form class="form--content" action="index.html" method="post">
+                        <form class="form--content" id="frm_eventos" method="post">
                             <div class="text--form__container">
                                 <h3 class="text--form">Ingresar evento</h3>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Titulo</label>
-                                <input class="input--form" type="text" name="" value="">
+                                <input class="input--form" id="eventTitle" type="text" name="data" required="">
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Dirección</label>
-                                <input class="input--form" type="text" name="" value="">
+                                <input class="input--form" id="eventAddress" type="text" name="data" required="">
                             </div>
                             <div class="input-container input-container-25 input-container-100">
                                 <label for="" class="label--form label--form-100">Comienza</label>
                                 <div class="form--input-50">
-                                    <input class="input--form" type="text" name="" value="">
-                                    <input class="input--form" type="text" name="" value="">
+                                    <input class="input--form" id="startDate" type="text" name="data" placeholder="Fecha: YYYY-MM-DD" required="">
+                                    <input class="input--form" id="startTime" type="text" name="data" placeholder="Hora: HH:MM" required="">
                                 </div>
                             </div>
                             <div class="input-container input-container-20 input-container-100">
                                 <label for="" class="label--form label--form-100">Termina</label>
                                 <div class="form--input-50">
-                                    <input class="input--form" type="text" name="" value="">
-                                    <input class="input--form" type="text" name="" value="">
+                                    <input class="input--form" id="endDate" type="text" name="data" placeholder="Fecha: YYYY-MM-DD" required="">
+                                    <input class="input--form" id="endTime" type="text" name="data" placeholder="Hora: HH:MM" required="">
                                 </div>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Descripción</label>
-                                <textarea class="input--form textarea--form" type="text" name="" value=""></textarea>
+                                <textarea class="textarea--form" id="eventDescription" type="text" name="data" required=""></textarea>
                             </div>
                             <div class="button-container">
-                                <button class="button--form">Ingresar</button>
+                                <button class="button--form" id="btn--events">Ingresar</button>
                             </div>
                         </form>
                     </div>
@@ -53,7 +53,7 @@
                               Subir foto
                             </button>
                             <div class="modal fade" id="imageCrop" tabindex="-1" role="dialog" aria-labelledby="imageCropTitle" aria-hidden="true">
-                              <div class="modal-dialog" role="document">
+                              <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
                                     <h5 class="modal-title" id="imageCropTitle">Recortar la imagen</h5>
@@ -80,82 +80,29 @@
                             <tr>
                                 <th>Número</th>
                                 <th>Título</th>
+                                <th>Dirección</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody class="table--body">
+                            <?php
+                            $item=1;
+                            foreach ($this->EventosM->readEvents() as $row) {
+                            ?>
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
+                                <td><?php echo $item++; ?></td>
+                                <td><?php echo $row["evento_nombre"]; ?></td>
+                                <td><?php echo $row["evento_direccion"]; ?></td>
                                 <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
+                                    <a href="actualizar-evento&token=<?php echo $row['evento_code'];?>">
+                                        <i class="icon--update material-icons">mode_edit</i>
                                     </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
+                                    <a onclick="return confirm('¿Estás seguro de eliminar este archivo?');" href="eliminar-evento&token=<?php echo $row['evento_code'];?>">
+                                        <i class="icon--danger material-icons">delete</i>
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </td>
-                            </tr>
+                            <?php  }   ?>
                         </tbody>
                     </table>
                 </div>

@@ -11,7 +11,7 @@
         $controller = new $controller;
         call_user_func(array($controller, $action));
     } else {
-        $controller = "user";
+        $controller = "pagina";
         require_once "controller/$controller.controller.php";
         $controller = ucwords($controller).'Controller';
         $controller = new $controller;

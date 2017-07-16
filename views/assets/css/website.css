@@ -27,6 +27,10 @@ a, a:focus, a:active, a:hover{
     outline: 0;
 }
 
+a:focus{
+    color: #ffffff;
+}
+
 ul, ol{
     list-style: none;
     margin-bottom: 0;
@@ -990,7 +994,7 @@ textarea.input--form{
     }
 
     .header--button{
-        width: 42%;
+        width: 50%;
         margin-left: auto;
         margin-right: 10px;
     }

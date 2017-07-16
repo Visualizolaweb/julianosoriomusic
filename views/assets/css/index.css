@@ -26,6 +26,10 @@ a, a:focus, a:active, a:hover{
     outline: 0;
 }
 
+a:focus{
+    color: #ffffff;
+}
+
 ul, ol{
     list-style: none;
     margin-bottom: 0;
@@ -54,6 +58,15 @@ h1, h2, h3, h4, h5, h6{
 
 table, th{
     border: none !important;
+}
+
+.error{
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    color: red;
+    font-family: var(--family-lato);
+    font-weight: 700;
 }
 
 /* SCROLL */
@@ -285,6 +298,10 @@ table, th{
     margin-top: 60px;
 }
 
+.container--content__update{
+    margin-top: 115px;
+}
+
 .form--container{
     width: 40%;
     padding: 30px 40px;
@@ -335,7 +352,7 @@ table, th{
     margin-top: 20px;
 }
 
-.input--form, .dataTables_wrapper .dataTables_filter input{
+.input--form, .dataTables_wrapper .dataTables_filter input, .textarea--form{
     width: 100%;
     padding: 5px 12px;
     border: 0;
@@ -362,6 +379,7 @@ table, th{
 .form--input-50{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .form--input-50 .input--form{
@@ -372,7 +390,12 @@ table, th{
     height: 80px;
 }
 
-.input--form:focus, .dataTables_wrapper .dataTables_filter input:focus{
+.input--error{
+    outline: 0;
+    border-color: var(--bg-accent);
+}
+
+.input--form:focus, .dataTables_wrapper .dataTables_filter input:focus, .textarea--form:focus{
     outline: 0;
     border-color: var(--bg-accent);
 }
@@ -475,6 +498,29 @@ table.dataTable tbody th, table.dataTable tbody td{
 
 .upload-result{
     margin-top: 0 !important;
+}
+
+.button--form[disabled="disabled"]:hover{
+    background-color: transparent;
+    color: var(--bg-accent);
+    cursor: not-allowed;
+}
+
+td img {
+    max-width: 120px;
+}
+
+.icon--danger, .icon--danger:focus{
+    color: #e53935;
+}
+
+.icon--update, .icon--update:focus{
+    color: #2196f3;
+}
+
+.form--container__gallery{
+    width: 60%;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 575px) {
