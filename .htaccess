@@ -1,5 +1,6 @@
 RewriteEngine on
 RewriteRule ^inicio$                            index.php?c=pagina
+RewriteRule ^get-events$                        index.php?c=pagina&a=getEvents
 RewriteRule ^cerrar-sesion$                     index.php?c=user&a=close
 RewriteRule ^dashboard$                         index.php?c=user&a=dashboard
 RewriteRule ^login$                             index.php?c=user&a=login

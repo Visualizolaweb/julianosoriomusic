@@ -21,6 +21,24 @@
             require_once 'views/include/footer.php';
         }
 
+        public function getEvents(){
+            $data = $_POST["data"];
+            $eventosByCode = $this->PaginaM->readEventByCode($data);
+            ?>
+            <div class="events--2__section">
+                <h2 class="events--2__title">
+                <?php echo $eventosByCode["evento_nombre"]; ?>
+                </h2>
+                <h4 class="events--2__subtitle">
+                <?php echo $eventosByCode["evento_direccion"]; ?>
+                </h4>
+                <p class="events--2__text">
+                <?php echo $eventosByCode["evento_descripcion"]; ?>
+                </p>
+            </div>
+        <?php
+        }
+
         public function getTwitter(){
             $settings = array(
             'oauth_access_token' => "3342443140-jpEbctIis5Ys6B2dliE0OqbNVMmd33Aj9dlfMEJ",

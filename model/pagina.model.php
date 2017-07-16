@@ -34,6 +34,18 @@
             return $result;
         }
 
+        public function readEventByCode($data){
+            try{
+        		$sql = "SELECT * FROM eventos WHERE evento_code = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($data));
+                $result = $query->fetch(PDO::FETCH_BOTH);
+              }catch (Exception $e){
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $result;
+        }
+
         public function readBanner(){
             try{
         		$sql = "SELECT * FROM banner WHERE ban_id = '2VXe2DUcj3I4KnfeF33CFCfrWREs32'";

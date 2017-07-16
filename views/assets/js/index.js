@@ -171,7 +171,7 @@ $("#frm_eventos").submit(function(e){
       $.post("crear-evento",{data:data},function(resp){
         var resp = JSON.parse(resp);
         if (resp[0] == true) {
-            document.location.href = "crear-evento";
+            document.location.href = resp[1];
             alert(resp[2]);
         }
       });

@@ -56,9 +56,31 @@ $('.navbar--link').click(function(){
 })
 
 // console.clear()
+window.onload = function() {
+    var active = $('.active--link').attr("href");
+    console.log(active);
+    $.post("get-events",{data:active},function(data){
+        var data = JSON.parse(data);
+        if (data[0]==true) {
+            alert(true)
+        }else{
+            alert(false)
+        }
+    });
+}
 
-$('a.events--link').click(function(e){
+$('.events--link').click(function(e){
     e.preventDefault();
+    $('.events--link').removeClass('active--link');
+    $(this).addClass('active--link');
     var value = $(this).attr("href");
     console.log(value);
+    $.post("get-events",{data:value},function(resp){
+        var resp = JSON.parse(resp);
+        if (resp[0]==true) {
+            alert(true)
+        }else{
+            alert(false)
+        }
+    });
 })

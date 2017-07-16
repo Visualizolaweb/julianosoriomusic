@@ -295,17 +295,7 @@
         ?>
     </div>
     <div class="events--2">
-       <div class="events--2__section">
-         <h2 class="events--2__title">
-           Maecenas Tristique Justo
-         </h2>
-         <h4 class="events--2__subtitle">
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-         </h4>
-         <p class="events--2__text">
-           Integer pulvinar justo sed ante egestas, sit amet molestie velit lacinia. Donec at nulla quis massa egestas tempor at eget est.
-         </p>
-       </div>
+        <?php $this->getEvents(); ?>
     </div>
 </section>
   <section class="gallery-container">
