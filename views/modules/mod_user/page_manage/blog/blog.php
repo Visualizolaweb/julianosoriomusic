@@ -20,17 +20,6 @@
                                 <label for="" class="label--form">Descripción</label>
                                 <textarea id="des_blo" class="input--form textarea--form" name="data" value=""></textarea>
                             </div>
-                            <div class="button-container">
-                                <button type="submit" class="button--form">Ingresar</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="form--container">
-                        <i class="material-icons icon--form">collections</i>
-                        <div class="form--content">
-                            <div class="text--form__container">
-                                <h3 class="text--form">Ingresar imagen</h3>
-                            </div>
                             <button type="button" class="button--form" data-toggle="modal" data-target="#imageCrop">
                               Subir foto
                             </button>
@@ -55,7 +44,10 @@
                                 </div>
                               </div>
                             </div>
-                        </div>
+                            <div class="button-container">
+                                <button type="submit" class="button--form">Ingresar</button>
+                            </div>
+                        </form>
                     </div>
                     <table id="table" class="table--container">
                         <thead class="table--header">

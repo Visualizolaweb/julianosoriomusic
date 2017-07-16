@@ -10,73 +10,49 @@
             }
         }
 
-        public function createUser($data){
-            try {
-                $sql = "INSERT INTO user VALUES (?,?,?,?)";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[3],$data[0],$data[1],$data[2]));
-                $result = "Datos ingresados correctamente";
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
-        }
-
-        public function readUser(){
-            try {
-                $sql = "SELECT * FROM user";
+        public function readGaleria(){
+          try{
+      			$sql = "SELECT * FROM galeria LIMIT 20";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
-                $result = fetchALL(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
+                $result = $query->fetchALL(PDO::FETCH_BOTH);
+            }catch (Exception $e){
+              die($e->getMessage()."".$e->getLine()."".$e->getFile());
+          }
+          return $result;
         }
 
-        public function readUserByCode($data){
-            try {
-                $sql = "SELECT * FROM user WHERE user_code = ?";
+        public function readContact(){
+            try{
+        		$sql = "SELECT * FROM contacto WHERE con_id = 'AeU839Cekf02Cw9fEcoe293c0vD2D1'";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
+                $query->execute();
                 $result = $query->fetch(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
+              }catch (Exception $e){
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $result;
         }
 
-        public function readUserByEmail($data){
-            try {
-                $sql = "SELECT * FROM user WHERE user_email = ?";
+        public function readBanner(){
+            try{
+        		$sql = "SELECT * FROM banner WHERE ban_id = '2VXe2DUcj3I4KnfeF33CFCfrWREs32'";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
+                $query->execute();
                 $result = $query->fetch(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
+              }catch (Exception $e){
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $result;
         }
 
-        public function updateUser($data){
-            try {
-                $sql = "UPDATE user SET user_name = ?, user_email = ? WHERE user_code = ?";
+        public function readUpcomingEvents(){
+            try{
+        		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio >= DATE(NOW()) ORDER BY evento_fecha_inicio ASC LIMIT 3";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[2],$data[0],$data[1]));
-                $result = "Datos actualizados correctamente";
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
-        }
-
-        public function deleteUser($data){
-            try {
-                $sql = "DELETE FROM user WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = "Datos eliminados correctamente";
-            } catch (PDOException $e) {
+                $query->execute();
+                $result = $query->fetchALL(PDO::FETCH_BOTH);
+              }catch (Exception $e){
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $result;

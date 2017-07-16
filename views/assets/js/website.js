@@ -55,4 +55,10 @@ $('.navbar--link').click(function(){
     $('.navbar-container').removeClass('add');
 })
 
-console.clear()
+// console.clear()
+
+$('a.events--link').click(function(e){
+    e.preventDefault();
+    var value = $(this).attr("href");
+    console.log(value);
+})

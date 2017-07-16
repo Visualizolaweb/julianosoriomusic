@@ -38,10 +38,11 @@
       </div>
     </div>
     <div class="header--text">
+    <?php $banner = $this->PaginaM->readBanner(); ?>
       <div class="header--text__container">
         <div class="header--text__contain">
-          <h6 class="header--text__subtitle">Descarga y lleva siempre contigo</h6>
-          <h1 class="header--text__title">Infinito</h1>
+          <h6 class="header--text__subtitle"><?php echo $banner["ban_subtitulo"]; ?></h6>
+          <h1 class="header--text__title"><?php echo $banner["ban_titulo"]; ?></h1>
           <a href="#" class="header--button">Disponible en<img class="button--image" src="views/assets/img/Recursos/icons/google-play.png" alt="">
         </a>
         </div>
@@ -53,38 +54,7 @@
   </header>
   <section class="twitter-container">
       <div class="owl-carousel owl-theme">
-          <div class="item">
-            <div class="twitter--body">
-              <i class="fa fa-twitter fa-2x twitter--icon"></i>
-              <h2 class="twitter--name">@julianosoriomusic</h2>
-              <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
-              <h4 class="twitter--date">Publicado 12 de Junio</h4>
-            </div>
-          </div>
-          <div class="item">
-            <div class="twitter--body">
-              <i class="fa fa-twitter fa-2x twitter--icon"></i>
-              <h2 class="twitter--name">@julianosoriomusic</h2>
-              <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
-              <h4 class="twitter--date">Publicado 12 de Junio</h4>
-            </div>
-          </div>
-          <div class="item">
-            <div class="twitter--body">
-              <i class="fa fa-twitter fa-2x twitter--icon"></i>
-              <h2 class="twitter--name">@julianosoriomusic</h2>
-              <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di</p>
-              <h4 class="twitter--date">Publicado 12 de Junio</h4>
-            </div>
-          </div>
-          <div class="item">
-            <div class="twitter--body">
-              <i class="fa fa-twitter fa-2x twitter--icon"></i>
-              <h2 class="twitter--name">@julianosoriomusic</h2>
-              <p class="twitter--text">Nunc ligula augue, aliquam et nulla non, bibendum imperdiet di, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloribus inve.</p>
-              <h4 class="twitter--date">Publicado 12 de Junio</h4>
-            </div>
-          </div>
+        <?php $this->getTwitter(); ?>
       </div>
   </section>
   <section class="infinito-container">
@@ -256,27 +226,73 @@
         </div>
     </div>
     <div class="events--links__container">
-        <div class="events--links">
-            <a class="events--link" href="#">
-              <span class="links--month">Agosto</span>
-              <span class="links--day">15</span>
-              <span class="links--year">2017</span>
-            </a>
-        </div>
-        <div class="events--links">
-            <a class="events--link active--link" href="#">
-              <span class="links--month">Agosto</span>
-              <span class="links--day">15</span>
-              <span class="links--year">2017</span>
-            </a>
-        </div>
-        <div class="events--links">
-            <a class="events--link" href="#">
-              <span class="links--month">Agosto</span>
-              <span class="links--day">15</span>
-              <span class="links--year">2017</span>
-            </a>
-        </div>
+        <?php
+        function convertMonthEvents($month){
+            switch ($month) {
+                case '01':
+                    $month = "Enero";
+                    break;
+                case '02':
+                    $month = "Febrero";
+                    break;
+                case '03':
+                    $month = "Marzo";
+                    break;
+                case '04':
+                    $month = "Abril";
+                    break;
+                case '05':
+                    $month = "Mayo";
+                    break;
+                case '06':
+                    $month = "Junio";
+                    break;
+                case '07':
+                    $month = "Julio";
+                    break;
+                case '08':
+                    $month = "Agosto";
+                    break;
+                case '09':
+                    $month = "Septiembre";
+                    break;
+                case '10':
+                    $month = "Octubre";
+                    break;
+                case '11':
+                    $month = "Noviembre";
+                    break;
+                case '12':
+                    $month = "Diciembre";
+                    break;
+                default:
+                    $month = "Enero";
+                    break;
+
+            }
+            return $month;
+       }
+        // $className = "active--link";
+        $item = 1;
+        foreach ($this->PaginaM->readUpcomingEvents() as $row) {
+            list($years, $months, $days) = explode("-", $row["evento_fecha_inicio"]);
+            if ($item === 1) {
+                $className = "active--link";
+            } else {
+                $className = "";
+            }
+            $item++;
+            ?>
+            <div class="events--links">
+                <a class="events--link <?php echo $className; ?>" href="<?php echo $row['evento_code'];?>">
+                  <span class="links--month"><?php echo convertMonthEvents($months); ?></span>
+                  <span class="links--day"><?php echo $days; ?></span>
+                  <span class="links--year"><?php echo $years; ?></span>
+                </a>
+            </div>
+        <?php
+        }
+        ?>
     </div>
     <div class="events--2">
        <div class="events--2__section">
@@ -294,27 +310,16 @@
 </section>
   <section class="gallery-container">
       <section class="owl-carousel owl-theme">
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-3.png" alt=""></div>
-          <div class="item"><img class="gallery--image" src="views/assets/img/Recursos/images/img-blog-2.png" alt=""></div>
-          <a class="item gallery-item" href="#">Ver más</a>
+          <?php
+            foreach ($this->PaginaM->readGaleria() as $row) {
+            ?>
+                <div class="item">
+                    <img class="gallery--image" src="views/assets/img/galeria/<?php echo $row['gal_ruta'];?>" alt="">
+                </div>
+          <?php } ?>
+          <a class="item gallery-item" href="#">
+              <img src="views/assets/img/galeria/ver_mas.jpg" alt="">
+          </a>
       </section>
   </section>
   <section class="contact-container" id="footer">
@@ -340,11 +345,12 @@
         </form>
       </div>
       <div class="info-container">
+        <?php $contacto = $this->PaginaM->readContact(); ?>
         <img src="views/assets/img/Recursos/logo/LogoGray.png" alt="">
         <span class="info--title info--title__padding">Correo Electrónico</span>
-        <span class="info--subtitle">manager@julianosoriomusic</span>
+        <span class="info--subtitle"><?php echo $contacto["con_email"]; ?></span>
         <span class="info--title">Número Móvil</span>
-        <span class="info--subtitle">(57) 300 610 0192</span>
+        <span class="info--subtitle"><?php echo $contacto["con_telefono"]; ?></span>
       </div>
     </div>
     <footer class="contact-footer">

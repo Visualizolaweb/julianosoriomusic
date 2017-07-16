@@ -9,15 +9,6 @@
         }
 
         public function main(){
-            require_once 'views/include/header-website.php';
-            require_once 'views/modules/mod_user/user_manage/pagina.php';
-            require_once 'views/include/footer-website.php';
-        }
-        /*public function nepote(){
-          $this->UserM->createUser();
-        }*/
-
-        public function signIn(){
             require_once 'views/include/header.php';
             require_once 'views/modules/mod_user/user_manage/signIn.php';
             require_once 'views/include/footer.php';
@@ -73,9 +64,10 @@
        }
        echo json_encode($return);
      }
+
      public function close(){
        session_destroy();
-       header("Location:inicio");
+       header("Location: inicio");
      }
   }
 
