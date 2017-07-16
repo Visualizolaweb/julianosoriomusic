@@ -31,66 +31,73 @@
           return $result;
         }
 
-        public function createUser($data){
+        public function readEventsByCode($data){
             try {
-                $sql = "INSERT INTO user VALUES (?,?,?,?)";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[3],$data[0],$data[1],$data[2]));
-                $result = "Datos ingresados correctamente";
+              $sql = "SELECT * FROM eventos WHERE evento_code = ?";
+              $query = $this->pdo->prepare($sql);
+              $query->execute(array($data));
+              $result = $query->fetch(PDO::FETCH_BOTH);
             } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+              die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $result;
         }
 
-        public function readUser(){
+        public function createEvents($data){
             try {
-                $sql = "SELECT * FROM user";
+                $sql = "INSERT INTO eventos VALUES (?,?,?,?,?,?,?,?)";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array(
+                            $data[7],$data[0],$data[6],$data[1],$data[2],$data[3],$data[4],$data[5]
+                                ));
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+        }
+
+        public function readEvents(){
+            try {
+                $sql = "SELECT * FROM eventos ORDER BY evento_nombre";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
-                $result = fetchALL(PDO::FETCH_BOTH);
+                $result = $query->fetchALL(PDO::FETCH_BOTH);
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $result;
         }
 
-
-        public function readUserByEmail($data){
+        public function updateEvents($data){
             try {
-                $sql = "SELECT * FROM user WHERE user_email = ?";
+                $sql = "UPDATE eventos SET
+                        evento_nombre = ?,
+                        evento_descripcion = ?,
+                        evento_direccion = ?,
+                        evento_fecha_inicio = ?,
+                        evento_hora_inicio = ?,
+                        evento_fecha_fin = ?,
+                        evento_hora_fin = ?
+                        WHERE evento_code = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = $query->fetch(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
-        }
-
-        public function updateUser($data){
-            try {
-                $sql = "UPDATE user SET user_name = ?, user_email = ? WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[2],$data[0],$data[1]));
+                $query->execute(array(
+                $data[0],$data[6],$data[1],$data[2],$data[3],$data[4],$data[5],$data[7]));
                 $result = "Datos actualizados correctamente";
             } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+                die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
             }
             return $result;
         }
 
-        public function deleteUser($data){
-            try {
-                $sql = "DELETE FROM user WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = "Datos eliminados correctamente";
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
+        public function deleteEvent($field){
+          try {
+            $sql="DELETE FROM eventos WHERE evento_code = ?";
+            $query = $this->pdo->prepare($sql);
+            $query->execute(array($field));
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
         }
+
         public function __DESTRUCT(){
             DataBase::disconnect();
         }

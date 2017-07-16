@@ -6,7 +6,7 @@
             </header>
             <div class="col-12">
                 <div class="container--content">
-                    <div class="form--container">
+                    <div class="form--container form--container__gallery">
                         <i class="material-icons icon--form">collections</i>
                         <div class="form--content">
                             <div class="text--form__container">
@@ -16,7 +16,7 @@
                               Subir foto
                             </button>
                             <div class="modal fade" id="imageCrop" tabindex="-1" role="dialog" aria-labelledby="imageCropTitle" aria-hidden="true">
-                              <div class="modal-dialog" role="document">
+                              <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
                                     <h5 class="modal-title" id="imageCropTitle">Recortar la imagen</h5>
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                     </div>
-                    <table id="table" class="table--container">
+                    <table id="table" class="table--container table--container__galeria">
                         <thead class="table--header">
                             <tr>
                                 <th>Número</th>
@@ -56,7 +56,7 @@
                                 <td><img src=views/assets/img/galeria/<?php echo $row['gal_ruta']; ?>></td>
                                 <td>
                                     <a onclick="return confirm('Esta Seguro De Eliminar Este Archivo?');" href="index.php?c=galeria&a=delete&galcod=<?php echo $row['gal_id'];?>">
-                                        <i class="material-icons">delete</i>
+                                        <i class="icon--danger material-icons">delete</i>
                                     </a>
                                 </td>
                             </tr>
@@ -82,8 +82,8 @@ $uploadCrop = $('#wrap-upload').croppie({
         height: 200
     },
     boundary: {
-        width: 275,
-        height: 200
+        width: 700,
+        height: 400
     }
 });
 

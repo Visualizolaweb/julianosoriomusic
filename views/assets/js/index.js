@@ -5,7 +5,7 @@ $("#pas_log").focus(function(){
   $.post("valid-email",{data:email},function(data){
       var data = JSON.parse(data);
       if (data[0]==true) {
-        $("#ema_log").after("<span>El correo no existe</span>");
+        $("#ema_log").after("<span class='error'>El correo no existe</span>");
         $("#btn_log").attr("disabled",true);
       }else{
         $("#btn_log").attr("disabled",false);
@@ -89,6 +89,113 @@ $("#frm_contacto").submit(function(e){
           }
       });
 });
+
+$("#startDate").focusout(function(){
+    $("#startDate").siblings("span").remove();
+    var data = $("#startDate").val();
+    if (data.length > 0) {
+        var RegExp = /^\d{4}-\d{2}-\d{2}$/;
+        if (RegExp.test(data)) {
+            $("#startDate").removeClass("input--error")
+            $("#startDate").siblings("span").remove();
+            $("#btn--events").attr("disabled",false);
+        } else {
+            $("#startDate").addClass("input--error")
+            $("#startTime").after("<span class='error'>Formato invalido</span>")
+            $("#btn--events").attr("disabled",true);
+        }
+    }
+})
+
+$("#endDate").focusout(function(){
+    $("#endDate").siblings("span").remove();
+    var data = $("#endDate").val();
+    if (data.length > 0) {
+        var RegExp = /^\d{4}-\d{2}-\d{2}$/;
+        if (RegExp.test(data)) {
+            $("#endDate").removeClass("input--error")
+            $("#endDate").siblings("span").remove();
+            $("#btn--events").attr("disabled",false);
+        } else {
+            $("#endDate").addClass("input--error")
+            $("#endTime").after("<span class='error'>Formato invalido</span>")
+            $("#btn--events").attr("disabled",true);
+        }
+    }
+})
+
+$("#startTime").focusout(function(){
+    $("#startTime").siblings("span").remove();
+    var data = $("#startTime").val();
+    if (data.length > 0) {
+        var RegExp = /^\d{2}:\d{2}$/;
+        if (RegExp.test(data)) {
+            $("#startTime").removeClass("input--error")
+            $("#startTime").siblings("span").remove();
+            $("#btn--events").attr("disabled",false);
+        } else {
+            $("#startTime").addClass("input--error");
+            $("#startTime").after("<span class='error'>Formato invalido</span>");
+            $("#btn--events").attr("disabled",true);
+        }
+    }
+})
+
+$("#endTime").focusout(function(){
+    $("#endTime").siblings("span").remove();
+    var data = $("#endTime").val();
+    if (data.length > 0) {
+        var RegExp = /^\d{2}:\d{2}$/;
+        if (RegExp.test(data)) {
+            $("#endTime").removeClass("input--error")
+            $("#endTime").siblings("span").remove();
+            $("#btn--events").attr("disabled",false);
+        } else {
+            $("#endTime").addClass("input--error");
+            $("#endTime").after("<span class='error'>Formato invalido</span>");$("#btn--events").attr("disabled",true);
+        }
+    }
+})
+
+$("#frm_eventos").submit(function(e){
+      e.preventDefault();
+      var data = [
+                    $("#eventTitle").val(),
+                    $("#eventAddress").val(),
+                    $("#startDate").val(),
+                    $("#startTime").val(),
+                    $("#endDate").val(),
+                    $("#endTime").val(),
+                    $("#eventDescription").val()
+                 ];
+      $.post("crear-evento",{data:data},function(resp){
+        var resp = JSON.parse(resp);
+        if (resp[0] == true) {
+            document.location.href = resp[1];
+            alert(resp[2]);
+        }
+      });
+});
+
+$("#frm_eventos_up").submit(function(e){
+      e.preventDefault();
+      var JsonObj=[];
+      $("input[class=input--form]").each(function(){
+        var structure = {};
+        structure = $(this).val();
+        JsonObj.push(structure);
+      });
+      var description = $('#eventDesc').val();
+      JsonObj.push(description);
+      $.post("actualizar-evento",{data:JsonObj},function(resp){
+        var resp = JSON.parse(resp);
+        if (resp[0] == true) {
+            document.location.href = resp[1];
+            alert(resp[2]);
+        }
+      });
+});
+
 $.extend( true, $.fn.dataTable.defaults, {
     "ordering": false,
     "lengthChange": false,
