@@ -90,7 +90,7 @@
           				break;
 
           			default:
-          				$month = "Jan";
+          				$month = "Enero";
           				break;
           		}
           		return $month;

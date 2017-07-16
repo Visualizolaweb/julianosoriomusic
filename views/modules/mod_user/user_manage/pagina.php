@@ -38,10 +38,11 @@
       </div>
     </div>
     <div class="header--text">
+    <?php $banner = $this->PaginaM->readBanner(); ?>
       <div class="header--text__container">
         <div class="header--text__contain">
-          <h6 class="header--text__subtitle">Descarga y lleva siempre contigo</h6>
-          <h1 class="header--text__title">Infinito</h1>
+          <h6 class="header--text__subtitle"><?php echo $banner["ban_subtitulo"]; ?></h6>
+          <h1 class="header--text__title"><?php echo $banner["ban_titulo"]; ?></h1>
           <a href="#" class="header--button">Disponible en<img class="button--image" src="views/assets/img/Recursos/icons/google-play.png" alt="">
         </a>
         </div>
@@ -225,27 +226,73 @@
         </div>
     </div>
     <div class="events--links__container">
-        <div class="events--links">
-            <a class="events--link" href="#">
-              <span class="links--month">Agosto</span>
-              <span class="links--day">15</span>
-              <span class="links--year">2017</span>
-            </a>
-        </div>
-        <div class="events--links">
-            <a class="events--link active--link" href="#">
-              <span class="links--month">Agosto</span>
-              <span class="links--day">15</span>
-              <span class="links--year">2017</span>
-            </a>
-        </div>
-        <div class="events--links">
-            <a class="events--link" href="#">
-              <span class="links--month">Agosto</span>
-              <span class="links--day">15</span>
-              <span class="links--year">2017</span>
-            </a>
-        </div>
+        <?php
+        function convertMonthEvents($month){
+            switch ($month) {
+                case '01':
+                    $month = "Enero";
+                    break;
+                case '02':
+                    $month = "Febrero";
+                    break;
+                case '03':
+                    $month = "Marzo";
+                    break;
+                case '04':
+                    $month = "Abril";
+                    break;
+                case '05':
+                    $month = "Mayo";
+                    break;
+                case '06':
+                    $month = "Junio";
+                    break;
+                case '07':
+                    $month = "Julio";
+                    break;
+                case '08':
+                    $month = "Agosto";
+                    break;
+                case '09':
+                    $month = "Septiembre";
+                    break;
+                case '10':
+                    $month = "Octubre";
+                    break;
+                case '11':
+                    $month = "Noviembre";
+                    break;
+                case '12':
+                    $month = "Diciembre";
+                    break;
+                default:
+                    $month = "Enero";
+                    break;
+
+            }
+            return $month;
+       }
+        // $className = "active--link";
+        $item = 1;
+        foreach ($this->PaginaM->readUpcomingEvents() as $row) {
+            list($years, $months, $days) = explode("-", $row["evento_fecha_inicio"]);
+            if ($item === 1) {
+                $className = "active--link";
+            } else {
+                $className = "";
+            }
+            $item++;
+            ?>
+            <div class="events--links">
+                <a class="events--link <?php echo $className; ?>" href="<?php echo $row['evento_code'];?>">
+                  <span class="links--month"><?php echo convertMonthEvents($months); ?></span>
+                  <span class="links--day"><?php echo $days; ?></span>
+                  <span class="links--year"><?php echo $years; ?></span>
+                </a>
+            </div>
+        <?php
+        }
+        ?>
     </div>
     <div class="events--2">
        <div class="events--2__section">
@@ -298,11 +345,12 @@
         </form>
       </div>
       <div class="info-container">
+        <?php $contacto = $this->PaginaM->readContact(); ?>
         <img src="views/assets/img/Recursos/logo/LogoGray.png" alt="">
         <span class="info--title info--title__padding">Correo Electrónico</span>
-        <span class="info--subtitle">manager@julianosoriomusic</span>
+        <span class="info--subtitle"><?php echo $contacto["con_email"]; ?></span>
         <span class="info--title">Número Móvil</span>
-        <span class="info--subtitle">(57) 300 610 0192</span>
+        <span class="info--subtitle"><?php echo $contacto["con_telefono"]; ?></span>
       </div>
     </div>
     <footer class="contact-footer">

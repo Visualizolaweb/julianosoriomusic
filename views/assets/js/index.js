@@ -5,7 +5,7 @@ $("#pas_log").focus(function(){
   $.post("valid-email",{data:email},function(data){
       var data = JSON.parse(data);
       if (data[0]==true) {
-        $("#ema_log").after("<span>El correo no existe</span>");
+        $("#ema_log").after("<span class='error'>El correo no existe</span>");
         $("#btn_log").attr("disabled",true);
       }else{
         $("#btn_log").attr("disabled",false);
