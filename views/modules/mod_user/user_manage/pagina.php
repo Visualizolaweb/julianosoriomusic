@@ -49,7 +49,24 @@
       </div>
     </div>
     <section class="player-container">
-      <h2 style="font-size: 16px;">Canción para mentir</h2>
+        <audio id="track">
+            <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
+        </audio>
+        <nav class="song--container">
+            <div class="buttons--songs">
+                <button type="button" id="play-button">
+                    <i class="icon--song fa fa-play" id="play"></i>
+                </button>
+                <button type="button" id="restart-button">
+                    <i class="icon--song fa fa-stop" id="stop"></i>
+                </button>
+            </div>
+            <h3 class="song--text">Cancion para mentir</h3>
+            <div id="default-bar">
+                <div id="progress-bar"></div>
+
+            </div>
+        </nav>
     </section>
   </header>
   <section class="twitter-container">
@@ -295,7 +312,17 @@
         ?>
     </div>
     <div class="events--2">
-        <?php $this->getEvents(); ?>
+       <div class="events--2__section">
+         <h2 class="events--2__title">
+           Maecenas Tristique Justo
+         </h2>
+         <h4 class="events--2__subtitle">
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+         </h4>
+         <p class="events--2__text">
+           Integer pulvinar justo sed ante egestas, sit amet molestie velit lacinia. Donec at nulla quis massa egestas tempor at eget est.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+         </p>
+       </div>
     </div>
 </section>
   <section class="gallery-container">
@@ -319,7 +346,7 @@
     </div>
     <div class="contact--body">
       <div class="form-container">
-        <form action="" class="form--contact">
+        <form action="index.php?c=pagina&a=sendEmailContact" class="form--contact" method="post">
           <div class="inputs-container-50">
             <label class="label--form" for="">Nombre Completo</label>
             <input type="text" class="input--form">
@@ -329,9 +356,10 @@
             <input type="email" class="input--form">
           </div>
           <div class="inputs-container-100">
-            <label class="label--form" for="">Deja tu Mensajes</label>
+            <label class="label--form" for="">Deja tu Mensaje</label>
             <textarea name="" id="" class="input--form"></textarea>
           </div>
+          <button style="color: white">Enviar</button>
         </form>
       </div>
       <div class="info-container">

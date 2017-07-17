@@ -1,7 +1,7 @@
 <?php
     require_once 'model/pagina.model.php';
     require_once 'views/assets/TwitterAPI.php';
-
+    require_once 'views/assets/PHPMailer/PHPMailerAutoload.php';
     class PaginaController{
         private $PaginaM;
 
@@ -21,20 +21,38 @@
             require_once 'views/include/footer.php';
         }
 
+        public function sendEmailContact(){
+            $mail = new PHPMailer();
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'daniel.eco18@gmail.com';
+            $mail->Password = '43276762.98121818043.2365508.deco.';
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+            $mail->setFrom('daniel.eco18@gmail.com');
+            $mail->addAddress('decardona34@misena.edu.co');
+            $mail->Subject = 'Prueba de correo con PHP';
+            $mail->Body = 'Mensaje enviado pais, casi que no hpta jajaja';
+            $mail->CharSet = 'UTF-8';
+            if ($mail->send()) {
+               $msn = "Envio correctamente";
+            } else {
+               $msn = "Correo invalido ".$mail->ErrorInfo;
+            }
+            // return $msn;
+            echo $msn;
+        }
+
         public function getEvents(){
-            $data = $_POST["data"];
+            // $data = $_POST["data"];
+            $data = "YgjGChmNirUVaI3";
             $eventosByCode = $this->PaginaM->readEventByCode($data);
             ?>
             <div class="events--2__section">
-                <h2 class="events--2__title">
-                <?php echo $eventosByCode["evento_nombre"]; ?>
-                </h2>
-                <h4 class="events--2__subtitle">
-                <?php echo $eventosByCode["evento_direccion"]; ?>
-                </h4>
-                <p class="events--2__text">
-                <?php echo $eventosByCode["evento_descripcion"]; ?>
-                </p>
+                <h2 class="events--2__title"><?php echo $eventosByCode["evento_nombre"]; ?></h2>
+                <h4 class="events--2__subtitle"><?php echo $eventosByCode["evento_direccion"]; ?></h4>
+                <p class="events--2__text"><?php echo $eventosByCode["evento_descripcion"]; ?></p>
             </div>
         <?php
         }

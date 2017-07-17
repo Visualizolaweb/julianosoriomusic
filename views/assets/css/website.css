@@ -192,9 +192,12 @@ h1, h2, h3, h4, h5, h6, p{
 
 .player-container{
     width: 100%;
-    padding: 20px 16px;
+    padding: 0 16px;
+    line-height: 60px;
     color: #ffffff;
     background-color: rgba(0,0,0,.6);
+    display: flex;
+    align-items: center;
 }
 /*------- TWITTER --------*/
 .twitter-container{
@@ -590,7 +593,7 @@ textarea.input--form{
 
 .footer-text{
     color: #ed2b45;
-    font-family: var(-family-lato);
+    font-family: var(--family-lato);
     font-size: 16px;
     font-weight: 400;
     text-align: center;
@@ -613,7 +616,69 @@ textarea.input--form{
 .footer-text{
     font-size: 20px;
 }
+
+.song--container{
+    padding: 5px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    position: relative;
+    top: 8px;
+}
+
+#default-bar{
+    background-color: #fff;
+    height: 5px;
+    width: 94%;
+    padding-right: 30px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.song--text{
+    position: absolute;
+    top: 8px;
+    left: 7%;
+    z-index: 1000;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: var(--family-robotoC);
+}
+
+#progress-bar{
+    position: absolute;
+    height: 5px;
+    top: 0;
+    left: 0;
+    background-color: #fcd80f;
+    width: 0;
+}
+
+#play-button{
+    padding-right: 10px;
+}
+
+.buttons--songs{
+    width: 6%;
+}
+
+.buttons--songs button:hover{
+    cursor: pointer;
+}
+
+.icon--song{
+    color: #fff;
+}
+
 @media (max-width: 575px) {
+    #default-bar{
+        width: 88%;
+    }
+
+    .song--text{
+        left: 15%;
+    }
     .header--logo{
         width: 50%;
     }
