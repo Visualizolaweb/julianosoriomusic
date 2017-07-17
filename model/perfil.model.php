@@ -10,35 +10,11 @@
             }
         }
 
-        public function createUser($data){
+        public function readSobreById(){
             try {
-                $sql = "INSERT INTO user VALUES (?,?,?,?)";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[3],$data[0],$data[1],$data[2]));
-                $result = "Datos ingresados correctamente";
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
-        }
-
-        public function readUser(){
-            try {
-                $sql = "SELECT * FROM user";
+                $sql = "SELECT * FROM sobre WHERE sob_id = 'lO23cOv23PC2ei4dJV829CWVvivi32'";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
-                $result = fetchALL(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
-        }
-
-        public function readUserByCode($data){
-            try {
-                $sql = "SELECT * FROM user WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
                 $result = $query->fetch(PDO::FETCH_BOTH);
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -46,40 +22,23 @@
             return $result;
         }
 
-        public function readUserByEmail($data){
+        public function updateSobreImg($imageName){
             try {
-                $sql = "SELECT * FROM user WHERE user_email = ?";
+                $sql = "UPDATE sobre SET sob_ruta = ? WHERE sob_id = 'lO23cOv23PC2ei4dJV829CWVvivi32'";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = $query->fetch(PDO::FETCH_BOTH);
+                $query->execute(array($imageName));
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
-            return $result;
         }
-
-        public function updateUser($data){
+        public function updateSobre($data){
             try {
-                $sql = "UPDATE user SET user_name = ?, user_email = ? WHERE user_code = ?";
+                $sql = "UPDATE sobre SET sob_parrafo1 = ?, sob_parrafo2 = ? WHERE sob_id = 'lO23cOv23PC2ei4dJV829CWVvivi32'";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[2],$data[0],$data[1]));
-                $result = "Datos actualizados correctamente";
+                $query->execute(array($data[0],$data[1]));
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
-            return $result;
-        }
-
-        public function deleteUser($data){
-            try {
-                $sql = "DELETE FROM user WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = "Datos eliminados correctamente";
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
         }
         public function __DESTRUCT(){
             DataBase::disconnect();
