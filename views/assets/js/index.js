@@ -195,6 +195,21 @@ $("#frm_eventos_up").submit(function(e){
         }
       });
 });
+$("#frm_perfil").submit(function(e){
+  e.preventDefault();
+  var data = [$("#fra_per").val(),
+              $("#pf1_per").val(),
+              $("#pf2_per").val()];
+  $.post("update-perfil",{data:data},function(data){
+    var data = JSON.parse(data);
+    if (data[0]==true) {
+      document.location.href=data[1];
+      alert(data[2]);
+    }else{
+      alert(data[2]);
+    }
+  });
+});
 
 $.extend( true, $.fn.dataTable.defaults, {
     "ordering": false,
