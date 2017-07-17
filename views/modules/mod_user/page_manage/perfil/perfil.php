@@ -31,7 +31,7 @@
                     </div>
                     <div class="form--container">
                         <i class="material-icons icon--form">person</i>
-                        <form class="form--content" id="frm_perfil" action="" method="post">
+                        <form class="form--content" id="frm_perfil2" action="" method="post">
                             <div class="text--form__container">
                                 <h3 class="text--form">Modificar Sobre Mí</h3>
                             </div>
@@ -48,7 +48,7 @@
                                 <textarea id="pf2_per" class="input--form textarea--form" type="text" name="" value=""></textarea>
                             </div>
                             <div class="button-container">
-                                <button class="button--form">Modificar</button>
+                                <button type="submit" class="button--form">Modificar</button>
                             </div>
                         </form>
                     </div>

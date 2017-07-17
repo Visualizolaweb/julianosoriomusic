@@ -29,7 +29,7 @@
 
         public function update(){
           $data = $_POST["data"];
-          if (empty($data[0]) || empty($data[1])) {
+          if (empty($data[0]) || empty($data[1]) || empty($data[2])) {
             $return = array(false,"Campos Nulos","");
           }else{
             $this->PerfilM->updateSobre($data);

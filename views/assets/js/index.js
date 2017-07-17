@@ -195,7 +195,7 @@ $("#frm_eventos_up").submit(function(e){
         }
       });
 });
-$("#frm_perfil").submit(function(e){
+$("#frm_perfil2").submit(function(e){
   e.preventDefault();
   var data = [$("#fra_per").val(),
               $("#pf1_per").val(),
@@ -203,8 +203,8 @@ $("#frm_perfil").submit(function(e){
   $.post("update-perfil",{data:data},function(data){
     var data = JSON.parse(data);
     if (data[0]==true) {
+      alert(data[1]);
       document.location.href=data[1];
-      alert(data[2]);
     }else{
       alert(data[2]);
     }
