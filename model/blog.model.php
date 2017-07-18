@@ -20,9 +20,9 @@
         }
         public function createForm($data){
           try {
-            $sql="INSERT INTO blog VALUES(?,?,?,?)";
+            $sql="INSERT INTO blog VALUES(?,?,?,?,?,?)";
             $query=$this->pdo->prepare($sql);
-            $query->execute(array($data[2],$data[0],$data[1],$data[3]));
+            $query->execute(array($data[2],$data[0],$data[1],$data[3],$data[4],$data[5]));
           } catch (PDOException $e) {
             die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
           }

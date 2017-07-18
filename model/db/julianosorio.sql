@@ -3,9 +3,6 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-07-2017 a las 01:05:28
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -130,7 +127,7 @@ CREATE TABLE `discografia` (
 -- Estructura de tabla para la tabla `eventos`
 --
 
-DROP TABLE IF EXISTS `eventos`;
+
 CREATE TABLE `eventos` (
   `evento_code` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `evento_nombre` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
@@ -196,6 +193,7 @@ INSERT INTO `galeria` (`gal_id`, `gal_ruta`) VALUES
 ('LYIkEA07OF9upL6fyaOAmYhkkKDFqX', '1500177450.png'),
 ('uEFpJ7aXpP05opch4E9294JZQO6jhc', '1500177484.png'),
 ('YVFvfFd9KE72tvbXDJstbqzSvVTyVl', '1500177497.png');
+
 
 -- --------------------------------------------------------
 
@@ -270,6 +268,12 @@ ALTER TABLE `eventos_imagen`
 --
 ALTER TABLE `galeria`
   ADD PRIMARY KEY (`gal_id`);
+
+--
+-- Indices de la tabla `sobre`
+--
+ALTER TABLE `sobre`
+  ADD PRIMARY KEY (`sob_id`);
 
 --
 -- Indices de la tabla `usuario`

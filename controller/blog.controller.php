@@ -36,6 +36,8 @@
           $fecha=date('Ymdhis');
           $result=$this->BlogM->readFecha($fecha);
           $data[3]=$result["bli_id"];
+          $data[4]=date('Ymd');
+          $data[5]=0;
           $this->BlogM->createForm($data);
           $this->BlogM->updateFormImg($data);
           $i=0;
