@@ -28,13 +28,7 @@
           $Ext  = pathinfo($_FILES["cancion"]["name"],PATHINFO_EXTENSION);
           if ($Ext!="mp3") {
             $return = array(false,"Sube un Archivo MP3","");
-        }else{/*fecha
-lectura
-
-tbl comentario
-com_id
-blo_id
-com_text LONGTEXT*/
+        }else{
             if ($tmp!="") {
               $flag=true;
               $evento = $ruta.$_FILES["cancion"]["name"];
