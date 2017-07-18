@@ -4,6 +4,10 @@
     require_once 'views/assets/PHPMailer/PHPMailerAutoload.php';
     class PaginaController{
         private $PaginaM;
+        private $evento_titulo;
+        private $evento_subtitulo;
+        private $evento_text;
+
 
         public function __CONSTRUCT(){
             $this->PaginaM = new PaginaModel();
@@ -45,16 +49,11 @@
         }
 
         public function getEvents(){
-            // $data = $_POST["data"];
-            $data = "YgjGChmNirUVaI3";
+            $data = $_POST["data"];
             $eventosByCode = $this->PaginaM->readEventByCode($data);
-            ?>
-            <div class="events--2__section">
-                <h2 class="events--2__title"><?php echo $eventosByCode["evento_nombre"]; ?></h2>
-                <h4 class="events--2__subtitle"><?php echo $eventosByCode["evento_direccion"]; ?></h4>
-                <p class="events--2__text"><?php echo $eventosByCode["evento_descripcion"]; ?></p>
-            </div>
-        <?php
+ 
+        $return = $eventosByCode;
+        echo json_encode($return);
         }
 
         public function getTwitter(){
