@@ -24,13 +24,11 @@
           $data[0] = $_POST["data"];
           $flag=false;
           $tmp = $_FILES["cancion"]["tmp_name"];
-          echo $_FILES["cancion"]["tmp_name"];
-          echo $_FILES["cancion"]["name"];
           $ruta = "views/assets/musica/";
           $Ext  = pathinfo($_FILES["cancion"]["name"],PATHINFO_EXTENSION);
           if ($Ext!="mp3") {
-            echo "Sube un Archivo MP3";
-          }else{
+            $return = array(false,"Sube un Archivo MP3","");
+        }else{
             if ($tmp!="") {
               $flag=true;
               $evento = $ruta.$_FILES["cancion"]["name"];
@@ -39,15 +37,19 @@
             }
             if ($flag==true) {
               if (move_uploaded_file($tmp,$evento)) {
-                echo "Subio Correctamente";
                 $data[1]=$_FILES["cancion"]["name"];
                 $data[2]=randomAlpha('30');
                 $this->DiscografiaM->createDiscografia($data);
+                $return = array(false,"discografia","Subio Correctamente");
               }else{
                 echo "No subio";
+                $return = array(false,"Error Al Subir","");
               }
+            }else{
+                $return = array(false,"Error Al Subir","");
             }
           }
+          echo json_encode($return);
         }
         public function delete(){
           $field = $_GET["discod"];
