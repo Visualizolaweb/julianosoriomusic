@@ -1,11 +1,8 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-07-2017 a las 06:12:55
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +16,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `julianosorio`
 --
+CREATE DATABASE IF NOT EXISTS `julianosorio` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+USE `julianosorio`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +25,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `banner`
 --
 
+DROP TABLE IF EXISTS `banner`;
 CREATE TABLE `banner` (
   `ban_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `ban_subtitulo` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
@@ -46,6 +46,7 @@ INSERT INTO `banner` (`ban_id`, `ban_subtitulo`, `ban_titulo`, `ban_ruta`) VALUE
 -- Estructura de tabla para la tabla `blog`
 --
 
+DROP TABLE IF EXISTS `blog`;
 CREATE TABLE `blog` (
   `blo_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `blo_titulo` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
@@ -69,6 +70,7 @@ INSERT INTO `blog` (`blo_id`, `blo_titulo`, `blo_descripcion`, `bli_id`) VALUES
 -- Estructura de tabla para la tabla `blog_imagen`
 --
 
+DROP TABLE IF EXISTS `blog_imagen`;
 CREATE TABLE `blog_imagen` (
   `bli_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `bli_ruta` varchar(120) COLLATE utf8_spanish_ci NOT NULL,
@@ -92,6 +94,7 @@ INSERT INTO `blog_imagen` (`bli_id`, `bli_ruta`, `bli_fecha`, `bli_formulario`) 
 -- Estructura de tabla para la tabla `contacto`
 --
 
+DROP TABLE IF EXISTS `contacto`;
 CREATE TABLE `contacto` (
   `con_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `con_email` varchar(120) COLLATE utf8_spanish_ci NOT NULL,
@@ -111,6 +114,7 @@ INSERT INTO `contacto` (`con_id`, `con_email`, `con_telefono`) VALUES
 -- Estructura de tabla para la tabla `discografia`
 --
 
+DROP TABLE IF EXISTS `discografia`;
 CREATE TABLE `discografia` (
   `dis_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `dis_titulo` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
@@ -122,6 +126,7 @@ CREATE TABLE `discografia` (
 --
 -- Estructura de tabla para la tabla `eventos`
 --
+
 
 CREATE TABLE `eventos` (
   `evento_code` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
@@ -150,6 +155,7 @@ INSERT INTO `eventos` (`evento_code`, `evento_nombre`, `evento_descripcion`, `ev
 -- Estructura de tabla para la tabla `eventos_imagen`
 --
 
+DROP TABLE IF EXISTS `eventos_imagen`;
 CREATE TABLE `eventos_imagen` (
   `evi_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `evi_ruta` varchar(120) COLLATE utf8_spanish_ci DEFAULT NULL
@@ -168,6 +174,7 @@ INSERT INTO `eventos_imagen` (`evi_id`, `evi_ruta`) VALUES
 -- Estructura de tabla para la tabla `galeria`
 --
 
+DROP TABLE IF EXISTS `galeria`;
 CREATE TABLE `galeria` (
   `gal_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `gal_ruta` varchar(70) COLLATE utf8_spanish_ci NOT NULL
@@ -187,26 +194,6 @@ INSERT INTO `galeria` (`gal_id`, `gal_ruta`) VALUES
 ('uEFpJ7aXpP05opch4E9294JZQO6jhc', '1500177484.png'),
 ('YVFvfFd9KE72tvbXDJstbqzSvVTyVl', '1500177497.png');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `sobre`
---
-
-CREATE TABLE `sobre` (
-  `sob_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `sob_frase` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
-  `sob_parrafo1` longtext COLLATE utf8_spanish_ci NOT NULL,
-  `sob_parrafo2` longtext COLLATE utf8_spanish_ci NOT NULL,
-  `sob_ruta` varchar(120) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `sobre`
---
-
-INSERT INTO `sobre` (`sob_id`, `sob_frase`, `sob_parrafo1`, `sob_parrafo2`, `sob_ruta`) VALUES
-('lO23cOv23PC2ei4dJV829CWVvivi32', 'mi vid', 'l', 'l', '1500257120.png');
 
 -- --------------------------------------------------------
 
@@ -214,6 +201,7 @@ INSERT INTO `sobre` (`sob_id`, `sob_frase`, `sob_parrafo1`, `sob_parrafo2`, `sob
 -- Estructura de tabla para la tabla `usuario`
 --
 
+DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `usu_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `usu_nombre` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
