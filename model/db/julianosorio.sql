@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-07-2017 a las 19:16:23
+-- Tiempo de generación: 19-07-2017 a las 23:55:30
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 5.6.28
 
@@ -128,7 +128,8 @@ INSERT INTO `contacto` (`con_id`, `con_email`, `con_telefono`) VALUES
 CREATE TABLE `discografia` (
   `dis_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `dis_titulo` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
-  `dis_cancion` varchar(120) COLLATE utf8_spanish_ci NOT NULL
+  `dis_cancion` varchar(120) COLLATE utf8_spanish_ci NOT NULL,
+  `dis_letra` longtext COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -155,6 +156,7 @@ CREATE TABLE `eventos` (
 INSERT INTO `eventos` (`evento_code`, `evento_nombre`, `evento_descripcion`, `evento_direccion`, `evento_fecha_inicio`, `evento_hora_inicio`, `evento_fecha_fin`, `evento_hora_fin`) VALUES
 ('02FUeFLGfJyjGC5', 'Mi pinche titulo', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'Mi pinche direccion', '2017-07-16', '00:11:00', '1111-00-00', '11:00:00'),
 ('8QGhdnpvGeodcLi', 'Mi pinche titulo2', 'Mi pinche descripcion222', 'Mi pinche direccion2222', '2017-07-18', '00:00:00', '0000-00-00', '00:00:00'),
+('bEZ0mAuDktttbeN', 'puro', 'fruiods', 'puro', '2017-07-20', '20:20:00', '2017-07-20', '20:22:00'),
 ('rUVaI3XkaLjhoN0', 'Marcha Gay', 'asomadre', 'Casa de MF', '2014-06-20', '10:20:00', '2014-06-20', '10:22:00'),
 ('x4ZzGDU6l9RUVgG', 'Pablo', 'hoa', 'pablito', '0000-11-11', '00:00:00', '0000-11-11', '00:00:00'),
 ('YgjGChmNirUVaI3', 'title', 'descripcion', 'address', '2017-07-17', '00:00:00', '0000-00-00', '00:00:00');
