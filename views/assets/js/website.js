@@ -1,3 +1,4 @@
+
 // $("#fakeLoader").fakeLoader({
 //     timeToHide:1200,
 //     zIndex:"999",
@@ -108,17 +109,18 @@ $('.navbar--link').click(function(){
     $('.navbar-container').removeClass('add');
 })
 
+
 // console.clear()
 window.onload = function() {
     var active = $('.active--link').attr("href");
-    console.log(active);
+    $("#track").html('<source src="views/assets/musica/Sleep.mp3" type="audio/mp3">');
+
+    // console.log(active);
     $.post("get-events",{data:active},function(data){
         var data = JSON.parse(data);
-        if (data[0]==true) {
-            alert(true)
-        }else{
-            alert(false)
-        }
+        $(".events--2__title").html(data['evento_nombre']);
+        $(".events--2__subtitle").html(data['evento_direccion']);
+        $(".events--2__text").html(data['evento_descripcion']);
     });
 }
 
@@ -128,12 +130,10 @@ $('.events--link').click(function(e){
     $(this).addClass('active--link');
     var value = $(this).attr("href");
     console.log(value);
-    $.post("get-events",{data:value},function(resp){
-        var resp = JSON.parse(resp);
-        if (resp[0]==true) {
-            alert(true)
-        }else{
-            alert(false)
-        }
+    $.post("get-events",{data:value},function(data){
+        var data = JSON.parse(data);
+        $(".events--2__title").html(data['evento_nombre']);
+        $(".events--2__subtitle").html(data['evento_direccion']);
+        $(".events--2__text").html(data['evento_descripcion']);
     });
 })

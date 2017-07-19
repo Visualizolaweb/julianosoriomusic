@@ -22,3 +22,4 @@ RewriteRule ^galeria$                           index.php?c=galeria
 RewriteRule ^contacto$                          index.php?c=contactame
 RewriteRule ^update-contacto$                   index.php?c=contactame&a=update
 RewriteRule ^mi-perfil$                         index.php?c=perfil
+RewriteRule ^update-perfil$                     index.php?c=perfil&a=update

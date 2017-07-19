@@ -50,7 +50,7 @@
     </div>
     <section class="player-container">
         <audio id="track">
-            <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
+
         </audio>
         <nav class="song--container">
             <div class="buttons--songs">
@@ -320,7 +320,7 @@
            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
          </h4>
          <p class="events--2__text">
-           Integer pulvinar justo sed ante egestas, sit amet molestie velit lacinia. Donec at nulla quis massa egestas tempor at eget est.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+           dato quemado
          </p>
        </div>
     </div>
