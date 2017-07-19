@@ -9,6 +9,7 @@
         }
 
         public function main(){
+            $per = $this->PerfilM->readSobreById();
             require_once 'views/include/header.php';
             require_once 'views/modules/mod_user/page_manage/perfil/perfil.php';
         }

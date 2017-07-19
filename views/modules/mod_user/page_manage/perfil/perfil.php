@@ -37,7 +37,7 @@
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Frase</label>
-                                <input id="fra_per" class="input--form" type="text" name="" value="">
+                                <input id="fra_per" class="input--form" type="text" name="" value="<?php echo $per['sob_frase']; ?>">
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Parrafo 1</label>
