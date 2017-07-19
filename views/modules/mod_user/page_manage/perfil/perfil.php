@@ -52,6 +52,8 @@
                             </div>
                         </form>
                     </div>
+                </div>
+                <div class="container--gallery">
                     <div class="form--container form--container__gallery">
                         <i class="material-icons icon--form">collections</i>
                         <div class="form--content">

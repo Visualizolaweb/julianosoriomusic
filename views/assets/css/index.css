@@ -523,6 +523,13 @@ td img {
     margin-bottom: 30px;
 }
 
+.container--gallery{
+    width: 100%;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 575px) {
     .banner-items{
         padding: 15px;

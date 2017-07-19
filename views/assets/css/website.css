@@ -440,6 +440,12 @@ h1, h2, h3, h4, h5, h6, p{
     color: #ffffff;
     font-family: var(--family-robotoC);
     padding: 10px 20px;
+    transition: .3s all;
+}
+
+.blog--button__text:hover{
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .blog--button__icon{
@@ -563,7 +569,7 @@ textarea.input--form{
 
 .input--form:focus{
     border-top: 2px solid transparent;
-    border-bottom: 2px solid #ed2b45;
+    border-bottom: 2px solid #a18309;
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
     background-color: rgba(255, 255, 255, .3);
@@ -669,6 +675,23 @@ textarea.input--form{
 
 .icon--song{
     color: #fff;
+}
+
+.button--contact{
+    background-color: #a18309;
+    color: #ffffff;
+    line-height: 2.5;
+    padding: 0 40px;
+    font-family: var(--family-lato);
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-top: 20px;
+    transition: .4s all;
+}
+
+.button--contact:hover,.button--contact:focus{
+    cursor: pointer;
+    background-color: #866d0a;
 }
 
 @media (max-width: 575px) {
