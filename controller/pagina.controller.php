@@ -51,7 +51,7 @@
         public function getEvents(){
             $data = $_POST["data"];
             $eventosByCode = $this->PaginaM->readEventByCode($data);
- 
+
         $return = $eventosByCode;
         echo json_encode($return);
         }
@@ -64,6 +64,7 @@
             'consumer_secret' => "dQzHUps6qzjHIHxHU4kXWYpea01QsMou87yvrR8c0s6UJ1HHcU");
 
             $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+
             $getfield = '?screen_name=ux_code&include_rts=true';
             $requestMethod = 'GET';
 
@@ -150,6 +151,10 @@
                }
            ?>
            <?php
+        }
+        public function getTwitters(){
+            $url=NULL;
+            return $url;
         }
     }
 

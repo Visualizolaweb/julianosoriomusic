@@ -17,4 +17,7 @@
         $controller = new $controller;
         $controller->main();
     }
+    if (isset($_GET["msn"])) {
+        echo "<script>alert('".$_GET['msn']."')</script>";
+    }
 ?>

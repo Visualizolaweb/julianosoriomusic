@@ -71,7 +71,13 @@
   </header>
   <section class="twitter-container">
       <div class="owl-carousel owl-theme">
-        <?php $this->getTwitter(); ?>
+        <?php
+        try {
+            $this->getTwitter();
+        } catch (Exception $e) {
+            $this->getTwitters();
+        }
+        ?>
       </div>
   </section>
   <section class="infinito-container">

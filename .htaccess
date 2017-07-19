@@ -18,6 +18,7 @@ RewriteRule ^actualizar-evento$                 index.php?c=eventos&a=updateData
 RewriteRule ^actualizar-evento&token=(.*)$      index.php?c=eventos&a=update&token=$1
 RewriteRule ^discografia$                       index.php?c=discografia
 RewriteRule ^crear-discografia$                 index.php?c=discografia&a=create
+RewriteRule ^&msn=(.*)$              index.php?c=discografia&msn=$1
 RewriteRule ^galeria$                           index.php?c=galeria
 RewriteRule ^contacto$                          index.php?c=contactame
 RewriteRule ^update-contacto$                   index.php?c=contactame&a=update
