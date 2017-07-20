@@ -101,8 +101,8 @@
 $uploadCrop = $('#wrap-upload').croppie({
     enableExif: true,
     viewport: {
-        width: 275,
-        height: 200
+        width: 554,
+        height: 354
     },
     boundary: {
         width: 700,

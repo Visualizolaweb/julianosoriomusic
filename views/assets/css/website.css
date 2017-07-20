@@ -355,6 +355,10 @@ h1, h2, h3, h4, h5, h6, p{
     background-color: #eaeaea;
 }
 
+.blog--card{
+    min-height: 578px;
+}
+
 .blog--title{
     line-height: 1;
     color: #141414;
@@ -415,6 +419,12 @@ h1, h2, h3, h4, h5, h6, p{
     justify-content: center;
     position: relative;
     top: -25px;
+}
+
+.blog--card__text{
+    font-size: 22px;
+    font-family: var(--family-lato);
+    font-weight: 600;
 }
 
 .blog--card__subtitle{
@@ -925,7 +935,7 @@ textarea.input--form{
         justify-content: center;
         position: relative;
         height: auto;
-        background-color: none;
+        background-color: transparent;
         flex-direction: row;
     }
 
@@ -1098,7 +1108,7 @@ textarea.input--form{
         justify-content: center;
         position: relative;
         height: auto;
-        background-color: none;
+        background-color: transparent;
         flex-direction: row;
     }
 

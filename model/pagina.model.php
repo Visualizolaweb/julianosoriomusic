@@ -69,6 +69,30 @@
             }
             return $result;
         }
+
+        public function readUpcomingBlogs(){
+            try{
+        		$sql = "SELECT * FROM blog INNER JOIN blog_imagen ON blog.bli_id = blog_imagen.bli_id WHERE blo_fecha <= DATE(NOW()) ORDER BY blo_fecha DESC LIMIT 3";
+                $query = $this->pdo->prepare($sql);
+                $query->execute();
+                $result = $query->fetchALL(PDO::FETCH_BOTH);
+              }catch (Exception $e){
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $result;
+        }
+
+        public function readAboutMe(){
+            try{
+        		$sql = "SELECT * FROM sobre WHERE sob_id = 'lO23cOv23PC2ei4dJV829CWVvivi32'";
+                $query = $this->pdo->prepare($sql);
+                $query->execute();
+                $result = $query->fetch(PDO::FETCH_BOTH);
+              }catch (Exception $e){
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $result;
+        }
         public function __DESTRUCT(){
             DataBase::disconnect();
         }

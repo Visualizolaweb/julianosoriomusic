@@ -31,6 +31,7 @@
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
         }
+        
         public function updateSobre($data){
             try {
                 $sql = "UPDATE sobre SET sob_frase = ?,sob_parrafo1 = ?, sob_parrafo2 = ? WHERE sob_id = 'lO23cOv23PC2ei4dJV829CWVvivi32'";

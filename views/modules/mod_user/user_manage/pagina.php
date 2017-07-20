@@ -101,13 +101,14 @@
       <h2 class="about-me--title">Sobre Mí</h2>
     </div>
     <div class="about-me-body">
+        <?php $sobre = $this->PaginaM->readAboutMe(); ?>
        <div class="about-me-content">
         <div class="about-me--image">
-          <img class="about--img" src="views/assets/img/Recursos/images/julian-infinito.png" alt="">
+          <img class="about--img" src="<?php echo 'views/assets/img/sobre/'.$sobre['sob_ruta'];?>" alt="">
         </div>
         <div class="about-me--principal">
           <h4 class="about-me--text">
-            “Phasellus varius ullamcorper magna id sagittis. In luctus lorem turpis, ac sollicitudin eros auctor nec. Ut laoreet finibus ante non iaculis. Ut lorem tortor”
+              <?php echo '"'.$sobre["sob_frase"].'."'; ?>
           </h4>
           <h6 class="about-me--name">
             - Julian Osorio
@@ -115,10 +116,10 @@
         </div>
         <div class="about-me--section">
           <p class="about-me--paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor purus quis bibendum elementum. Nulla luctus, velit vel dignissim volutpat, elit neque ullamcorper eros, vel commodo enim ex vel erat. Etiam nisi odio, dictum in scelerisque ut, accumsan in tortor. Etiam consequat nibh sit amet varius posuere. Integer pulvinar justo sed ante egestas, sit amet molestie velit lacinia.
+            <?php echo $sobre["sob_parrafo1"]; ?>
           </p>
           <p class="about-me--paragraph">
-            Donec at nulla quis massa egestas tempor at eget est. Maecenas eget laoreet ante, ut egestas turpis. Maecenas sed elit vel arcu sagittis suscipit. Aliquam erat volutpat. Sed sit amet arcu et elit congue bibendum eget in ante. Nunc ligula augue, aliquam et nulla non, bibendum imperdiet diam. Phasellus semper, nisi at fringilla rhoncus, mauris diam dapibus purus, eu varius odio mi vitae mauris. Aenean pellentesque diam luctus augue dapibus luctus.
+            <?php echo $sobre["sob_parrafo2"]; ?>
           </p>
         </div>
        </div>
@@ -130,111 +131,96 @@
       <h2 class="blog--title">Blog</h2>
     </div>
     <div class="blog--body">
-      <article class="blog--card">
-        <div class="blog--card__header">
-          <img class="blog--card__image" src="views/assets/img/Recursos/images/img-blog-1.png" alt="">
-          <div class="blog--date">
-            <h4 class="blog--date__title">
-              13
-            </h4>
-            <h6 class="blog--date__subtitle">
-              Junio
-            </h6>
-          </div>
-          <div class="blog--card__title">
-            <h6 class="blog--card__subtitle">130 Lecturas</h6>
-            <h6 class="blog--card__subtitle">2 Comentarios</h6>
-          </div>
-        </div>
-        <div class="blog--card__body">
-          <div class="blog--card__paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
-          </div>
-          <div class="blog--card__footer">
-            <div class="blog--button__container">
-              <a class="blog--button__text" href="#">
-                Leer Más
-                <i class="fa fa-chevron-right blog--button__icon"></i>
-              </a>
+    <?php
+    function convertMonthBlog($month){
+        switch ($month) {
+            case '01':
+                $month = "Enero";
+                break;
+            case '02':
+                $month = "Febrero";
+                break;
+            case '03':
+                $month = "Marzo";
+                break;
+            case '04':
+                $month = "Abril";
+                break;
+            case '05':
+                $month = "Mayo";
+                break;
+            case '06':
+                $month = "Junio";
+                break;
+            case '07':
+                $month = "Julio";
+                break;
+            case '08':
+                $month = "Agosto";
+                break;
+            case '09':
+                $month = "Septiembre";
+                break;
+            case '10':
+                $month = "Octubre";
+                break;
+            case '11':
+                $month = "Noviembre";
+                break;
+            case '12':
+                $month = "Diciembre";
+                break;
+            default:
+                $month = "Enero";
+                break;
+
+        }
+        return $month;
+    }
+    foreach ($this->PaginaM->readUpcomingBlogs() as $row) {
+        list($years, $months, $days) = explode("-", $row["blo_fecha"]);
+    ?>
+        <article class="blog--card">
+          <div class="blog--card__header">
+            <img class="blog--card__image" src="<?php echo 'views/assets/img/blog/'.$row['bli_ruta'];?>" alt="">
+            <div class="blog--date">
+              <h4 class="blog--date__title">
+                <?php echo $days; ?>
+              </h4>
+              <h6 class="blog--date__subtitle">
+                <?php echo convertMonthBlog($months); ?>
+              </h6>
             </div>
-            <div class="blog--social">
-              <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="blog--card">
-        <div class="blog--card__header">
-          <img class="blog--card__image" src="views/assets/img/Recursos/images/img-blog-2.png" alt="">
-          <div class="blog--date">
-            <h4 class="blog--date__title">
-              13
-            </h4>
-            <h6 class="blog--date__subtitle">
-              Junio
-            </h6>
-          </div>
-          <div class="blog--card__title">
-            <h6 class="blog--card__subtitle">130 Lecturas</h6>
-            <h6 class="blog--card__subtitle">2 Comentarios</h6>
-          </div>
-        </div>
-        <div class="blog--card__body">
-          <div class="blog--card__paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
-          </div>
-          <div class="blog--card__footer">
-            <div class="blog--button__container">
-              <a class="blog--button__text" href="#">
-                Leer Más
-                <i class="fa fa-chevron-right blog--button__icon"></i>
-              </a>
-            </div>
-            <div class="blog--social">
-              <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
+            <div class="blog--card__title">
+              <h6 class="blog--card__subtitle"><?php echo $row["blo_lectura"].' Lecturas'; ?></h6>
+              <h6 class="blog--card__subtitle">2 Comentarios</h6>
             </div>
           </div>
-        </div>
-      </article>
-      <article class="blog--card">
-        <div class="blog--card__header">
-          <img class="blog--card__image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-          <div class="blog--date">
-            <h4 class="blog--date__title">
-              13
-            </h4>
-            <h6 class="blog--date__subtitle">
-              Junio
-            </h6>
-          </div>
-          <div class="blog--card__title">
-            <h6 class="blog--card__subtitle">130 Lecturas</h6>
-            <h6 class="blog--card__subtitle">2 Comentarios</h6>
-          </div>
-        </div>
-        <div class="blog--card__body">
-          <div class="blog--card__paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
-          </div>
-          <div class="blog--card__footer">
-            <div class="blog--button__container">
-              <a class="blog--button__text" href="#">
-                Leer Más
-                <i class="fa fa-chevron-right blog--button__icon"></i>
-              </a>
+          <div class="blog--card__body">
+            <div class="blog--card__text">
+              <?php echo $row["blo_titulo"]; ?>
             </div>
-            <div class="blog--social">
-              <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
+            <div class="blog--card__paragraph">
+              <?php echo substr($row["blo_descripcion"], 0, 235).'...'; ?>
+            </div>
+            <div class="blog--card__footer">
+              <div class="blog--button__container">
+                <a class="blog--button__text" href="#">
+                  Leer Más
+                  <i class="fa fa-chevron-right blog--button__icon"></i>
+                </a>
+              </div>
+              <div class="blog--social">
+                <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
+                <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
+                <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+    <?php
+    }
+    ?>
     </div>
   </section>
   <section class="events-container">
@@ -320,13 +306,13 @@
     <div class="events--2">
        <div class="events--2__section">
          <h2 class="events--2__title">
-           Maecenas Tristique Justo
+
          </h2>
          <h4 class="events--2__subtitle">
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
          </h4>
          <p class="events--2__text">
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
          </p>
        </div>
     </div>
