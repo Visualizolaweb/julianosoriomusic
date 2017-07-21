@@ -193,7 +193,7 @@
             </div>
             <div class="blog--card__title">
               <h6 class="blog--card__subtitle"><?php echo $row["blo_lectura"].' Lecturas'; ?></h6>
-              <h6 class="blog--card__subtitle">2 Comentarios</h6>
+              <h6 class="blog--card__subtitle"><?php echo $row["COUNT(com_id)"].' Comentarios'; ?></h6>
             </div>
           </div>
           <div class="blog--card__body">

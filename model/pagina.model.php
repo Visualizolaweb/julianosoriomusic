@@ -72,7 +72,7 @@
 
         public function readUpcomingBlogs(){
             try{
-        		$sql = "SELECT * FROM blog INNER JOIN blog_imagen ON blog.bli_id = blog_imagen.bli_id WHERE blo_fecha <= DATE(NOW()) ORDER BY blo_fecha DESC LIMIT 3";
+        		$sql = "SELECT *, COUNT(com_id) FROM blog LEFT JOIN blog_imagen ON blog.bli_id = blog_imagen.bli_id LEFT JOIN blog_comentario ON blog.blo_id = blog_comentario.blo_id WHERE blo_fecha <= CURDATE() GROUP BY blog.blo_id ORDER BY blo_fecha DESC LIMIT 3";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
