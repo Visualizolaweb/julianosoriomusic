@@ -37,6 +37,12 @@
             require_once 'views/include/footer-website.php';
         }
 
+        public function fullBlogs(){
+            require_once 'views/include/header-website.php';
+            require_once 'views/modules/mod_user/page_manage/blog/full-blogs.php';
+            require_once 'views/include/footer-website.php';
+        }
+
         public function updateReadsInBlogs(){
             $data = $_POST["data"];
             $updateBlogs = $this->PaginaM->updateReadsInBlogs($data);

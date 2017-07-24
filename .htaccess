@@ -12,6 +12,7 @@ RewriteRule ^banner$                            index.php?c=banner
 RewriteRule ^update-banner$                     index.php?c=banner&a=update
 RewriteRule ^eventos$                           index.php?c=eventos
 RewriteRule ^admin-blog$                        index.php?c=blog
+RewriteRule ^blog$                              index.php?c=pagina&a=fullBlogs
 RewriteRule ^crear-blog$                        index.php?c=blog&a=createForm
 RewriteRule ^crear-evento$                      index.php?c=eventos&a=createEvents
 RewriteRule ^eliminar-evento&token=(.*)$        index.php?c=eventos&a=delete&token=$1

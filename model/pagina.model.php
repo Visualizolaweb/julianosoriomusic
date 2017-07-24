@@ -94,6 +94,18 @@
             return $result;
         }
 
+        public function readBlogs(){
+            try{
+        		$sql = "SELECT blog.blo_id, blo_titulo, blo_descripcion, blo_fecha, blog_imagen.bli_ruta, blo_lectura, COUNT(com_id) FROM blog LEFT JOIN blog_imagen ON blog.bli_id = blog_imagen.bli_id LEFT JOIN blog_comentario ON blog.blo_id = blog_comentario.blo_id WHERE blo_fecha <= CURDATE() GROUP BY blog.blo_id ORDER BY blo_fecha DESC";
+                $query = $this->pdo->prepare($sql);
+                $query->execute();
+                $result = $query->fetchALL(PDO::FETCH_BOTH);
+              }catch (Exception $e){
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $result;
+        }
+
         public function readAboutMe(){
             try{
         		$sql = "SELECT * FROM sobre WHERE sob_id = 'lO23cOv23PC2ei4dJV829CWVvivi32'";

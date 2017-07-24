@@ -78,6 +78,12 @@ h1, h2, h3, h4, h5, h6, p{
     justify-content: space-between;
 }
 
+.header-container__other{
+    background-image: url(../img/Recursos/background/BgContact.png);
+    background-size: cover;
+    height: auto;
+}
+
 .header--navbar{
     display: flex;
     flex-wrap: wrap;
@@ -368,6 +374,10 @@ h1, h2, h3, h4, h5, h6, p{
     padding-top: 30px;
     padding-right: 16px;
     padding-left: 16px;
+}
+
+.blog--body__full{
+    padding-top: 50px;
 }
 
 .blog--card__body,.blog--card__footer,.blog--card__header{
@@ -702,6 +712,32 @@ textarea.input--form{
 .button--contact:hover,.button--contact:focus{
     cursor: pointer;
     background-color: #866d0a;
+}
+
+.gallery--container__main{
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;;
+    flex-wrap: wrap;
+}
+
+.gallery--item__main{
+    width: 31%;
+    margin-bottom: 1%;
+}
+
+.gallery--item__main:nth-child(3n-1){
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.gallery--image__main{
+    width: 100%;
 }
 
 @media (max-width: 575px) {

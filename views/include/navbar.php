@@ -18,13 +18,13 @@
             <a href="discografia" class="navbar-link">Discografía</a>
         </li>
         <li class="navbar-item">
-            <a href="blog" class="navbar-link">Blog</a>
+            <a href="admin-blog" class="navbar-link">Blog</a>
         </li>
         <li class="navbar-item">
-            <a href="eventos" class="navbar-link">Eventos</a>
+            <a href="admin-eventos" class="navbar-link">Eventos</a>
         </li>
         <li class="navbar-item">
-            <a href="galeria" class="navbar-link">Galeria</a>
+            <a href="admin-galeria" class="navbar-link">Galeria</a>
         </li>
         <li class="navbar-item">
             <a href="contacto" class="navbar-link">Contáctame</a>

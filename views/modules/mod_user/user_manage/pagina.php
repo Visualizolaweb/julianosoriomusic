@@ -13,19 +13,19 @@
               <img class="image--icon icon--menu" src="views/assets/img/Recursos/icons/clear.svg" alt="">
               <ul class="navbar--items">
                   <li class="navbar--item">
-                      <a href="#" class="navbar--link">Inicio</a>
+                      <a href="inicio" class="navbar--link">Inicio</a>
                   </li>
                   <li class="navbar--item">
-                      <a href="#" class="navbar--link">Discografía</a>
+                      <a href="#discografia" class="navbar--link">Discografía</a>
                   </li>
                   <li class="navbar--item">
                       <a href="#about-me" class="navbar--link">Sobre mí</a>
                   </li>
                   <li class="navbar--item">
-                      <a href="#" class="navbar--link">Blog</a>
+                      <a href="blog" class="navbar--link">Blog</a>
                   </li>
                   <li class="navbar--item">
-                      <a href="#" class="navbar--link">Eventos</a>
+                      <a href="eventos" class="navbar--link">Eventos</a>
                   </li>
                   <li class="navbar--item">
                       <a href="galeria" class="navbar--link">Galeria</a>
@@ -80,7 +80,7 @@
         ?>
       </div>
   </section>
-  <section class="infinito-container">
+  <section class="infinito-container" id="discografia">
     <div class="infinito--header">
       <img src="views/assets/img/Recursos/header/header-Music.png" alt="">
       <h4 class="infinito--subtitle">Elit neque ullamcorper eros</h4>
@@ -391,3 +391,15 @@
     </footer>
   </section>
 </main>
+<script type="text/javascript">
+window.onload = function() {
+    var active = $('.active--link').attr("href");
+    $("#track").html('<source src="views/assets/musica/Sleep.mp3" type="audio/mp3">');
+    $.post("get-events",{data:active},function(data){
+        var data = JSON.parse(data);
+        $(".events--2__title").html(data['evento_nombre']);
+        $(".events--2__subtitle").html(data['evento_direccion']);
+        $(".events--2__text").html(data['evento_descripcion']);
+    });
+}
+</script>

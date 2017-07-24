@@ -111,17 +111,6 @@ $('.navbar--link').click(function(){
 
 
 // console.clear()
-window.onload = function() {
-    var active = $('.active--link').attr("href");
-    $("#track").html('<source src="views/assets/musica/Sleep.mp3" type="audio/mp3">');
-    $.post("get-events",{data:active},function(data){
-        var data = JSON.parse(data);
-        $(".events--2__title").html(data['evento_nombre']);
-        $(".events--2__subtitle").html(data['evento_direccion']);
-        $(".events--2__text").html(data['evento_descripcion']);
-    });
-}
-
 $('.events--link').click(function(e){
     e.preventDefault();
     $('.events--link').removeClass('active--link');
