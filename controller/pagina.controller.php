@@ -25,6 +25,25 @@
             require_once 'views/include/footer.php';
         }
 
+        public function readBlog(){
+            require_once 'views/include/header-website.php';
+            require_once 'views/modules/mod_user/page_manage/blog/read-blog.php';
+            require_once 'views/include/footer-website.php';
+        }
+
+        public function gallery(){
+            require_once 'views/include/header-website.php';
+            require_once 'views/modules/mod_user/page_manage/galeria/read-galeria.php';
+            require_once 'views/include/footer-website.php';
+        }
+
+        public function updateReadsInBlogs(){
+            $data = $_POST["data"];
+            $updateBlogs = $this->PaginaM->updateReadsInBlogs($data);
+            $return = array(true, "blog&token=$data");
+            echo json_encode($return);
+        }
+
         public function sendEmailContact(){
             $mail = new PHPMailer();
             $mail->isSMTP();
@@ -51,9 +70,8 @@
         public function getEvents(){
             $data = $_POST["data"];
             $eventosByCode = $this->PaginaM->readEventByCode($data);
-
-        $return = $eventosByCode;
-        echo json_encode($return);
+            $return = $eventosByCode;
+            echo json_encode($return);
         }
 
         public function getTwitter(){
@@ -155,6 +173,16 @@
         public function getTwitters(){
             $url=NULL;
             return $url;
+            ?>
+            <div class="item">
+                <div class="twitter--body">
+                    <i class="fa fa-twitter fa-2x twitter--icon"></i>
+                    <h2 class="twitter--name">@julianosoriomusic</h2>
+                    <p class='twitter--text'>Lo sentimos, la conexión con twitter fallo.</p>
+                    <h4 class='twitter--date'></h4>';
+                </div>
+            </div>
+        <?php
         }
     }
 

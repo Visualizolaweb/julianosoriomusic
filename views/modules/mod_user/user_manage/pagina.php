@@ -28,7 +28,7 @@
                       <a href="#" class="navbar--link">Eventos</a>
                   </li>
                   <li class="navbar--item">
-                      <a href="#" class="navbar--link">Galeria</a>
+                      <a href="galeria" class="navbar--link">Galeria</a>
                   </li>
                   <li class="navbar--item">
                       <a href="#footer" class="navbar--link">Contáctame</a>
@@ -192,8 +192,24 @@
               </h6>
             </div>
             <div class="blog--card__title">
-              <h6 class="blog--card__subtitle"><?php echo $row["blo_lectura"].' Lecturas'; ?></h6>
-              <h6 class="blog--card__subtitle"><?php echo $row["COUNT(com_id)"].' Comentarios'; ?></h6>
+              <h6 class="blog--card__subtitle">
+                  <?php
+                    if ($row["blo_lectura"] == 1) {
+                        echo $row["blo_lectura"].' Lectura';
+                    } else {
+                        echo $row["blo_lectura"].' Lecturas';
+                    }
+                  ?>
+              </h6>
+              <h6 class="blog--card__subtitle">
+                  <?php
+                  if ($row["COUNT(com_id)"] == 1) {
+                      echo $row["COUNT(com_id)"].' Comentario';
+                  } else {
+                      echo $row["COUNT(com_id)"].' Comentarios';
+                  }
+                  ?>
+              </h6>
             </div>
           </div>
           <div class="blog--card__body">
@@ -205,7 +221,7 @@
             </div>
             <div class="blog--card__footer">
               <div class="blog--button__container">
-                <a class="blog--button__text" href="#">
+                <a class="blog--button__text" href="<?php echo $row['blo_id']; ?>">
                   Leer Más
                   <i class="fa fa-chevron-right blog--button__icon"></i>
                 </a>
@@ -281,7 +297,6 @@
             }
             return $month;
        }
-        // $className = "active--link";
         $item = 1;
         foreach ($this->PaginaM->readUpcomingEvents() as $row) {
             list($years, $months, $days) = explode("-", $row["evento_fecha_inicio"]);

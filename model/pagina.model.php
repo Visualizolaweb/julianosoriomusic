@@ -12,7 +12,19 @@
 
         public function readGaleria(){
           try{
-      			$sql = "SELECT * FROM galeria LIMIT 20";
+      			$sql = "SELECT gal_ruta FROM galeria LIMIT 20";
+                $query = $this->pdo->prepare($sql);
+                $query->execute();
+                $result = $query->fetchALL(PDO::FETCH_BOTH);
+            }catch (Exception $e){
+              die($e->getMessage()."".$e->getLine()."".$e->getFile());
+          }
+          return $result;
+        }
+
+        public function readFullGaleria(){
+          try{
+      			$sql = "SELECT gal_ruta FROM galeria";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -60,7 +72,7 @@
 
         public function readUpcomingEvents(){
             try{
-        		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio >= DATE(NOW()) ORDER BY evento_fecha_inicio ASC LIMIT 3";
+        		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio >= CURDATE() ORDER BY evento_fecha_inicio ASC LIMIT 3";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -72,7 +84,7 @@
 
         public function readUpcomingBlogs(){
             try{
-        		$sql = "SELECT *, COUNT(com_id) FROM blog LEFT JOIN blog_imagen ON blog.bli_id = blog_imagen.bli_id LEFT JOIN blog_comentario ON blog.blo_id = blog_comentario.blo_id WHERE blo_fecha <= CURDATE() GROUP BY blog.blo_id ORDER BY blo_fecha DESC LIMIT 3";
+        		$sql = "SELECT blog.blo_id, blo_titulo, blo_descripcion, blo_fecha, blog_imagen.bli_ruta, blo_lectura, COUNT(com_id) FROM blog LEFT JOIN blog_imagen ON blog.bli_id = blog_imagen.bli_id LEFT JOIN blog_comentario ON blog.blo_id = blog_comentario.blo_id WHERE blo_fecha <= CURDATE() GROUP BY blog.blo_id ORDER BY blo_fecha DESC LIMIT 3";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -92,6 +104,40 @@
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $result;
+        }
+
+        public function updateReadsInBlogs($data){
+            try {
+                $sql = "UPDATE blog SET blo_lectura = blo_lectura+1 WHERE blo_id = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($data));
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+        }
+
+        public function readBlogByCode($data){
+          try {
+            $sql="SELECT * FROM blog INNER JOIN blog_imagen ON(blog.bli_id = blog_imagen.bli_id) WHERE blog.blo_id = ?";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($data));
+            $result=$query->fetch(PDO::FETCH_BOTH);
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+          return $result;
+        }
+
+        public function readCommentsInBlogByCode($data){
+          try {
+            $sql="SELECT com_text FROM blog INNER JOIN blog_comentario ON(blog.blo_id = blog_comentario.blo_id) WHERE blog.blo_id = ?";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($data));
+            $result=$query->fetchALL(PDO::FETCH_BOTH);
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+          return $result;
         }
         public function __DESTRUCT(){
             DataBase::disconnect();

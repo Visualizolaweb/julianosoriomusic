@@ -114,8 +114,6 @@ $('.navbar--link').click(function(){
 window.onload = function() {
     var active = $('.active--link').attr("href");
     $("#track").html('<source src="views/assets/musica/Sleep.mp3" type="audio/mp3">');
-
-    // console.log(active);
     $.post("get-events",{data:active},function(data){
         var data = JSON.parse(data);
         $(".events--2__title").html(data['evento_nombre']);
@@ -129,11 +127,22 @@ $('.events--link').click(function(e){
     $('.events--link').removeClass('active--link');
     $(this).addClass('active--link');
     var value = $(this).attr("href");
-    console.log(value);
     $.post("get-events",{data:value},function(data){
         var data = JSON.parse(data);
         $(".events--2__title").html(data['evento_nombre']);
         $(".events--2__subtitle").html(data['evento_direccion']);
         $(".events--2__text").html(data['evento_descripcion']);
+    });
+})
+
+$('.blog--button__text').click(function(e){
+    e.preventDefault();
+    var value = $(this).attr("href");
+    console.log(value);
+    $.post("update-blog",{data:value},function(data){
+        var data = JSON.parse(data);
+        if (data[0] == true) {
+            document.location.href = data[1];
+        }
     });
 })

@@ -1,6 +1,7 @@
 RewriteEngine on
 RewriteRule ^inicio$                            index.php?c=pagina
 RewriteRule ^get-events$                        index.php?c=pagina&a=getEvents
+RewriteRule ^galeria$                           index.php?c=pagina&a=gallery
 RewriteRule ^cerrar-sesion$                     index.php?c=user&a=close
 RewriteRule ^dashboard$                         index.php?c=user&a=dashboard
 RewriteRule ^login$                             index.php?c=user&a=login
@@ -10,7 +11,7 @@ RewriteRule ^admin$                             index.php?c=user
 RewriteRule ^banner$                            index.php?c=banner
 RewriteRule ^update-banner$                     index.php?c=banner&a=update
 RewriteRule ^eventos$                           index.php?c=eventos
-RewriteRule ^blog$                              index.php?c=blog
+RewriteRule ^admin-blog$                        index.php?c=blog
 RewriteRule ^crear-blog$                        index.php?c=blog&a=createForm
 RewriteRule ^crear-evento$                      index.php?c=eventos&a=createEvents
 RewriteRule ^eliminar-evento&token=(.*)$        index.php?c=eventos&a=delete&token=$1
@@ -18,9 +19,11 @@ RewriteRule ^actualizar-evento$                 index.php?c=eventos&a=updateData
 RewriteRule ^actualizar-evento&token=(.*)$      index.php?c=eventos&a=update&token=$1
 RewriteRule ^discografia$                       index.php?c=discografia
 RewriteRule ^crear-discografia$                 index.php?c=discografia&a=create
-RewriteRule ^&msn=(.*)$              index.php?c=discografia&msn=$1
-RewriteRule ^galeria$                           index.php?c=galeria
+RewriteRule ^&msn=(.*)$                         index.php?c=discografia&msn=$1
+RewriteRule ^blog&token=(.*)$                   index.php?c=pagina&a=readBlog&token=$1
+RewriteRule ^admin-galeria$                           index.php?c=galeria
 RewriteRule ^contacto$                          index.php?c=contactame
 RewriteRule ^update-contacto$                   index.php?c=contactame&a=update
 RewriteRule ^mi-perfil$                         index.php?c=perfil
 RewriteRule ^update-perfil$                     index.php?c=perfil&a=update
+RewriteRule ^update-blog$                       index.php?c=pagina&a=updateReadsInBlogs
