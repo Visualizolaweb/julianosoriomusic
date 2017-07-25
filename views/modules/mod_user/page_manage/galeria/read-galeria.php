@@ -1,4 +1,3 @@
-
 <main class="main-container">
   <header class="header-container header-container__other">
     <div class="header--navbar">
@@ -48,3 +47,4 @@
             }
         ?>
     </section>
+</main>

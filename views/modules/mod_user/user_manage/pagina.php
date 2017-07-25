@@ -64,7 +64,6 @@
             <h3 class="song--text">Cancion para mentir</h3>
             <div id="default-bar">
                 <div id="progress-bar"></div>
-
             </div>
         </nav>
     </section>
@@ -364,7 +363,7 @@
           </div>
           <div class="inputs-container-100">
             <label class="label--form" for="">Deja tu Mensaje</label>
-            <textarea name="" id="" class="input--form"></textarea>
+            <textarea name="" id="" class="input--form textarea--contact"></textarea>
           </div>
           <button class="button--contact">Enviar</button>
         </form>

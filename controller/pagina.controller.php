@@ -4,10 +4,6 @@
     require_once 'views/assets/PHPMailer/PHPMailerAutoload.php';
     class PaginaController{
         private $PaginaM;
-        private $evento_titulo;
-        private $evento_subtitulo;
-        private $evento_text;
-
 
         public function __CONSTRUCT(){
             $this->PaginaM = new PaginaModel();
@@ -43,6 +39,12 @@
             require_once 'views/include/footer-website.php';
         }
 
+        public function fullEvents(){
+            require_once 'views/include/header-website.php';
+            require_once 'views/modules/mod_user/page_manage/eventos/read-eventos.php';
+            require_once 'views/include/footer-website.php';
+        }
+
         public function updateReadsInBlogs(){
             $data = $_POST["data"];
             $updateBlogs = $this->PaginaM->updateReadsInBlogs($data);
@@ -69,7 +71,6 @@
             } else {
                $msn = "Correo invalido ".$mail->ErrorInfo;
             }
-            // return $msn;
             echo $msn;
         }
 

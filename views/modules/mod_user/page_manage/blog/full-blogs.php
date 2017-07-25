@@ -1,4 +1,3 @@
-
 <main class="main-container">
   <header class="header-container header-container__other">
     <div class="header--navbar">
@@ -147,3 +146,4 @@
         ?>
         </div>
     </section>
+</main>
