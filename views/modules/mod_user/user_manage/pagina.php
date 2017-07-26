@@ -48,25 +48,11 @@
         </div>
       </div>
     </div>
-    <section class="player-container">
-        <audio id="track">
-
-        </audio>
-        <nav class="song--container">
-            <div class="buttons--songs">
-                <button type="button" id="play-button">
-                    <i class="icon--song fa fa-play" id="play"></i>
-                </button>
-                <button type="button" id="restart-button">
-                    <i class="icon--song fa fa-stop" id="stop"></i>
-                </button>
-            </div>
-            <h3 class="song--text">Cancion para mentir</h3>
-            <div id="default-bar">
-                <div id="progress-bar"></div>
-            </div>
-        </nav>
-    </section>
+        <div class="media-wrapper">
+            <audio id="player" preload controls style="width:100%;">
+                <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
+            </audio>
+        </div>
   </header>
   <section class="twitter-container">
       <div class="owl-carousel owl-theme">
@@ -87,10 +73,36 @@
     </div>
     <div class="infinito--player">
        <div class="player--songs">
-
+           <div class="player--info">
+               <h2 class="song--title">Canción para mentir</h2>
+               <div class="player--text">
+                   <a class="player--link" href="#"><i class="icon--player fa fa-facebook-official"></i>Compartir en facebook</a>
+                   <a class="player--link" href="#"><i class="icon--player fa fa-list-alt"></i>Ver Letra</a>
+               </div>
+           </div>
+           <ul class="container--songs">
+               <li class="song--item">
+                   <audio id="player" preload controls style="width:100%;">
+                       <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
+                   </audio>
+               </li>
+               <li class="song--item">
+                   <audio id="player" preload controls style="width:100%;">
+                       <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
+                   </audio>
+               </li>
+               <li class="song--item">
+                   <audio id="player" preload controls style="width:100%;">
+                       <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
+                   </audio>
+               </li>
+           </ul>
        </div>
        <div class="player--album">
-
+           <div class="album--container">
+               <img class="album--caratula" src="views/assets/img/Recursos/playerList/default/Caratula.png" alt="">
+               <img class="album--vinilo" src="views/assets/img/Recursos/playerList/default/Vinilo.png" alt="">
+           </div>
        </div>
     </div>
   </section>

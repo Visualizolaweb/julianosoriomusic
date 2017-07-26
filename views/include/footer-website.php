@@ -3,6 +3,7 @@
     <!-- <script src="views/assets/js/loader.min.js"></script> -->
     <script src="views/assets/js/tether.min.js"></script>
     <script src="views/assets/js/bootstrap.min.js"></script>
+    <script src="views/assets/js/mediaelement.min.js"></script>
     <script src="views/assets/js/website.js"></script>
     </body>
 </html>

@@ -6,58 +6,17 @@
 //     spinner:"spinner1"
 // });
 
-let myTrack = document.getElementById("track");
-let playButton = $('#play-button');
-let barSize = 100;
-let progressBar = $('#progress-bar');
-let duration = 0;
-let currentTime = 0;
-
-$('#restart-button').click(function(){
-    myTrack.currentTime = 0;
-})
-playButton.click(function(){
-    if (!myTrack.paused && !myTrack.ended) {
-        myTrack.pause();
-        $('#play').remove();
-        $('#play-button').after().wrapInner("<i class='icon--song fa fa-play' id='play'></i>");
-        window.clearInterval(UpdateTime);
-    } else {
-        $('#play').remove();
-        $('#play-button').after().wrapInner("<i class='icon--song fa fa-pause' id='play'></i>");
-        myTrack.play();
-        UpdateTime = setInterval(update,1);
-    }
-})
-
-
-function update(){
-    if (!myTrack.ended) {
-        currentTime = myTrack.currentTime;
-        let size = myTrack.currentTime*barSize/myTrack.duration;
-        $('#progress-bar').css("width", size+"%");
-    } else {
-        currentTime = 0;
-        $('#play').remove();
-        $('#play-button').after().wrapInner("<i class='icon--song fa fa-pause' id='play'></i>");
-        $('#progress-bar').css("width", "0");
-    }
-}
-
-$('#default-bar').click(function(e){
-    if (!myTrack.ended) {
-        let mouseX = e.pageX - $('#default-bar').offset().left;
-        let newTime = mouseX*myTrack.duration/$('#default-bar').width();
-        console.log(newTime);
-        myTrack.currentTime = newTime;
-
-        $('#progress-bar').css("width", mouseX+"px");
-    }
-})
-
-function pad(d){
-    return (d<10) ? '0' + d.toString () : d.toString ();
-}
+$('audio').mediaelementplayer();
+$('.media-wrapper .mejs__time-float').remove();
+$('.media-wrapper .mejs__time').remove();
+$('.media-wrapper .mejs__time-handle').remove();
+$('.song--item .mejs__time-float').remove();
+$('.song--item .mejs__time-handle').remove();
+$('.song--item .mejs__currenttime-container').remove();
+$('.media-wrapper .mejs__volume-button').remove();
+$('.song--item .mejs__volume-button').remove();
+$('.media-wrapper .mejs__horizontal-volume-slider').remove();
+$('.song--item .mejs__horizontal-volume-slider').remove();
 
 $('section.owl-carousel').owlCarousel({
     loop:true,

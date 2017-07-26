@@ -45,6 +45,7 @@ button, button:focus, button:active, button:hover,
 textarea, textarea:focus, textarea:active, textarea:hover
 {
     outline: 0;
+    outline: none;
     border: none;
     background-color: rgba(0,0,0,.2);
 }
@@ -295,6 +296,88 @@ h1, h2, h3, h4, h5, h6, p{
     line-height: 0.3;
     text-transform: uppercase;
     font-weight: 300;
+}
+
+.infinito--title{
+    padding-bottom: 80px;
+}
+
+.infinito--player{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 70px;
+}
+
+.player--songs{
+    width: 30%;
+}
+
+.player--album{
+    width: 55%;
+}
+
+.album--container{
+    width: 100%;
+    position: relative;
+}
+
+.album--caratula{
+    position: relative;
+    z-index: 2;
+    width: 70%;
+}
+
+.album--vinilo{
+    position: absolute;
+    top: 0;
+    left: 40%;
+    z-index: 1;
+    width: 65%;
+    top: 10px;
+    animation:spin 3s linear infinite;
+}
+
+@keyframes spin { 100% {transform:rotate(360deg); } }
+
+.song--title{
+    color: #7c7c7c;
+    font-family: var(--family-robotoC);
+    font-size: 32px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.player--text{
+    display: flex;
+    width: 100%;
+    padding-bottom: 25px;
+    margin-left: 2px;
+}
+
+.icon--player{
+    margin-right: 10px;
+}
+
+.player--link{
+    color: #7c7c7c;
+    font-family: var(--family-robotoC);
+    font-size: 16px;
+}
+
+.player--link:hover{
+    color: #6c6c6c;
+}
+
+.fa-facebook-official{
+    color: #05276c;
+}
+
+.fa-list-alt{
+    margin-left: 40px;
 }
 /*------- ABOUT ME --------*/
 .about-me--container{
@@ -643,59 +726,6 @@ h1, h2, h3, h4, h5, h6, p{
     font-size: 20px;
 }
 
-.song--container{
-    padding: 5px 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-    position: relative;
-    top: 8px;
-}
-
-#default-bar{
-    background-color: #fff;
-    height: 5px;
-    width: 94%;
-    padding-right: 30px;
-    position: relative;
-    overflow-x: hidden;
-}
-
-.song--text{
-    position: absolute;
-    top: 8px;
-    left: 7%;
-    z-index: 1000;
-    color: #ffffff;
-    font-size: 16px;
-    font-family: var(--family-robotoC);
-}
-
-#progress-bar{
-    position: absolute;
-    height: 5px;
-    top: 0;
-    left: 0;
-    background-color: #fcd80f;
-    width: 0;
-}
-
-#play-button{
-    padding-right: 10px;
-}
-
-.buttons--songs{
-    width: 6%;
-}
-
-.buttons--songs button:hover{
-    cursor: pointer;
-}
-
-.icon--song{
-    color: #fff;
-}
 
 .button--contact{
     background-color: #a18309;
@@ -829,6 +859,34 @@ h1, h2, h3, h4, h5, h6, p{
 
 .events--article__link:hover, .events--article__link:focus{
     color: #212121;
+}
+
+.media-wrapper .mejs__container{
+    background: rgba(0,0,0,.3);
+}
+
+.mejs__time-current, .mejs__time-handle-content{
+    background-color: #fcd80f;
+}
+
+.mejs__time-total{
+    background-color: #d4d5d8;
+    height: 5px;
+    border-radius: 0;
+    margin-top: 7px;
+    overflow: hidden;
+}
+
+.mejs__time-hovered{
+    background-color: transparent;
+}
+
+.song--item .mejs__container{
+    background: #fafafa;
+}
+
+.song--item:nth-child(2n) .mejs__container{
+    background: #ffffff;
 }
 
 @media (max-width: 575px) {
