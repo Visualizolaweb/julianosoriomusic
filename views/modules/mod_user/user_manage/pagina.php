@@ -48,11 +48,16 @@
         </div>
       </div>
     </div>
-        <div class="media-wrapper">
-            <audio id="player" preload controls style="width:100%;">
-                <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
-            </audio>
-        </div>
+    <div class="player--main">
+      <div class="text--wrapper">
+        <h4 class="player--main__text">Canción para mentir</h4>
+      </div>
+      <div class="media-wrapper">
+        <audio id="player" class="audio" preload="none" style="width:100%;">
+          <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
+        </audio>
+      </div>
+    </div>
   </header>
   <section class="twitter-container">
       <div class="owl-carousel owl-theme">
@@ -82,17 +87,17 @@
            </div>
            <ul class="container--songs">
                <li class="song--item">
-                   <audio id="player" preload controls style="width:100%;">
+                   <audio id="player" class="audio" preload="none" style="width:100%;">
                        <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
                    </audio>
                </li>
                <li class="song--item">
-                   <audio id="player" preload controls style="width:100%;">
+                   <audio id="player" class="audio" preload="none" style="width:100%;">
                        <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
                    </audio>
                </li>
                <li class="song--item">
-                   <audio id="player" preload controls style="width:100%;">
+                   <audio id="player" class="audio" preload="none" style="width:100%;">
                        <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
                    </audio>
                </li>

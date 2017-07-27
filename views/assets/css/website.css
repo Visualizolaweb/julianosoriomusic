@@ -47,7 +47,6 @@ textarea, textarea:focus, textarea:active, textarea:hover
     outline: 0;
     outline: none;
     border: none;
-    background-color: rgba(0,0,0,.2);
 }
 
 h1, h2, h3, h4, h5, h6, p{
@@ -338,6 +337,9 @@ h1, h2, h3, h4, h5, h6, p{
     z-index: 1;
     width: 65%;
     top: 10px;
+}
+
+.album--rotate{
     animation:spin 3s linear infinite;
 }
 
@@ -378,6 +380,24 @@ h1, h2, h3, h4, h5, h6, p{
 
 .fa-list-alt{
     margin-left: 40px;
+}
+
+.text--wrapper{
+    width: 100%;
+    background-color: rgba(0,0,0,.7);
+    padding-top: 15px;
+    padding-left: 50px;
+    position: relative;
+}
+
+.player--main__text{
+    z-index: 10;
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    font-family: var(--family-robotoC);
+    top: 10px;
+    left: 52px;
 }
 /*------- ABOUT ME --------*/
 .about-me--container{
@@ -590,6 +610,80 @@ h1, h2, h3, h4, h5, h6, p{
     margin-left: 5px;
 }
 
+.blog--container__one{
+    width: 100%;
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+.blog--content{
+    width: 55%;
+}
+
+.comments--content{
+    width: 30%;
+}
+
+.blog--content__title{
+    color: #fafafa;
+    font-size: 32px;
+    padding-bottom: 10px;
+    font-family: var(--family-robotoC);
+}
+
+.blog--content__text{
+    color: #fafafa;
+    padding-top: 20px;
+    font-family: var(--family-roboto);
+    line-height: 1.25;
+    font-size: 16px;
+}
+
+.comments--item{
+    padding: 12px 8px;
+    margin-bottom: 8px;
+    background-color: rgba(255,255,255,.85);
+}
+
+.comments--text{
+    color: black;
+    font-size: 18px;
+}
+
+.blog--content__img{
+    width: 100%;
+}
+
+.comments--title{
+    color: #fafafa;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    font-family: var(--family-robotoC);
+}
+
+.textarea--blog{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    resize: none;
+    height: 100px;
+    padding: 8px 8px;
+    background-color: rgba(255, 255, 255, .85);
+}
+
+.button--blog{
+    background-color: #ed2b45;
+    color: #fafafa;
+    width: 100%;
+    line-height: 2.5;
+    font-family: var(--family-lato);
+    text-transform: uppercase;
+    font-size: 18px;
+}
+/*EVENTOS*/
 .events-container{
     display: none;
 }
@@ -862,7 +956,7 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .media-wrapper .mejs__container{
-    background: rgba(0,0,0,.3);
+    background: rgba(0,0,0,.6);
 }
 
 .mejs__time-current, .mejs__time-handle-content{

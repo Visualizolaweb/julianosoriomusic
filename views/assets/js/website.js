@@ -18,6 +18,7 @@ $('.song--item .mejs__volume-button').remove();
 $('.media-wrapper .mejs__horizontal-volume-slider').remove();
 $('.song--item .mejs__horizontal-volume-slider').remove();
 
+
 $('section.owl-carousel').owlCarousel({
     loop:true,
     margin:0,
