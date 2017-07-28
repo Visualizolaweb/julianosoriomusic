@@ -1,7 +1,6 @@
 <?php
     $code = $_GET["token"];
-    $blog = $this->PaginaM->readBlogByCode($code);
-    $comments = $this->PaginaM->readCommentsInBlogByCode($code);
+    $event = $this->PaginaM->readEventByCode($code);
 ?>
 <main class="main-container">
   <header class="header-container header-container__other">
@@ -40,37 +39,15 @@
               </ul>
           </nav>
       </div>
-      <section class="blog--container__one">
-          <article class="blog--content">
-              <h1 class="blog--content__title"><?php echo $blog["blo_titulo"]; ?></h1>
-              <img class="blog--content__img" src="<?php echo 'views/assets/img/blog/'.$blog['bli_ruta']; ?>" alt="<?php echo $blog['blo_titulo']; ?>">
-              <p class="blog--content__text"><?php echo $blog["blo_descripcion"]; ?></p>
-          </article>
-          <div class="comments--content">
-                <div class="comments--content__title">
-                    <h2 class="comments--title">Comentarios</h2>
-                </div>
-                  <ul class="comments--items">
-                      <?php
-                          foreach ($comments as $row) {
-                      ?>
-                      <li class="comments--item">
-                          <h2 class="comments--text"><?php echo $row["com_text"]; ?></h2>
-                      </li>
-                      <?php
-                          }
-                      ?>
-                  </ul>
-              <div class="comments--form">
-                  <form method="post">
-                      <div class="">
-                          <textarea name="data" class="textarea--blog" placeholder="Deja tu opinión" required="" maxlength="100"></textarea>
-                          <button class="button--blog">Comentar</button>
-                      </div>
-                  </form>
-              </div>
-          </div>
-      </section>
     </div>
   </header>
 </main>
+<div class="">
+    <h1><?php echo $event["evento_nombre"]; ?></h1>
+    <h2><?php echo $event["evento_direccion"]; ?></h2>
+    <p><?php echo $event["evento_descripcion"]; ?></p>
+    <h4><?php echo $event["evento_fecha_inicio"]; ?></h4>
+    <h4><?php echo substr($event["evento_hora_inicio"],3); ?></h4>
+    <h4><?php echo $event["evento_fecha_fin"]; ?></h4>
+    <h4><?php echo substr($event["evento_hora_fin"],3); ?></h4>
+</div>

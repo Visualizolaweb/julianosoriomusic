@@ -95,3 +95,9 @@ $('.blog--button__text').click(function(e){
         }
     });
 })
+
+$('.events--article__link').click(function(e){
+    e.preventDefault();
+    var value = $(this).attr("href");
+    document.location.href = "eventos&token="+value;
+})

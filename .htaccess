@@ -23,7 +23,8 @@ RewriteRule ^discografia$                       index.php?c=discografia
 RewriteRule ^crear-discografia$                 index.php?c=discografia&a=create
 RewriteRule ^&msn=(.*)$                         index.php?c=discografia&msn=$1
 RewriteRule ^blog&token=(.*)$                   index.php?c=pagina&a=readBlog&token=$1
-RewriteRule ^admin-galeria$                           index.php?c=galeria
+RewriteRule ^eventos&token=(.*)$                index.php?c=pagina&a=readEvent&token=$1
+RewriteRule ^admin-galeria$                     index.php?c=galeria
 RewriteRule ^contacto$                          index.php?c=contactame
 RewriteRule ^update-contacto$                   index.php?c=contactame&a=update
 RewriteRule ^mi-perfil$                         index.php?c=perfil

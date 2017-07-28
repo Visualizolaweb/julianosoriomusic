@@ -38,49 +38,63 @@
     </div>
     <section class="events--container__full">
         <div class="events--container__text">
-            <a class="events--link__menu events--link__active" href="#">Próximos eventos</a>
-            <a class="events--link__menu" href="#">Eventos pasados</a>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link events--link__menu active" data-toggle="tab" href="#upcomingEvents" role="tab">Próximos eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link events--link__menu" data-toggle="tab" href="#pastEvents" role="tab">Eventos pasados</a>
+                </li>
+            </ul>
         </div>
-        <div class="events--main">
-            <article class="events--article">
-                <h1 class="events--title">Marcha masculina</h1>
-                <h4 class="events--start">
-                    <i class="fa fa-calendar-o"></i>
-                    Comienza - 28-Agosto-2017
-                </h4>
-                <h4 class="events--start events--start__padding">
-                    <i class="fa fa-clock-o"></i>
-                    Comienza - 19:00
-                </h4>
-                <p class="events--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <a class="events--article__link"href="#">ver más</a>
-            </article>
-            <article class="events--article">
-                <h1 class="events--title">Marcha masculina</h1>
-                <h4 class="events--start">
-                    <i class="fa fa-calendar-o"></i>
-                    Comienza - 28-Agosto-2017
-                </h4>
-                <h4 class="events--start events--start__padding">
-                    <i class="fa fa-clock-o"></i>
-                    Comienza - 19:00
-                </h4>
-                <p class="events--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <a class="events--article__link"href="#">ver más</a>
-            </article>
-            <article class="events--article">
-                <h1 class="events--title">Marcha masculina y femenina rico</h1>
-                <h4 class="events--start">
-                    <i class="fa fa-calendar-o"></i>
-                    Comienza - 28-Agosto-2017
-                </h4>
-                <h4 class="events--start events--start__padding">
-                    <i class="fa fa-clock-o"></i>
-                    Comienza - 19:00
-                </h4>
-                <p class="events--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <a class="events--article__link" href="#">ver más</a>
-            </article>
-        </div>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="upcomingEvents" role="tabpanel">
+          <div class="events--main">
+              <?php
+              foreach ($this->PaginaM->readUpcomingEventsFull() as $row) {
+              ?>
+              <article class="events--article">
+                  <h1 class="events--title"><?php echo $row["evento_nombre"]; ?></h1>
+                  <h4 class="events--start">
+                      <i class="fa fa-calendar-o"></i>
+                      <?php echo 'Comienza '.$row["evento_fecha_inicio"]; ?>
+                  </h4>
+                  <h4 class="events--start events--start__padding">
+                      <i class="fa fa-clock-o"></i>
+                      <?php echo 'Comienza '.substr($row["evento_hora_inicio"], 3); ?>
+                  </h4>
+                  <p class="events--text"><?php echo substr($row["evento_descripcion"], 0, 230).'...'; ?></p>
+                  <a class="events--article__link" href="<?php echo $row['evento_code']; ?>">ver más</a>
+              </article>
+              <?php
+              }
+              ?>
+          </div>
+      </div>
+      <div class="tab-pane" id="pastEvents" role="tabpanel">
+          <div class="events--main">
+              <?php
+              foreach ($this->PaginaM->readPastEvents() as $row) {
+              ?>
+              <article class="events--article">
+                  <h1 class="events--title"><?php echo $row["evento_nombre"]; ?></h1>
+                  <h4 class="events--start">
+                      <i class="fa fa-calendar-o"></i>
+                      <?php echo 'Comienza '.$row["evento_fecha_inicio"]; ?>
+                  </h4>
+                  <h4 class="events--start events--start__padding">
+                      <i class="fa fa-clock-o"></i>
+                      <?php echo 'Comienza '.substr($row["evento_hora_inicio"], 3);; ?>
+                  </h4>
+                  <p class="events--text"><?php echo substr($row["evento_descripcion"], 0, 230).'...'; ?></p>
+                  <a class="events--article__link" href="<?php echo $row['evento_code']; ?>">ver más</a>
+              </article>
+              <?php
+              }
+              ?>
+          </div>
+      </div>
+    </div>
     </section>
 </main>

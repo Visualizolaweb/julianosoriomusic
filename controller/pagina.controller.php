@@ -27,6 +27,12 @@
             require_once 'views/include/footer-website.php';
         }
 
+        public function readEvent(){
+            require_once 'views/include/header-website.php';
+            require_once 'views/modules/mod_user/page_manage/eventos/read-evento.php';
+            require_once 'views/include/footer-website.php';
+        }
+
         public function gallery(){
             require_once 'views/include/header-website.php';
             require_once 'views/modules/mod_user/page_manage/galeria/read-galeria.php';
@@ -57,14 +63,14 @@
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'daniel.eco18@gmail.com';
-            $mail->Password = '43276762.98121818043.2365508.deco.';
+            $mail->Username = '';
+            $mail->Password = '';
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
-            $mail->setFrom('daniel.eco18@gmail.com');
-            $mail->addAddress('decardona34@misena.edu.co');
-            $mail->Subject = 'Prueba de correo con PHP';
-            $mail->Body = 'Mensaje enviado pais, casi que no hpta jajaja';
+            $mail->setFrom('');
+            $mail->addAddress('');
+            $mail->Subject = '';
+            $mail->Body = '';
             $mail->CharSet = 'UTF-8';
             if ($mail->send()) {
                $msn = "Envio correctamente";
