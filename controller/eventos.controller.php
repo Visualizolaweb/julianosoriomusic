@@ -43,7 +43,7 @@
             $data = $_POST["data"];
             $data[7] = randomAlpha('15');
             $eventos = $this->EventosM->createEvents($data);
-            $return = array(true,"eventos", "Datos ingresados correctamente");
+            $return = array(true,"admin-eventos", "Datos ingresados correctamente");
             echo json_encode($return);
         }
 
@@ -51,14 +51,14 @@
             $data = $_POST["data"];
             $data[7] = $_SESSION["event_code"];
             $result = $this->EventosM->updateEvents($data);
-            $return = array(true,"eventos", "Datos actualizados correctamente");
+            $return = array(true,"admin-eventos", "Datos actualizados correctamente");
             echo json_encode($return);
         }
 
         public function delete(){
             $field = $_GET["token"];
             $this->EventosM->deleteEvent($field);
-            header("Location: eventos");
+            header("Location: admin-eventos");
         }
     }
 

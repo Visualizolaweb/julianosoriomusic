@@ -18,6 +18,23 @@ $('.song--item .mejs__volume-button').remove();
 $('.media-wrapper .mejs__horizontal-volume-slider').remove();
 $('.song--item .mejs__horizontal-volume-slider').remove();
 
+$(".song--item button").click(function(){
+    var id = $(this).attr("aria-controls");
+    $("#btnlyrics").attr("data-target","#lyric_"+id);
+});
+
+$(document).ready(function(){
+  $.post("index.php?c=discografia&a=loadSongs",function(data){
+     var data = JSON.parse(data);
+
+     for (var i = 0; i <= data.length; i++) {
+       $("#mep_"+data[i][0]+" .mejs__time-rail").html("<span>"+ data[i][1] +"</span>");
+     }
+
+
+
+  });
+});
 
 $('section.owl-carousel').owlCarousel({
     loop:true,
@@ -68,6 +85,7 @@ $('.icon--menu').click(function(){
 $('.navbar--link').click(function(){
     $('.navbar-container').removeClass('add');
 })
+
 
 
 // console.clear()

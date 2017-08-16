@@ -61,6 +61,17 @@
           $this->DiscografiaM->deleteDiscografia($field);
           header("Location:discografia");
         }
+
+        public function loadSongs(){
+          $canciones = array(
+                            array(1,"cancion1","views/assets/musica/Sleep.mp3"),
+                            array(2,"cancion2","views/assets/musica/Sleep.mp3"),
+                            array(3,"cancion3","views/assets/musica/Sleep.mp3"),
+                            array(4,"cancion4","views/assets/musica/Sleep.mp3"),
+                            array(5,"cancion5","views/assets/musica/Sleep.mp3"));
+
+          echo json_encode($canciones);
+        }
     }
 
 ?>

@@ -18,7 +18,7 @@
                             </div>
                             <div class="input-container form-group">
                                 <label for="" class="label--form">Letra</label>
-                                <textarea class="form-control" name="letra" value=""></textarea>
+                                <textarea class="input--form textarea--form textarea--disco" name="letra" value=""></textarea>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Cancion</label>
@@ -34,7 +34,6 @@
                             <tr>
                                 <th>Número</th>
                                 <th>Título</th>
-                                <th>Letra</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -46,7 +45,6 @@
                             <tr>
                                 <td><?php echo $item++; ?></td>
                                 <td><?php echo $row["dis_titulo"]; ?></td>
-                                <td><?php echo $row["dis_letra"]; ?></td>
                                 <td>
                                     <a onclick="return confirm('Esta Seguro De Eliminar Este Archivo?');" href="index.php?c=discografia&a=delete&discod=<?php echo $row['dis_id'];?>">
                                         <i class="material-icons">delete</i>

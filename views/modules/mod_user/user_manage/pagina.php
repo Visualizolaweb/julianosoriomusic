@@ -82,27 +82,48 @@
                <h2 class="song--title">Canción para mentir</h2>
                <div class="player--text">
                    <a class="player--link" href="#"><i class="icon--player fa fa-facebook-official"></i>Compartir en facebook</a>
-                   <a class="player--link" href="#"><i class="icon--player fa fa-list-alt"></i>Ver Letra</a>
+                   <button id="btnlyrics" class="player--link"  data-toggle="modal" ><i class="icon--player fa fa-list-alt"></i>Ver Letra</button>
                </div>
            </div>
            <ul class="container--songs">
-               <li class="song--item">
-                   <audio id="player" class="audio" preload="none" style="width:100%;">
-                       <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
-                   </audio>
-               </li>
-               <li class="song--item">
-                   <audio id="player" class="audio" preload="none" style="width:100%;">
-                       <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
-                   </audio>
-               </li>
-               <li class="song--item">
-                   <audio id="player" class="audio" preload="none" style="width:100%;">
-                       <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
-                   </audio>
-               </li>
+              <?php
+
+                $canciones = array(
+                                  array(1,"cancion1","views/assets/musica/Sleep.mp3"),
+                                  array(2,"cancion2","views/assets/musica/Sleep.mp3"),
+                                  array(3,"cancion3","views/assets/musica/Sleep.mp3"),
+                                  array(4,"cancion4","views/assets/musica/Sleep.mp3"),
+                                  array(5,"cancion5","views/assets/musica/Sleep.mp3"));
+
+                foreach ($canciones as $cancion) {
+                  echo '<li class="song--item">
+                           <audio id="player" class="audio" preload="none" style="width:100%;">
+                               <source src="'.$cancion[2].'" type="audio/mp3">
+                           </audio>
+                       </li>';
+                }
+              ?>
            </ul>
        </div>
+
+       <?php
+        foreach ($canciones as $letras) {
+          echo '<div class="modal fade" id="lyric_mep_'.$letras[0].'" tabindex="-1" role="dialog" aria-labelledby="imageCropTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <div class="col-12">
+                        '.$letras[1].'
+                    </div>
+                </div>
+             </div>
+            </div>
+          </div>';
+        }
+
+
+       ?>
+
        <div class="player--album">
            <div class="album--container">
                <img class="album--caratula" src="views/assets/img/Recursos/playerList/default/Caratula.png" alt="">

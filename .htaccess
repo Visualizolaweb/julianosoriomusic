@@ -30,3 +30,8 @@ RewriteRule ^update-contacto$                   index.php?c=contactame&a=update
 RewriteRule ^mi-perfil$                         index.php?c=perfil
 RewriteRule ^update-perfil$                     index.php?c=perfil&a=update
 RewriteRule ^update-blog$                       index.php?c=pagina&a=updateReadsInBlogs
+
+php_value upload_max_filesize 6400M
+php_value post_max_size 6400M
+php_value max_execution_time 300
+php_value max_input_time 300

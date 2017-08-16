@@ -530,6 +530,11 @@ td img {
     justify-content: center;
 }
 
+.textarea--disco{
+    margin-bottom: 0;
+    height: 150px;
+}
+
 @media (max-width: 575px) {
     .banner-items{
         padding: 15px;

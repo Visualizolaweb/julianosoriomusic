@@ -41,11 +41,11 @@
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Parrafo 1</label>
-                                <textarea id="pf1_per" class="input--form textarea--form" type="text" name="" value=""></textarea>
+                                <textarea id="pf1_per" class="input--form textarea--form" type="text" name="" value=""><?php echo $per['sob_parrafo1']; ?></textarea>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Parrafo 2</label>
-                                <textarea id="pf2_per" class="input--form textarea--form" type="text" name="" value=""></textarea>
+                                <textarea id="pf2_per" class="input--form textarea--form" type="text" name="" value=""><?php echo $per['sob_parrafo2']; ?></textarea>
                             </div>
                             <div class="button-container">
                                 <button type="submit" class="button--form">Modificar</button>
