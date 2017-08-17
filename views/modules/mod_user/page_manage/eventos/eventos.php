@@ -68,7 +68,7 @@
                                   </div>
                                   <div class="modal-footer">
                                       <input class="input--form" type="file" id="upload" style="display: block; width: 100%;">
-                                      <button onclick="document.location.href='eventos'" class="button--form upload-result">Recortar Imagen</button>
+                                      <button onclick="document.location.href='admin-eventos'" class="button--form upload-result">Recortar Imagen</button>
                                   </div>
                                 </div>
                               </div>

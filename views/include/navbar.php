@@ -1,3 +1,6 @@
+<?php if (!isset($_SESSION["user"])){
+  header("Location: inicio");
+} ?>
 <nav class="navbar-container">
     <ul class="navbar-items">
         <li class="navbar-item hidden-lg-up">

@@ -58,7 +58,8 @@
         public function delete(){
             $field = $_GET["token"];
             $this->EventosM->deleteEvent($field);
-            header("Location: admin-eventos");
+            $msn="Eliminado Correctamente";
+            header("Location: admin-eventos&msn=$msn");
         }
     }
 
