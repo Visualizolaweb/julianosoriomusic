@@ -11,18 +11,18 @@
                         <form class="form--content" action="crear-discografia" method="post" enctype="multipart/form-data">
                             <div class="text--form__container">
                                 <h3 class="text--form">Ingresar canciones</h3>
-                            </div>
+                            </div> 
                             <div class="input-container">
                                 <label for="" class="label--form">Titulo</label>
-                                <input class="input--form" type="text" name="data" value="">
+                                <input class="input--form" type="text" name="data" value="" required>
                             </div>
                             <div class="input-container form-group">
                                 <label for="" class="label--form">Letra</label>
-                                <textarea class="input--form textarea--form textarea--disco" name="letra" value=""></textarea>
+                                <textarea class="input--form textarea--form textarea--disco" name="letra" value="" required></textarea>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Cancion</label>
-                                <input class="input--form" type="file" name="cancion" value="">
+                                <input class="input--form" type="file" name="cancion" value="" required>
                             </div>
                             <div class="button-container">
                                 <button type="submit" class="button--form">Ingresar</button>
