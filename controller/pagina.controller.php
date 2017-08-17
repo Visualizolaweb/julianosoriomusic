@@ -58,6 +58,19 @@
             echo json_encode($return);
         }
 
+        public function loadSongs(){
+          $item = 1;
+          foreach ($this->PaginaM->loadSongsAsc() as $row) {
+            $songs[] = array(
+                            $item,
+                            $row["dis_titulo"],
+                            "views/assets/musica/".$row["dis_cancion"]
+                            );
+            $item++;
+          }
+          echo json_encode($songs);
+        }
+
         public function sendEmailContact(){
             $mail = new PHPMailer();
             $mail->isSMTP();
