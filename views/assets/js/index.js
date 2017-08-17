@@ -1,4 +1,3 @@
-
 $("#pas_log").focus(function(){
   $("#ema_log").siblings("span").remove();
   var email = $("#ema_log").val();

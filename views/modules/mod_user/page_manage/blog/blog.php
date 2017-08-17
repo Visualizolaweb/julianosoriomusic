@@ -50,7 +50,7 @@
                                   </div>
                                   <div class="modal-footer">
                                       <input class="input--form" type="file" id="upload" style="display: block; width: 100%;">
-                                      <button onclick="document.location.href='blog'" class="button--form upload-result">Recortar Imagen</button>
+                                      <button onclick="document.location.href='admin-blog'" class="button--form upload-result">Recortar Imagen</button>
                                   </div>
                                 </div>
                               </div>
@@ -102,12 +102,12 @@
 $uploadCrop = $('#wrap-upload').croppie({
     enableExif: true,
     viewport: {
-        width: 275,
-        height: 200
+        width: 370,
+        height: 260
     },
     boundary: {
-        width: 275,
-        height: 200
+        width: 600,
+        height: 400
     }
 });
 

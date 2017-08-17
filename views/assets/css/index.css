@@ -523,6 +523,18 @@ td img {
     margin-bottom: 30px;
 }
 
+.container--gallery{
+    width: 100%;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.textarea--disco{
+    margin-bottom: 0;
+    height: 150px;
+}
+
 @media (max-width: 575px) {
     .banner-items{
         padding: 15px;

@@ -12,9 +12,9 @@
 
         public function createDiscografia($data){
             try {
-                $sql = "INSERT INTO discografia VALUES (?,?,?)";
+                $sql = "INSERT INTO discografia VALUES (?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[2],$data[0],$data[1]));
+                $query->execute(array($data[2],$data[0],$data[1],$data[3]));
                 $result = "Datos ingresados correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -40,18 +40,6 @@
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
-        }
-
-        public function updateUser($data){
-            try {
-                $sql = "UPDATE user SET user_name = ?, user_email = ? WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[2],$data[0],$data[1]));
-                $result = "Datos actualizados correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }

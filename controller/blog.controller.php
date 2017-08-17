@@ -13,12 +13,6 @@
             require_once 'views/modules/mod_user/page_manage/blog/blog.php';
         }
 
-        public function dashboard(){
-            require_once 'views/include/header.php';
-            require_once 'views/modules/mod_user/user_manage/dashboard.php';
-            require_once 'views/include/footer.php';
-        }
-
         public function create(){
           $data = $_POST['image'];
           list($type, $data) = explode(';', $data);
@@ -32,7 +26,7 @@
         }
         public function createForm(){
           $data = $_POST["data"];
-          $data[2]=randomAlpha('30');
+          $data[2]=randomAlpha('15');
           $fecha=date('Ymdhis');
           $result=$this->BlogM->readFecha($fecha);
           $data[3]=$result["bli_id"];
@@ -48,7 +42,7 @@
             unlink("views/assets/img/blog/".$row["bli_ruta"]);
             $i++;
           }
-          $return = array(true,"blog","Guardo Con Exito");
+          $return = array(true,"admin-blog","Guardo Con Exito");
           echo json_encode($return);
         }
         public function delete(){
@@ -56,7 +50,7 @@
           $archivo = $this->BlogM->readBlogaById($field);
           unlink("views/assets/img/blog/".$archivo["bli_ruta"]);
           $this->BlogM->deleteBlog($field);
-          header("Location:blog");
+          header("Location: admin-blog");
         }
     }
 

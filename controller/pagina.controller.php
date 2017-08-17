@@ -4,10 +4,6 @@
     require_once 'views/assets/PHPMailer/PHPMailerAutoload.php';
     class PaginaController{
         private $PaginaM;
-        private $evento_titulo;
-        private $evento_subtitulo;
-        private $evento_text;
-
 
         public function __CONSTRUCT(){
             $this->PaginaM = new PaginaModel();
@@ -25,35 +21,70 @@
             require_once 'views/include/footer.php';
         }
 
+        public function readBlog(){
+            require_once 'views/include/header-website.php';
+            require_once 'views/modules/mod_user/page_manage/blog/read-blog.php';
+            require_once 'views/include/footer-website.php';
+        }
+
+        public function readEvent(){
+            require_once 'views/include/header-website.php';
+            require_once 'views/modules/mod_user/page_manage/eventos/read-evento.php';
+            require_once 'views/include/footer-website.php';
+        }
+
+        public function gallery(){
+            require_once 'views/include/header-website.php';
+            require_once 'views/modules/mod_user/page_manage/galeria/read-galeria.php';
+            require_once 'views/include/footer-website.php';
+        }
+
+        public function fullBlogs(){
+            require_once 'views/include/header-website.php';
+            require_once 'views/modules/mod_user/page_manage/blog/full-blogs.php';
+            require_once 'views/include/footer-website.php';
+        }
+
+        public function fullEvents(){
+            require_once 'views/include/header-website.php';
+            require_once 'views/modules/mod_user/page_manage/eventos/read-eventos.php';
+            require_once 'views/include/footer-website.php';
+        }
+
+        public function updateReadsInBlogs(){
+            $data = $_POST["data"];
+            $updateBlogs = $this->PaginaM->updateReadsInBlogs($data);
+            $return = array(true, "blog&token=$data");
+            echo json_encode($return);
+        }
+
         public function sendEmailContact(){
             $mail = new PHPMailer();
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'daniel.eco18@gmail.com';
-            $mail->Password = '43276762.98121818043.2365508.deco.';
+            $mail->Username = '';
+            $mail->Password = '';
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
-            $mail->setFrom('daniel.eco18@gmail.com');
-            $mail->addAddress('decardona34@misena.edu.co');
-            $mail->Subject = 'Prueba de correo con PHP';
-            $mail->Body = 'Mensaje enviado pais, casi que no hpta jajaja';
+            $mail->setFrom('');
+            $mail->addAddress('');
+            $mail->Subject = '';
+            $mail->Body = '';
             $mail->CharSet = 'UTF-8';
             if ($mail->send()) {
                $msn = "Envio correctamente";
             } else {
                $msn = "Correo invalido ".$mail->ErrorInfo;
             }
-            // return $msn;
             echo $msn;
         }
 
         public function getEvents(){
             $data = $_POST["data"];
             $eventosByCode = $this->PaginaM->readEventByCode($data);
- 
-        $return = $eventosByCode;
-        echo json_encode($return);
+            $return = $eventosByCode;
+            echo json_encode($return);
         }
 
         public function getTwitter(){
@@ -64,6 +95,7 @@
             'consumer_secret' => "dQzHUps6qzjHIHxHU4kXWYpea01QsMou87yvrR8c0s6UJ1HHcU");
 
             $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+
             $getfield = '?screen_name=ux_code&include_rts=true';
             $requestMethod = 'GET';
 
@@ -150,6 +182,20 @@
                }
            ?>
            <?php
+        }
+        public function getTwitters(){
+            $url=NULL;
+            return $url;
+            ?>
+            <div class="item">
+                <div class="twitter--body">
+                    <i class="fa fa-twitter fa-2x twitter--icon"></i>
+                    <h2 class="twitter--name">@julianosoriomusic</h2>
+                    <p class='twitter--text'>Lo sentimos, la conexión con twitter fallo.</p>
+                    <h4 class='twitter--date'></h4>';
+                </div>
+            </div>
+        <?php
         }
     }
 

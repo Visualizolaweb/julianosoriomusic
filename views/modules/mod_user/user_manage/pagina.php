@@ -13,22 +13,22 @@
               <img class="image--icon icon--menu" src="views/assets/img/Recursos/icons/clear.svg" alt="">
               <ul class="navbar--items">
                   <li class="navbar--item">
-                      <a href="#" class="navbar--link">Inicio</a>
+                      <a href="inicio" class="navbar--link">Inicio</a>
                   </li>
                   <li class="navbar--item">
-                      <a href="#" class="navbar--link">Discografía</a>
+                      <a href="#discografia" class="navbar--link">Discografía</a>
                   </li>
                   <li class="navbar--item">
                       <a href="#about-me" class="navbar--link">Sobre mí</a>
                   </li>
                   <li class="navbar--item">
-                      <a href="#" class="navbar--link">Blog</a>
+                      <a href="blog" class="navbar--link">Blog</a>
                   </li>
                   <li class="navbar--item">
-                      <a href="#" class="navbar--link">Eventos</a>
+                      <a href="eventos" class="navbar--link">Eventos</a>
                   </li>
                   <li class="navbar--item">
-                      <a href="#" class="navbar--link">Galeria</a>
+                      <a href="galeria" class="navbar--link">Galeria</a>
                   </li>
                   <li class="navbar--item">
                       <a href="#footer" class="navbar--link">Contáctame</a>
@@ -48,33 +48,29 @@
         </div>
       </div>
     </div>
-    <section class="player-container">
-        <audio id="track">
-
+    <div class="player--main">
+      <div class="text--wrapper">
+        <h4 class="player--main__text">Canción para mentir</h4>
+      </div>
+      <div class="media-wrapper">
+        <audio id="player" class="audio" preload="none" style="width:100%;">
+          <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
         </audio>
-        <nav class="song--container">
-            <div class="buttons--songs">
-                <button type="button" id="play-button">
-                    <i class="icon--song fa fa-play" id="play"></i>
-                </button>
-                <button type="button" id="restart-button">
-                    <i class="icon--song fa fa-stop" id="stop"></i>
-                </button>
-            </div>
-            <h3 class="song--text">Cancion para mentir</h3>
-            <div id="default-bar">
-                <div id="progress-bar"></div>
-
-            </div>
-        </nav>
-    </section>
+      </div>
+    </div>
   </header>
   <section class="twitter-container">
       <div class="owl-carousel owl-theme">
-        <?php $this->getTwitter(); ?>
+        <?php
+        try {
+            $this->getTwitter();
+        } catch (Exception $e) {
+            $this->getTwitters();
+        }
+        ?>
       </div>
   </section>
-  <section class="infinito-container">
+  <section class="infinito-container" id="discografia">
     <div class="infinito--header">
       <img src="views/assets/img/Recursos/header/header-Music.png" alt="">
       <h4 class="infinito--subtitle">Elit neque ullamcorper eros</h4>
@@ -82,10 +78,57 @@
     </div>
     <div class="infinito--player">
        <div class="player--songs">
+           <div class="player--info">
+               <h2 class="song--title">Canción para mentir</h2>
+               <div class="player--text">
+                   <a class="player--link" href="#"><i class="icon--player fa fa-facebook-official"></i>Compartir en facebook</a>
+                   <button id="btnlyrics" class="player--link"  data-toggle="modal" ><i class="icon--player fa fa-list-alt"></i>Ver Letra</button>
+               </div>
+           </div>
+           <ul class="container--songs">
+              <?php
 
+                $canciones = array(
+                                  array(1,"cancion1","views/assets/musica/Sleep.mp3"),
+                                  array(2,"cancion2","views/assets/musica/Sleep.mp3"),
+                                  array(3,"cancion3","views/assets/musica/Sleep.mp3"),
+                                  array(4,"cancion4","views/assets/musica/Sleep.mp3"),
+                                  array(5,"cancion5","views/assets/musica/Sleep.mp3"));
+
+                foreach ($canciones as $cancion) {
+                  echo '<li class="song--item">
+                           <audio id="player" class="audio" preload="none" style="width:100%;">
+                               <source src="'.$cancion[2].'" type="audio/mp3">
+                           </audio>
+                       </li>';
+                }
+              ?>
+           </ul>
        </div>
-       <div class="player--album">
 
+       <?php
+        foreach ($canciones as $letras) {
+          echo '<div class="modal fade" id="lyric_mep_'.$letras[0].'" tabindex="-1" role="dialog" aria-labelledby="imageCropTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <div class="col-12">
+                        '.$letras[1].'
+                    </div>
+                </div>
+             </div>
+            </div>
+          </div>';
+        }
+
+
+       ?>
+
+       <div class="player--album">
+           <div class="album--container">
+               <img class="album--caratula" src="views/assets/img/Recursos/playerList/default/Caratula.png" alt="">
+               <img class="album--vinilo" src="views/assets/img/Recursos/playerList/default/Vinilo.png" alt="">
+           </div>
        </div>
     </div>
   </section>
@@ -95,13 +138,14 @@
       <h2 class="about-me--title">Sobre Mí</h2>
     </div>
     <div class="about-me-body">
+        <?php $sobre = $this->PaginaM->readAboutMe(); ?>
        <div class="about-me-content">
         <div class="about-me--image">
-          <img class="about--img" src="views/assets/img/Recursos/images/julian-infinito.png" alt="">
+          <img class="about--img" src="<?php echo 'views/assets/img/sobre/'.$sobre['sob_ruta'];?>" alt="">
         </div>
         <div class="about-me--principal">
           <h4 class="about-me--text">
-            “Phasellus varius ullamcorper magna id sagittis. In luctus lorem turpis, ac sollicitudin eros auctor nec. Ut laoreet finibus ante non iaculis. Ut lorem tortor”
+              <?php echo '"'.$sobre["sob_frase"].'."'; ?>
           </h4>
           <h6 class="about-me--name">
             - Julian Osorio
@@ -109,10 +153,10 @@
         </div>
         <div class="about-me--section">
           <p class="about-me--paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor purus quis bibendum elementum. Nulla luctus, velit vel dignissim volutpat, elit neque ullamcorper eros, vel commodo enim ex vel erat. Etiam nisi odio, dictum in scelerisque ut, accumsan in tortor. Etiam consequat nibh sit amet varius posuere. Integer pulvinar justo sed ante egestas, sit amet molestie velit lacinia.
+            <?php echo $sobre["sob_parrafo1"]; ?>
           </p>
           <p class="about-me--paragraph">
-            Donec at nulla quis massa egestas tempor at eget est. Maecenas eget laoreet ante, ut egestas turpis. Maecenas sed elit vel arcu sagittis suscipit. Aliquam erat volutpat. Sed sit amet arcu et elit congue bibendum eget in ante. Nunc ligula augue, aliquam et nulla non, bibendum imperdiet diam. Phasellus semper, nisi at fringilla rhoncus, mauris diam dapibus purus, eu varius odio mi vitae mauris. Aenean pellentesque diam luctus augue dapibus luctus.
+            <?php echo $sobre["sob_parrafo2"]; ?>
           </p>
         </div>
        </div>
@@ -124,111 +168,112 @@
       <h2 class="blog--title">Blog</h2>
     </div>
     <div class="blog--body">
-      <article class="blog--card">
-        <div class="blog--card__header">
-          <img class="blog--card__image" src="views/assets/img/Recursos/images/img-blog-1.png" alt="">
-          <div class="blog--date">
-            <h4 class="blog--date__title">
-              13
-            </h4>
-            <h6 class="blog--date__subtitle">
-              Junio
-            </h6>
-          </div>
-          <div class="blog--card__title">
-            <h6 class="blog--card__subtitle">130 Lecturas</h6>
-            <h6 class="blog--card__subtitle">2 Comentarios</h6>
-          </div>
-        </div>
-        <div class="blog--card__body">
-          <div class="blog--card__paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
-          </div>
-          <div class="blog--card__footer">
-            <div class="blog--button__container">
-              <a class="blog--button__text" href="#">
-                Leer Más
-                <i class="fa fa-chevron-right blog--button__icon"></i>
-              </a>
+    <?php
+    function convertMonthBlog($month){
+        switch ($month) {
+            case '01':
+                $month = "Enero";
+                break;
+            case '02':
+                $month = "Febrero";
+                break;
+            case '03':
+                $month = "Marzo";
+                break;
+            case '04':
+                $month = "Abril";
+                break;
+            case '05':
+                $month = "Mayo";
+                break;
+            case '06':
+                $month = "Junio";
+                break;
+            case '07':
+                $month = "Julio";
+                break;
+            case '08':
+                $month = "Agosto";
+                break;
+            case '09':
+                $month = "Septiembre";
+                break;
+            case '10':
+                $month = "Octubre";
+                break;
+            case '11':
+                $month = "Noviembre";
+                break;
+            case '12':
+                $month = "Diciembre";
+                break;
+            default:
+                $month = "Enero";
+                break;
+
+        }
+        return $month;
+    }
+    foreach ($this->PaginaM->readUpcomingBlogs() as $row) {
+        list($years, $months, $days) = explode("-", $row["blo_fecha"]);
+    ?>
+        <article class="blog--card">
+          <div class="blog--card__header">
+            <img class="blog--card__image" src="<?php echo 'views/assets/img/blog/'.$row['bli_ruta'];?>" alt="">
+            <div class="blog--date">
+              <h4 class="blog--date__title">
+                <?php echo $days; ?>
+              </h4>
+              <h6 class="blog--date__subtitle">
+                <?php echo convertMonthBlog($months); ?>
+              </h6>
             </div>
-            <div class="blog--social">
-              <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="blog--card">
-        <div class="blog--card__header">
-          <img class="blog--card__image" src="views/assets/img/Recursos/images/img-blog-2.png" alt="">
-          <div class="blog--date">
-            <h4 class="blog--date__title">
-              13
-            </h4>
-            <h6 class="blog--date__subtitle">
-              Junio
-            </h6>
-          </div>
-          <div class="blog--card__title">
-            <h6 class="blog--card__subtitle">130 Lecturas</h6>
-            <h6 class="blog--card__subtitle">2 Comentarios</h6>
-          </div>
-        </div>
-        <div class="blog--card__body">
-          <div class="blog--card__paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
-          </div>
-          <div class="blog--card__footer">
-            <div class="blog--button__container">
-              <a class="blog--button__text" href="#">
-                Leer Más
-                <i class="fa fa-chevron-right blog--button__icon"></i>
-              </a>
-            </div>
-            <div class="blog--social">
-              <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="blog--card">
-        <div class="blog--card__header">
-          <img class="blog--card__image" src="views/assets/img/Recursos/images/img-blog-3.png" alt="">
-          <div class="blog--date">
-            <h4 class="blog--date__title">
-              13
-            </h4>
-            <h6 class="blog--date__subtitle">
-              Junio
-            </h6>
-          </div>
-          <div class="blog--card__title">
-            <h6 class="blog--card__subtitle">130 Lecturas</h6>
-            <h6 class="blog--card__subtitle">2 Comentarios</h6>
-          </div>
-        </div>
-        <div class="blog--card__body">
-          <div class="blog--card__paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim.
-          </div>
-          <div class="blog--card__footer">
-            <div class="blog--button__container">
-              <a class="blog--button__text" href="#">
-                Leer Más
-                <i class="fa fa-chevron-right blog--button__icon"></i>
-              </a>
-            </div>
-            <div class="blog--social">
-              <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
-              <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
+            <div class="blog--card__title">
+              <h6 class="blog--card__subtitle">
+                  <?php
+                    if ($row["blo_lectura"] == 1) {
+                        echo $row["blo_lectura"].' Lectura';
+                    } else {
+                        echo $row["blo_lectura"].' Lecturas';
+                    }
+                  ?>
+              </h6>
+              <h6 class="blog--card__subtitle">
+                  <?php
+                  if ($row["COUNT(com_id)"] == 1) {
+                      echo $row["COUNT(com_id)"].' Comentario';
+                  } else {
+                      echo $row["COUNT(com_id)"].' Comentarios';
+                  }
+                  ?>
+              </h6>
             </div>
           </div>
-        </div>
-      </article>
+          <div class="blog--card__body">
+            <div class="blog--card__text">
+              <?php echo $row["blo_titulo"]; ?>
+            </div>
+            <div class="blog--card__paragraph">
+              <?php echo substr($row["blo_descripcion"], 0, 235).'...'; ?>
+            </div>
+            <div class="blog--card__footer">
+              <div class="blog--button__container">
+                <a class="blog--button__text" href="<?php echo $row['blo_id']; ?>">
+                  Leer Más
+                  <i class="fa fa-chevron-right blog--button__icon"></i>
+                </a>
+              </div>
+              <div class="blog--social">
+                <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
+                <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
+                <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+    <?php
+    }
+    ?>
     </div>
   </section>
   <section class="events-container">
@@ -289,7 +334,6 @@
             }
             return $month;
        }
-        // $className = "active--link";
         $item = 1;
         foreach ($this->PaginaM->readUpcomingEvents() as $row) {
             list($years, $months, $days) = explode("-", $row["evento_fecha_inicio"]);
@@ -314,13 +358,13 @@
     <div class="events--2">
        <div class="events--2__section">
          <h2 class="events--2__title">
-           Maecenas Tristique Justo
+
          </h2>
          <h4 class="events--2__subtitle">
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
          </h4>
          <p class="events--2__text">
-           dato quemado
+
          </p>
        </div>
     </div>
@@ -357,9 +401,9 @@
           </div>
           <div class="inputs-container-100">
             <label class="label--form" for="">Deja tu Mensaje</label>
-            <textarea name="" id="" class="input--form"></textarea>
+            <textarea name="" id="" class="input--form textarea--contact"></textarea>
           </div>
-          <button style="color: white">Enviar</button>
+          <button class="button--contact">Enviar</button>
         </form>
       </div>
       <div class="info-container">
@@ -384,3 +428,15 @@
     </footer>
   </section>
 </main>
+<script type="text/javascript">
+window.onload = function() {
+    var active = $('.active--link').attr("href");
+    $("#track").html('<source src="views/assets/musica/Sleep.mp3" type="audio/mp3">');
+    $.post("get-events",{data:active},function(data){
+        var data = JSON.parse(data);
+        $(".events--2__title").html(data['evento_nombre']);
+        $(".events--2__subtitle").html(data['evento_direccion']);
+        $(".events--2__text").html(data['evento_descripcion']);
+    });
+}
+</script>

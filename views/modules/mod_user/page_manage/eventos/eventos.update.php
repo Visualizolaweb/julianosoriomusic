@@ -40,7 +40,7 @@
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Descripción</label>
-                                <textarea class="textarea--form" id="eventDesc" type="text" name="data[1]" required="" value="<?php echo $eventos['evento_descripcion'];?>"></textarea>
+                                <textarea class="textarea--form" id="eventDesc" type="text" name="data[1]" required="" value=""><?php echo $eventos['evento_descripcion'];?></textarea>
                             </div>
                             <div class="button-container">
                                 <button class="button--form" id="btn--events_up">Modificar</button>

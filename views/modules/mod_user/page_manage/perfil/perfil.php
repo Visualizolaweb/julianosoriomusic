@@ -37,21 +37,23 @@
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Frase</label>
-                                <input id="fra_per" class="input--form" type="text" name="" value="">
+                                <input id="fra_per" class="input--form" type="text" name="" value="<?php echo $per['sob_frase']; ?>">
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Parrafo 1</label>
-                                <textarea id="pf1_per" class="input--form textarea--form" type="text" name="" value=""></textarea>
+                                <textarea id="pf1_per" class="input--form textarea--form" type="text" name="" value=""><?php echo $per['sob_parrafo1']; ?></textarea>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Parrafo 2</label>
-                                <textarea id="pf2_per" class="input--form textarea--form" type="text" name="" value=""></textarea>
+                                <textarea id="pf2_per" class="input--form textarea--form" type="text" name="" value=""><?php echo $per['sob_parrafo2']; ?></textarea>
                             </div>
                             <div class="button-container">
                                 <button type="submit" class="button--form">Modificar</button>
                             </div>
                         </form>
                     </div>
+                </div>
+                <div class="container--gallery">
                     <div class="form--container form--container__gallery">
                         <i class="material-icons icon--form">collections</i>
                         <div class="form--content">
@@ -99,8 +101,8 @@
 $uploadCrop = $('#wrap-upload').croppie({
     enableExif: true,
     viewport: {
-        width: 275,
-        height: 200
+        width: 554,
+        height: 354
     },
     boundary: {
         width: 700,
