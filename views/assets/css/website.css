@@ -44,7 +44,6 @@ input, input:focus, input:active, input:hover,
 button, button:focus, button:active, button:hover,
 textarea, textarea:focus, textarea:active, textarea:hover
 {
-    outline: 0;
     outline: none;
     border: none;
 }
@@ -312,11 +311,11 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .player--songs{
-    width: 30%;
+    width: 35%;
 }
 
 .player--album{
-    width: 55%;
+    width: 50%;
 }
 
 .album--container{
@@ -368,6 +367,7 @@ h1, h2, h3, h4, h5, h6, p{
     color: #7c7c7c;
     font-family: var(--family-robotoC);
     font-size: 16px;
+    background-color: #eaeaea;
 }
 
 .player--link:hover{
@@ -976,11 +976,28 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .song--item .mejs__container{
-    background: #fafafa;
+    background: #dddddd;
 }
 
 .song--item:nth-child(2n) .mejs__container{
-    background: #ffffff;
+    background: #cccccc;
+}
+
+.song--item .mejs__time-rail{
+    border-left: 1px solid #bebebe;
+    padding-left: 18px;
+}
+
+.song--name{
+    display: block;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.song--item .mejs__time{
+    border-left: 1px solid #bebebe;
+    padding-left: 18px;
 }
 
 .nav-tabs, .nav-tabs .nav-link{
@@ -995,6 +1012,14 @@ h1, h2, h3, h4, h5, h6, p{
 
 .events--link__menu:first-child{
     padding-right: 20px;
+}
+
+.mejs__container-keyboard-inactive [role=slider], .mejs__container-keyboard-inactive [role=slider]:focus, .mejs__container-keyboard-inactive a, .mejs__container-keyboard-inactive a:focus, .mejs__container-keyboard-inactive button, .mejs__container-keyboard-inactive button:focus{
+    outline: none !important;
+}
+
+.mejs__button>button:focus{
+    outline: none !important;
 }
 
 @media (max-width: 575px) {

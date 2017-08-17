@@ -16,10 +16,10 @@
                       <a href="inicio" class="navbar--link">Inicio</a>
                   </li>
                   <li class="navbar--item">
-                      <a href="#discografia" class="navbar--link">Discografía</a>
+                      <a href="#discografia" class="navbar--link ancla--link">Discografía</a>
                   </li>
                   <li class="navbar--item">
-                      <a href="#about-me" class="navbar--link">Sobre mí</a>
+                      <a href="#about-me" class="navbar--link ancla--link">Sobre mí</a>
                   </li>
                   <li class="navbar--item">
                       <a href="blog" class="navbar--link">Blog</a>
@@ -31,7 +31,7 @@
                       <a href="galeria" class="navbar--link">Galeria</a>
                   </li>
                   <li class="navbar--item">
-                      <a href="#footer" class="navbar--link">Contáctame</a>
+                      <a href="#footer" class="navbar--link ancla--link">Contáctame</a>
                   </li>
               </ul>
           </nav>
@@ -98,7 +98,7 @@
                 foreach ($canciones as $cancion) {
                   echo '<li class="song--item">
                            <audio id="player" class="audio" preload="none" style="width:100%;">
-                               <source src="'.$cancion[2].'" type="audio/mp3">
+                               <source src="" type="audio/mp3">
                            </audio>
                        </li>';
                 }
@@ -127,7 +127,7 @@
        <div class="player--album">
            <div class="album--container">
                <img class="album--caratula" src="views/assets/img/Recursos/playerList/default/Caratula.png" alt="">
-               <img class="album--vinilo" src="views/assets/img/Recursos/playerList/default/Vinilo.png" alt="">
+               <img class="album--vinilo album--rotate" src="views/assets/img/Recursos/playerList/default/vinyl.png" alt="">
            </div>
        </div>
     </div>

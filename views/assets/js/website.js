@@ -6,6 +6,15 @@
 //     spinner:"spinner1"
 // });
 
+$('.ancla--link').click(function(e){
+		e.preventDefault();
+		var strAncla = $(this).attr('href');
+			$('body,html').stop(true,true).animate({
+				scrollTop: $(strAncla).offset().top
+			},1500);
+
+	});
+
 $('audio').mediaelementplayer();
 $('.media-wrapper .mejs__time-float').remove();
 $('.media-wrapper .mejs__time').remove();
@@ -27,8 +36,8 @@ $(document).ready(function(){
   $.post("index.php?c=discografia&a=loadSongs",function(data){
      var data = JSON.parse(data);
 
-     for (var i = 0; i <= data.length; i++) {
-       $("#mep_"+data[i][0]+" .mejs__time-rail").html("<span>"+ data[i][1] +"</span>");
+     for (var i = 0; i < data.length; i++) {
+       $("#mep_"+(i+1)+" .mejs__time-rail").html("<span class='song--name'>"+ data[i][1] +"</span>");
      }
 
 
