@@ -74,6 +74,20 @@ $("#frm_blog").submit(function(e){
           }
       });
 });
+$("#frm_blo_up").submit(function(e){
+      e.preventDefault();
+      var data = [$("#blo_tit_u").val(),
+                  $("#blo_des_u").val()];
+      $.post("update-blog",{data:data},function(data){
+          var data = JSON.parse(data);
+          if (data[0] == true) {
+              alert(data[1]);
+              document.location.href = data[2];
+          }else{
+            alert(data[1]);
+          }
+      });
+});
 $("#frm_contacto").submit(function(e){
       e.preventDefault();
       var data = [$("#ema_con").val(),

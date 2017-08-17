@@ -60,6 +60,17 @@
           }
           return $result;
         }
+        public function readBlogById($field){
+          try {
+            $sql="SELECT * FROM blog INNER JOIN blog_imagen ON(blog.bli_id=blog_imagen.bli_id) WHERE blo_id = ?";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($field));
+            $result=$query->fetch(PDO::FETCH_BOTH);
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+          return $result;
+        }
         public function updateFormImg($data){
           try {
             $sql="UPDATE blog_imagen SET bli_formulario = 'SI' WHERE bli_id = ?";
@@ -79,6 +90,15 @@
             die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
           }
           return $result;
+        }
+        public function updateBlog($data){
+          try {
+            $sql="UPDATE blog SET blo_titulo = ?, blo_descripcion = ? WHERE blo_id = ?";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($data[0],$data[1],$data[2]));
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
         }
         public function deleteImg($p,$w){
           try {

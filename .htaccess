@@ -13,6 +13,10 @@ RewriteRule ^update-banner$                     index.php?c=banner&a=update
 RewriteRule ^eventos$                           index.php?c=pagina&a=fullEvents
 RewriteRule ^admin-eventos$                     index.php?c=eventos
 RewriteRule ^admin-blog$                        index.php?c=blog
+RewriteRule ^admin-blog&msn=(.*)$               index.php?c=blog&msn=$1
+RewriteRule ^update-blog$                       index.php?c=blog&a=update
+RewriteRule ^actualizar-blog&token=(.*)$        index.php?c=blog&a=updateData&token=$1
+RewriteRule ^delete-blog&token=(.*)$            index.php?c=blog&a=delete&token=$1
 RewriteRule ^blog$                              index.php?c=pagina&a=fullBlogs
 RewriteRule ^crear-blog$                        index.php?c=blog&a=createForm
 RewriteRule ^crear-evento$                      index.php?c=eventos&a=createEvents
@@ -21,7 +25,7 @@ RewriteRule ^actualizar-evento$                 index.php?c=eventos&a=updateData
 RewriteRule ^actualizar-evento&token=(.*)$      index.php?c=eventos&a=update&token=$1
 RewriteRule ^discografia$                       index.php?c=discografia
 RewriteRule ^crear-discografia$                 index.php?c=discografia&a=create
-RewriteRule ^&msn=(.*)$                         index.php?c=discografia&msn=$1
+RewriteRule ^discografia&msn=(.*)$              index.php?c=discografia&msn=$1
 RewriteRule ^blog&token=(.*)$                   index.php?c=pagina&a=readBlog&token=$1
 RewriteRule ^eventos&token=(.*)$                index.php?c=pagina&a=readEvent&token=$1
 RewriteRule ^admin-galeria$                     index.php?c=galeria

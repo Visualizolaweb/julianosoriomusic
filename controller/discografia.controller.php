@@ -28,7 +28,6 @@
           $Ext  = pathinfo($_FILES["cancion"]["name"],PATHINFO_EXTENSION);
           if ($Ext!="mp3") {
             $msn="Sube un Archivo MP3";
-            header("Location:discografia&msn=$msn");
         }else{
             if ($tmp!="") {
               $flag=true;
@@ -41,24 +40,33 @@
                 $data[1]=$_FILES["cancion"]["name"];
                 $data[2]=randomAlpha('30');
                 $data[3]=$_POST["letra"];
+                $data[4]="Activo";
+                $contador = $this->DiscografiaM->readDiscografia();
+                if (count($contador[0])<=0) {
+                  $data[5]=1;
+                }else{
+                  foreach ($contador as $row) {
+                    $data[5]=$row["dis_num"]+1;
+                    echo $row["dis_num"];
+                  }
+                }
+                echo $data[5];
                 $this->DiscografiaM->createDiscografia($data);
                 $msn="Subio Correctamente";
-                header("Location:index.php?c=discografia&msn=$msn");
               }else{
                 $msn="Error Al Subir";
-                header("Location:index.php?c=discografia&msn=$msn");
               }
             }else{
                 $msn="Error Al Subir";
-                header("Location:index.php?c=discografia&msn=$msn");
             }
           }
+          //header("Location: discografia&msn=$msn");
         }
         public function delete(){
           $field = $_GET["discod"];
           $archivo = $this->DiscografiaM->readDiscografiaById($field);
           unlink("views/assets/musica/".$archivo["dis_cancion"]);
-          $this->DiscografiaM->deleteDiscografia($field);
+          $this->DiscografiaM->updateDiscografia($field);
           header("Location:discografia");
         }
 

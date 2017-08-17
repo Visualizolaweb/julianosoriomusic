@@ -76,10 +76,10 @@
                                 <td><?php echo $row["blo_titulo"]; ?></td>
                                 <td><img src="views/assets/img/blog/<?php echo $row['bli_ruta']; ?>"></td>
                                 <td>
-                                    <a href="#">
+                                    <a href="actualizar-blog&token=<?php echo $row['blo_id'] ?>">
                                         <i class="material-icons">mode_edit</i>
                                     </a>
-                                    <a onclick="return confirm('Esta Seguro De Eliminar Este Archivo?');" href="index.php?c=blog&a=delete&blocod=<?php echo $row['bli_id']; ?>">
+                                    <a onclick="return confirm('Esta Seguro De Eliminar Este Archivo?');" href="delete-blog&token=<?php echo $row['bli_id']; ?>">
                                         <i class="material-icons">delete</i>
                                     </a>
                                 </td>

@@ -12,7 +12,6 @@
             require_once 'views/include/header.php';
             require_once 'views/modules/mod_user/page_manage/blog/blog.php';
         }
-
         public function create(){
           $data = $_POST['image'];
           list($type, $data) = explode(';', $data);
@@ -45,12 +44,29 @@
           $return = array(true,"admin-blog","Guardo Con Exito");
           echo json_encode($return);
         }
+        public function updateData(){
+            require_once 'views/include/header.php';
+            require_once 'views/modules/mod_user/page_manage/blog/blog.update.php';
+            require_once 'views/include/footer.php';
+        }
+        public function update(){
+          $data = $_POST["data"];
+          if (empty($data[0]) || empty($data[1])) {
+            $return = array(true,"Campos Nulo","");
+          }else{
+            $data[2]=$_SESSION["blo_code"];
+            $this->BlogM->updateBlog($data);
+            $return = array(true,"Actualizo Con Exito","admin-blog");
+          }
+          echo json_encode($return);
+        }
         public function delete(){
-          $field = $_GET["blocod"];
+          $field = $_GET["token"];
           $archivo = $this->BlogM->readBlogaById($field);
           unlink("views/assets/img/blog/".$archivo["bli_ruta"]);
           $this->BlogM->deleteBlog($field);
-          header("Location: admin-blog");
+          $msn="Eliminado Correctamente";
+          header("Location: admin-blog&msn=$msn");
         }
     }
 
