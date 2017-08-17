@@ -111,7 +111,19 @@ $('.events--link').click(function(e){
         $(".events--2__text").html(descripcion);
     });
 })
-
+$("#frm_read_blog").submit(function(e){
+      e.preventDefault();
+      var data = $("#desc_blog").val();
+      $.post("create-comentario",{data:data},function(data){
+          var data = JSON.parse(data);
+          if (data[0] == true) {
+						alert(data[1]);
+            document.location.href = data[2];
+          }else{
+						alert(data[1]);
+          }
+      });
+});
 $('.blog--button__text').click(function(e){
     e.preventDefault();
     var value = $(this).attr("href");

@@ -39,6 +39,7 @@
           <article class="blog--content">
             <?php
               $code = $_GET["token"];
+              $_SESSION["blog"] = $_GET["token"];
               $blog = $this->PaginaM->readBlogByCode($code);
               $comments = $this->PaginaM->readCommentsInBlogByCode($code);
             ?>
@@ -62,10 +63,10 @@
                       ?>
                   </ul>
               <div class="comments--form">
-                  <form method="post">
+                  <form id="frm_read_blog" method="post">
                       <div class="">
-                          <textarea name="data" class="textarea--blog" placeholder="Deja tu opinión" required="" maxlength="100"></textarea>
-                          <button class="button--blog">Comentar</button>
+                          <textarea id="desc_blog" name="data" class="textarea--blog" placeholder="Deja tu opinión" required="" maxlength="100"></textarea>
+                          <button type="submit" class="button--blog">Comentar</button>
                       </div>
                   </form>
               </div>
