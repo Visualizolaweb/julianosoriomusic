@@ -14,7 +14,7 @@
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Correo</label>
-                                <input class="input--form" type="text" name="data" value="">
+                                <input class="input--form" type="text" name="data" value="<?php echo $_SESSION['user']['email']; ?>">
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Nueva Contraseña</label>

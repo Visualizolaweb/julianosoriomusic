@@ -60,14 +60,15 @@
                 $msn="Error Al Subir";
             }
           }
-          //header("Location: discografia&msn=$msn");
+          header("Location: discografia&msn=$msn");
         }
         public function delete(){
           $field = $_GET["discod"];
           $archivo = $this->DiscografiaM->readDiscografiaById($field);
           unlink("views/assets/musica/".$archivo["dis_cancion"]);
           $this->DiscografiaM->updateDiscografia($field);
-          header("Location:discografia");
+          $msn="Eliminado Correctamente";
+          header("Location: discografia&msn=$msn");
         }
 
         public function loadSongs(){

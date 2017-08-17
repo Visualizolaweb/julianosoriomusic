@@ -41,8 +41,8 @@ $("#frm_perfil").submit(function(e){
       $.post("update-user",{data:JsonObj},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
-            document.location.href = data[1];
             alert(data[2]);
+            document.location.href = data[1];
           }else{
             alert(data[1]);
           }
@@ -216,7 +216,7 @@ $("#frm_perfil2").submit(function(e){
   $.post("update-perfil",{data:data},function(data){
     var data = JSON.parse(data);
     if (data[0]==true) {
-      alert(data[1]);
+      alert(data[2]);
       document.location.href=data[1];
     }else{
       alert(data[2]);

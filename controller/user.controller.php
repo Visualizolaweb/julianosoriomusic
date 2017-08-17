@@ -34,6 +34,7 @@
           $result = $this->UserM->readUserByEmail($data);
           if (password_verify($data[1],$result["usu_password"])) {
             $_SESSION["user"]["id"] = $result["usu_id"];
+            $_SESSION["user"]["email"] = $result["usu_email"];
             $return = array(true,"dashboard");
           }else{
             $return = array(false,"Contraseña Incorrecta");
