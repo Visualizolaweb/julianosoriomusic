@@ -481,7 +481,7 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .blog--body__full{
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .blog--card__body,.blog--card__footer,.blog--card__header{
@@ -492,6 +492,14 @@ h1, h2, h3, h4, h5, h6, p{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.blog--card__header, .blog--card__body{
+    border: 1px solid #d0d0d0;
+}
+
+.blog--card__body{
+    border-top: 0;
 }
 
 .blog--card__footer{
@@ -553,6 +561,7 @@ h1, h2, h3, h4, h5, h6, p{
     padding: 0 16px;
     position: relative;
     top: -40px;
+    min-height: 240px;
 }
 
 .blog--card__footer{
@@ -620,11 +629,11 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .blog--content{
-    width: 55%;
+    width: 70%;
 }
 
 .comments--content{
-    width: 30%;
+    width: 70%;
 }
 
 .blog--content__title{
@@ -645,6 +654,7 @@ h1, h2, h3, h4, h5, h6, p{
 .comments--item{
     padding: 12px 8px;
     margin-bottom: 8px;
+    margin-top: 12px;
     background-color: rgba(255,255,255,.85);
 }
 
@@ -659,7 +669,8 @@ h1, h2, h3, h4, h5, h6, p{
 
 .comments--title{
     color: #fafafa;
-    padding-bottom: 15px;
+    padding-bottom: 0px;
+    padding-top: 40px;
     text-transform: uppercase;
     font-family: var(--family-robotoC);
 }
@@ -1020,6 +1031,16 @@ h1, h2, h3, h4, h5, h6, p{
 
 .mejs__button>button:focus{
     outline: none !important;
+}
+
+.header--navbar__other{
+    background: #111111;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.header-container__other{
+  background: #eaeaea !important;
 }
 
 @media (max-width: 575px) {
@@ -1426,6 +1447,12 @@ h1, h2, h3, h4, h5, h6, p{
         margin-right: 1%;
         margin-left: 1%;
     }
+
+    .header--navbar__other{
+        background: #111111;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -1808,5 +1835,11 @@ h1, h2, h3, h4, h5, h6, p{
 
     .events--link__menu:first-child{
         padding-right: 20px;
+    }
+
+    .header--navbar__other{
+        background: #111111;
+        padding-bottom: 20px;
+        padding-top: 20px;
     }
 }

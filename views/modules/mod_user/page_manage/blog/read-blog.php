@@ -1,11 +1,6 @@
-<?php
-    $code = $_GET["token"];
-    $blog = $this->PaginaM->readBlogByCode($code);
-    $comments = $this->PaginaM->readCommentsInBlogByCode($code);
-?>
 <main class="main-container">
   <header class="header-container header-container__other">
-    <div class="header--navbar">
+    <div class="header--navbar header--navbar__other">
       <div class="header--logo">
           <img src="views/assets/img/Recursos/logo/Logo.png" alt="" class="img--logo">
       </div>
@@ -42,6 +37,11 @@
       </div>
       <section class="blog--container__one">
           <article class="blog--content">
+            <?php
+              $code = $_GET["token"];
+              $blog = $this->PaginaM->readBlogByCode($code);
+              $comments = $this->PaginaM->readCommentsInBlogByCode($code);
+            ?>
               <h1 class="blog--content__title"><?php echo $blog["blo_titulo"]; ?></h1>
               <img class="blog--content__img" src="<?php echo 'views/assets/img/blog/'.$blog['bli_ruta']; ?>" alt="<?php echo $blog['blo_titulo']; ?>">
               <p class="blog--content__text"><?php echo $blog["blo_descripcion"]; ?></p>

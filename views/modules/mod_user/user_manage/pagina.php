@@ -436,7 +436,8 @@ window.onload = function() {
         var data = JSON.parse(data);
         $(".events--2__title").html(data['evento_nombre']);
         $(".events--2__subtitle").html(data['evento_direccion']);
-        $(".events--2__text").html(data['evento_descripcion']);
+        var descripcion = data['evento_descripcion'].substring(0, 600);
+        $(".events--2__text").html(descripcion);
     });
 }
 </script>

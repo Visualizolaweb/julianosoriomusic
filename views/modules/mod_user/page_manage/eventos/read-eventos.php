@@ -1,6 +1,6 @@
 <main class="main-container">
   <header class="header-container header-container__other">
-    <div class="header--navbar">
+    <div class="header--navbar header--navbar__other">
       <div class="header--logo">
           <img src="views/assets/img/Recursos/logo/Logo.png" alt="Logo Julian Osorio Music" class="img--logo">
       </div>
