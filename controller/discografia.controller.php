@@ -72,14 +72,17 @@
         }
 
         public function loadSongs(){
-          $canciones = array(
-                            array(1,"cancion1","views/assets/musica/Sleep.mp3"),
-                            array(2,"cancion2","views/assets/musica/Sleep.mp3"),
-                            array(3,"cancion3","views/assets/musica/Sleep.mp3"),
-                            array(4,"cancion4","views/assets/musica/Sleep.mp3"),
-                            array(5,"cancion5","views/assets/musica/Sleep.mp3"));
-
-          echo json_encode($canciones);
+          $item = 1;
+          foreach ($this->PaginaM->loadSongsAsc() as $row) {
+            $songs[] = array(
+                            $item,
+                            $row["dis_titulo"],
+                            "views/assets/musica/".$row["dis_cancion"],
+                            $row["dis_letra"]
+                            );
+            $item++;
+          }
+          echo json_encode($songs);
         }
     }
 

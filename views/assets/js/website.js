@@ -33,15 +33,11 @@ $(".song--item button").click(function(){
 });
 
 $(document).ready(function(){
-  $.post("index.php?c=discografia&a=loadSongs",function(data){
-     var data = JSON.parse(data);
-
-     for (var i = 0; i < data.length; i++) {
-       $("#mep_"+(i+1)+" .mejs__time-rail").html("<span class='song--name'>"+ data[i][1] +"</span>");
-     }
-
-
-
+  $.post("index.php?c=pagina&a=loadSongs",function(data){
+     	var data = JSON.parse(data);
+     	for (var i = 0; i < data.length; i++) {
+       	$("#mep_"+(i+1)+" .mejs__time-rail").html("<span class='song--name'>"+ data[i][1] +"</span>");
+     	}
   });
 });
 

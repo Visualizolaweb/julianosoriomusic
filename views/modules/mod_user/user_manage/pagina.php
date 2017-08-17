@@ -49,12 +49,16 @@
       </div>
     </div>
     <div class="player--main">
+      <?php
+        $randomSong = $this->PaginaM->loadSongRandom();
+        $song = $randomSong[rand(0, count($randomSong) - 1)];
+      ?>
       <div class="text--wrapper">
-        <h4 class="player--main__text">Canción para mentir</h4>
+        <h4 class="player--main__text"><?php echo $song[0]; ?></h4>
       </div>
       <div class="media-wrapper">
-        <audio id="player" class="audio" preload="none" style="width:100%;">
-          <source src="views/assets/musica/Sleep.mp3" type="audio/mp3">
+        <audio id="player" class="audio" preload="none" style="width:100%;" autoplay>
+          <source src="<?php echo 'views/assets/musica/'.$song[1]; ?>" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -87,41 +91,47 @@
            </div>
            <ul class="container--songs">
               <?php
-
-                $canciones = array(
-                                  array(1,"cancion1","views/assets/musica/Sleep.mp3"),
-                                  array(2,"cancion2","views/assets/musica/Sleep.mp3"),
-                                  array(3,"cancion3","views/assets/musica/Sleep.mp3"),
-                                  array(4,"cancion4","views/assets/musica/Sleep.mp3"),
-                                  array(5,"cancion5","views/assets/musica/Sleep.mp3"));
-
-                foreach ($canciones as $cancion) {
-                  echo '<li class="song--item">
-                           <audio id="player" class="audio" preload="none" style="width:100%;">
-                               <source src="" type="audio/mp3">
-                           </audio>
-                       </li>';
-                }
+              $item = 1;
+              foreach ($this->PaginaM->loadSongsAsc() as $row) {
+                $songs[] = array(
+                                $item,
+                                $row["dis_titulo"],
+                                "views/assets/musica/".$row["dis_cancion"],
+                                $row["dis_letra"]
+                                );
+                $item++;
+              }
+              foreach ($songs as $song) {
+                echo '<li class="song--item">
+                         <audio id="player" class="audio" preload="none" style="width:100%;">
+                             <source src="'.$song[2].'" type="audio/mp3">
+                         </audio>
+                     </li>';
+              }
               ?>
            </ul>
        </div>
 
        <?php
-        foreach ($canciones as $letras) {
+        foreach ($songs as $letras) {
           echo '<div class="modal fade" id="lyric_mep_'.$letras[0].'" tabindex="-1" role="dialog" aria-labelledby="imageCropTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="imageCropTitle">'.$letras[1].'</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
                 <div class="modal-body">
                     <div class="col-12">
-                        '.$letras[1].'
+                        '.$letras[3].'
                     </div>
                 </div>
              </div>
             </div>
           </div>';
         }
-
-
        ?>
 
        <div class="player--album">
@@ -357,15 +367,9 @@
     </div>
     <div class="events--2">
        <div class="events--2__section">
-         <h2 class="events--2__title">
-
-         </h2>
-         <h4 class="events--2__subtitle">
-
-         </h4>
-         <p class="events--2__text">
-
-         </p>
+         <h2 class="events--2__title"></h2>
+         <h4 class="events--2__subtitle"></h4>
+         <p class="events--2__text"></p>
        </div>
     </div>
 </section>

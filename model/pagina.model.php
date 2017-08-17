@@ -22,6 +22,30 @@
           return $result;
         }
 
+        public function loadSongRandom(){
+          try{
+      			$sql = "SELECT dis_titulo, dis_cancion FROM discografia";
+            $query = $this->pdo->prepare($sql);
+            $query->execute();
+            $result = $query->fetchALL(PDO::FETCH_NUM);
+            }catch (Exception $e){
+              die($e->getMessage()."".$e->getLine()."".$e->getFile());
+          }
+          return $result;
+        }
+
+        public function loadSongsAsc(){
+          try{
+      			$sql = "SELECT dis_titulo, dis_cancion, dis_letra FROM discografia ORDER BY dis_num ASC";
+            $query = $this->pdo->prepare($sql);
+            $query->execute();
+            $result = $query->fetchALL(PDO::FETCH_ASSOC);
+            }catch (Exception $e){
+              die($e->getMessage()."".$e->getLine()."".$e->getFile());
+          }
+          return $result;
+        }
+
         public function readFullGaleria(){
           try{
       			$sql = "SELECT gal_ruta FROM galeria";
