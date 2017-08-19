@@ -27,6 +27,15 @@
             die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
           }
         }
+        public function createComentario($data){
+          try {
+            $sql="INSERT INTO blog_comentario VALUES(?,?,?)";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($data[2],$data[1],$data[0]));
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+        }
         public function readFecha(){
           try {
             $sql="SELECT * FROM blog_imagen ORDER BY bli_fecha DESC LIMIT 1";

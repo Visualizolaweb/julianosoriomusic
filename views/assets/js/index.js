@@ -78,7 +78,7 @@ $("#frm_blo_up").submit(function(e){
       e.preventDefault();
       var data = [$("#blo_tit_u").val(),
                   $("#blo_des_u").val()];
-      $.post("update-blog",{data:data},function(data){
+      $.post("update-blog-admin",{data:data},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
               alert(data[1]);

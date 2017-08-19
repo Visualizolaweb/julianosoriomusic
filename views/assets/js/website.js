@@ -6,6 +6,15 @@
 //     spinner:"spinner1"
 // });
 
+$('.ancla--link').click(function(e){
+		e.preventDefault();
+		var strAncla = $(this).attr('href');
+			$('body,html').stop(true,true).animate({
+				scrollTop: $(strAncla).offset().top
+			},1500);
+
+	});
+
 $('audio').mediaelementplayer();
 $('.media-wrapper .mejs__time-float').remove();
 $('.media-wrapper .mejs__time').remove();
@@ -24,15 +33,11 @@ $(".song--item button").click(function(){
 });
 
 $(document).ready(function(){
-  $.post("index.php?c=discografia&a=loadSongs",function(data){
-     var data = JSON.parse(data);
-
-     for (var i = 0; i <= data.length; i++) {
-       $("#mep_"+data[i][0]+" .mejs__time-rail").html("<span>"+ data[i][1] +"</span>");
-     }
-
-
-
+  $.post("index.php?c=pagina&a=loadSongs",function(data){
+     	var data = JSON.parse(data);
+     	for (var i = 0; i < data.length; i++) {
+       	$("#mep_"+(i+1)+" .mejs__time-rail").html("<span class='song--name'>"+ data[i][1] +"</span>");
+     	}
   });
 });
 
@@ -97,11 +102,24 @@ $('.events--link').click(function(e){
     $.post("get-events",{data:value},function(data){
         var data = JSON.parse(data);
         $(".events--2__title").html(data['evento_nombre']);
+        var descripcion = data['evento_descripcion'].substring(0, 600);
         $(".events--2__subtitle").html(data['evento_direccion']);
-        $(".events--2__text").html(data['evento_descripcion']);
+        $(".events--2__text").html(descripcion);
     });
 })
-
+$("#frm_read_blog").submit(function(e){
+      e.preventDefault();
+      var data = $("#desc_blog").val();
+      $.post("create-comentario",{data:data},function(data){
+          var data = JSON.parse(data);
+          if (data[0] == true) {
+						alert(data[1]);
+            document.location.href = data[2];
+          }else{
+						alert(data[1]);
+          }
+      });
+});
 $('.blog--button__text').click(function(e){
     e.preventDefault();
     var value = $(this).attr("href");

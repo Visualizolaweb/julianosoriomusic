@@ -1,11 +1,6 @@
-<?php
-    $code = $_GET["token"];
-    $blog = $this->PaginaM->readBlogByCode($code);
-    $comments = $this->PaginaM->readCommentsInBlogByCode($code);
-?>
 <main class="main-container">
   <header class="header-container header-container__other">
-    <div class="header--navbar">
+    <div class="header--navbar header--navbar__other">
       <div class="header--logo">
           <img src="views/assets/img/Recursos/logo/Logo.png" alt="" class="img--logo">
       </div>
@@ -42,6 +37,12 @@
       </div>
       <section class="blog--container__one">
           <article class="blog--content">
+            <?php
+              $code = $_GET["token"];
+              $_SESSION["blog"] = $_GET["token"];
+              $blog = $this->PaginaM->readBlogByCode($code);
+              $comments = $this->PaginaM->readCommentsInBlogByCode($code);
+            ?>
               <h1 class="blog--content__title"><?php echo $blog["blo_titulo"]; ?></h1>
               <img class="blog--content__img" src="<?php echo 'views/assets/img/blog/'.$blog['bli_ruta']; ?>" alt="<?php echo $blog['blo_titulo']; ?>">
               <p class="blog--content__text"><?php echo $blog["blo_descripcion"]; ?></p>
@@ -62,10 +63,10 @@
                       ?>
                   </ul>
               <div class="comments--form">
-                  <form method="post">
+                  <form id="frm_read_blog" method="post">
                       <div class="">
-                          <textarea name="data" class="textarea--blog" placeholder="Deja tu opinión" required="" maxlength="100"></textarea>
-                          <button class="button--blog">Comentar</button>
+                          <textarea id="desc_blog" name="data" class="textarea--blog" placeholder="Deja tu opinión" required="" maxlength="100"></textarea>
+                          <button type="submit" class="button--blog">Comentar</button>
                       </div>
                   </form>
               </div>

@@ -44,6 +44,18 @@
           $return = array(true,"admin-blog","Guardo Con Exito");
           echo json_encode($return);
         }
+        public function createComentario(){
+          $data[0] = $_POST["data"];
+          $data[1]=$_SESSION["blog"];
+          if (empty($data[0]) || empty($data[1])) {
+            $return = array(false,"Campos Nulos","");
+          }else{
+            $data[2]=randomAlpha('15');
+            $this->BlogM->createComentario($data);
+            $return = array(true,"Guardo Con Exito","blog&token=$data[1]");
+          }
+          echo json_encode($return);
+        }
         public function updateData(){
             require_once 'views/include/header.php';
             require_once 'views/modules/mod_user/page_manage/blog/blog.update.php';

@@ -12,7 +12,7 @@
                         <a class="banner-link discografia" href="discografia">Discografía</a>
                     </div>
                     <div class="banner-item banner-item-30">
-                        <a class="banner-link blog" href="blog">Blog</a>
+                        <a class="banner-link blog" href="admin-blog">Blog</a>
                     </div>
                     <div class="banner-item banner-item-30">
                         <a class="banner-link eventos" href="eventos">Eventos</a>
