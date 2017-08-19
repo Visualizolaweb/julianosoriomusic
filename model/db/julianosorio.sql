@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-08-2017 a las 22:44:16
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 5.6.31
+-- Tiempo de generación: 20-08-2017 a las 00:32:26
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -52,6 +50,7 @@ CREATE TABLE `blog` (
   `blo_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `blo_titulo` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `blo_descripcion` longtext COLLATE utf8_spanish_ci NOT NULL,
+  `blo_estado` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `bli_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `blo_fecha` date NOT NULL,
   `blo_lectura` int(11) NOT NULL
@@ -61,8 +60,10 @@ CREATE TABLE `blog` (
 -- Volcado de datos para la tabla `blog`
 --
 
-INSERT INTO `blog` (`blo_id`, `blo_titulo`, `blo_descripcion`, `bli_id`, `blo_fecha`, `blo_lectura`) VALUES
-('Kf5kUtm2CgsjXEDX5F2yyzU8k2cCYu', 'Holaaa', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae, maiores, magni dolorum aliquam culpa inventore ullam quae qui optio obcaecati doloribus minus perferendis error dolor blanditiis! Culpa, enim', 'ogLy9nGYZA6zPOTd6ZiLRGUQ7b8mp1', '2017-07-19', 3);
+INSERT INTO `blog` (`blo_id`, `blo_titulo`, `blo_descripcion`, `blo_estado`, `bli_id`, `blo_fecha`, `blo_lectura`) VALUES
+('aXQ3vM08g4qXxzn', 'Lanzamiento Album', 'El proximo mes se lanzara mi nuevo album', 'PUBLICADO', 'IJuojA1ENoJS4C9FBnLmXatoR8mYn4', '2017-08-19', 0),
+('EQjRmGxSY9IuD7F', 'Lanzamiento sencillo', 'Ya escuchaste mi nuevo sencillo? te invito a que lo hagas', 'PUBLICADO', 'vytYPIQNGQJJordavXztvuTTgzh8VC', '2017-08-19', 0),
+('inGYASIU3HQ0Ay7', 'Rifa de cd''s', 'Se el ganador de mi nuevo cd', 'PUBLICADO', 'r8BkuinGAShnB9Fn4ZIDTrAZQ4ilY9', '2017-08-19', 0);
 
 -- --------------------------------------------------------
 
@@ -75,13 +76,6 @@ CREATE TABLE `blog_comentario` (
   `blo_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `com_text` longtext COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `blog_comentario`
---
-
-INSERT INTO `blog_comentario` (`com_id`, `blo_id`, `com_text`) VALUES
-('eo8uPQhie4ZbBkE', 'Kf5kUtm2CgsjXEDX5F2yyzU8k2cCYu', 'Hola');
 
 -- --------------------------------------------------------
 
@@ -101,7 +95,9 @@ CREATE TABLE `blog_imagen` (
 --
 
 INSERT INTO `blog_imagen` (`bli_id`, `bli_ruta`, `bli_fecha`, `bli_formulario`) VALUES
-('ogLy9nGYZA6zPOTd6ZiLRGUQ7b8mp1', '1500515402.png', '2017-07-19 08:50:02', 'SI');
+('IJuojA1ENoJS4C9FBnLmXatoR8mYn4', '1503181646.png', '2017-08-19 05:27:26', 'SI'),
+('r8BkuinGAShnB9Fn4ZIDTrAZQ4ilY9', '1503181600.png', '2017-08-19 05:26:40', 'SI'),
+('vytYPIQNGQJJordavXztvuTTgzh8VC', '1503181570.png', '2017-08-19 05:26:10', 'SI');
 
 -- --------------------------------------------------------
 
@@ -160,18 +156,21 @@ CREATE TABLE `eventos` (
   `evento_fecha_inicio` date NOT NULL,
   `evento_hora_inicio` time NOT NULL,
   `evento_fecha_fin` date NOT NULL,
-  `evento_hora_fin` time NOT NULL
+  `evento_hora_fin` time NOT NULL,
+  `evento_estado` varchar(20) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `eventos`
 --
 
-INSERT INTO `eventos` (`evento_code`, `evento_nombre`, `evento_descripcion`, `evento_direccion`, `evento_fecha_inicio`, `evento_hora_inicio`, `evento_fecha_fin`, `evento_hora_fin`) VALUES
-('02FUeFLGfJyjGC5', 'Mi pinche titulo', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Mi pinche direccion', '2017-07-19', '00:11:00', '1111-00-00', '11:00:00'),
-('8QGhdnpvGeodcLi', 'Mi pinche titulo2', 'Mi pinche descripcion222', 'Mi pinche direccion2222', '2017-07-18', '00:00:00', '0000-00-00', '00:00:00'),
-('rUVaI3XkaLjhoN0', 'Marcha Gay', 'asomadre', 'Casa de MF', '2018-06-20', '10:20:00', '2018-06-20', '10:22:00'),
-('YgjGChmNirUVaI3', 'title', 'descripcion', 'address', '2017-07-23', '00:00:00', '0000-00-00', '00:00:00');
+INSERT INTO `eventos` (`evento_code`, `evento_nombre`, `evento_descripcion`, `evento_direccion`, `evento_fecha_inicio`, `evento_hora_inicio`, `evento_fecha_fin`, `evento_hora_fin`, `evento_estado`) VALUES
+('29B66ZcNKgHjegf', 'Toque de sencillos', 'Disfruta una noche con mis mejores sencillos', 'Discoteca fahrenheit ', '2017-10-02', '20:00:00', '2017-10-02', '23:00:00', 'PUBLICADO'),
+('nmOp31BG5XHxxmi', 'Concierto itagui', 'Evento del municipio de itagui donde estare como cantante invitado', 'Cr 50 # 40- 12', '2017-02-13', '14:00:00', '2017-02-13', '16:00:00', 'PUBLICADO'),
+('PFuxilryZg9cApN', 'Canta Conmigo', 'Participa en este evento donde tendras la oportunidad de cantar conmigo ', 'Cr 37 sur #25b - 13', '2017-04-15', '12:00:00', '2017-04-17', '15:00:00', 'PUBLICADO'),
+('TFZNf7j9lFfjs4D', 'Noche de estreno', 'Ven y canta conmigo las nuevas canciones de mi proximo album', 'Cll 10 #20 - 22', '2017-06-23', '20:00:00', '2017-06-25', '22:00:00', 'PUBLICADO'),
+('VaJioz48dfAUOjl', 'Firma de cd''s', 'Te estare acompañando y mostrando los exitos de mi nuevo album te espero!', 'CC: Premium plaza', '2017-08-22', '12:00:00', '2017-08-22', '14:00:00', 'PUBLICADO'),
+('x3majEsqgieIA7B', 'Concierto ', 'Ven a este concierto que tendra varios artistas invitados', 'Plaza de toros la macarena', '2017-09-25', '18:00:00', '2017-09-25', '20:00:00', 'PUBLICADO');
 
 -- --------------------------------------------------------
 
@@ -344,7 +343,6 @@ ALTER TABLE `blog`
 --
 ALTER TABLE `blog_comentario`
   ADD CONSTRAINT `blog_comentario_ibfk_1` FOREIGN KEY (`blo_id`) REFERENCES `blog` (`blo_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
