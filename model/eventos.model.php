@@ -45,10 +45,10 @@
 
         public function createEvents($data){
             try {
-                $sql = "INSERT INTO eventos VALUES (?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO eventos VALUES (?,?,?,?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array(
-                            $data[7],$data[0],$data[6],$data[1],$data[2],$data[3],$data[4],$data[5]
+                            $data[8],$data[0],$data[6],$data[1],$data[2],$data[3],$data[4],$data[5],$data[7]
                                 ));
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -76,11 +76,12 @@
                         evento_fecha_inicio = ?,
                         evento_hora_inicio = ?,
                         evento_fecha_fin = ?,
-                        evento_hora_fin = ?
+                        evento_hora_fin = ?,
+                        evento_estado = ?
                         WHERE evento_code = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array(
-                $data[0],$data[6],$data[1],$data[2],$data[3],$data[4],$data[5],$data[7]));
+                $data[0],$data[6],$data[1],$data[2],$data[3],$data[4],$data[5],$data[7],$data[8]));
                 $result = "Datos actualizados correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()." ".$e->getLine()." ".$e->getFile());

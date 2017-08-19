@@ -181,7 +181,8 @@ $("#frm_eventos").submit(function(e){
                     $("#startTime").val(),
                     $("#endDate").val(),
                     $("#endTime").val(),
-                    $("#eventDescription").val()
+                    $("#eventDescription").val(),
+                    $("#eventEstado").val()
                  ];
       $.post("crear-evento",{data:data},function(resp){
         var resp = JSON.parse(resp);
@@ -202,6 +203,8 @@ $("#frm_eventos_up").submit(function(e){
       });
       var description = $('#eventDesc').val();
       JsonObj.push(description);
+      var estado = $('#eventEstado').val();
+      JsonObj.push(estado);
       $.post("actualizar-evento",{data:JsonObj},function(resp){
         var resp = JSON.parse(resp);
         if (resp[0] == true) {

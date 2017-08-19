@@ -96,7 +96,7 @@
 
         public function readUpcomingEvents(){
             try{
-        		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio >= CURDATE() ORDER BY evento_fecha_inicio ASC LIMIT 3";
+        		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio >= CURDATE() AND evento_estado = 'PUBLICADO' ORDER BY evento_fecha_inicio ASC LIMIT 3";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
