@@ -25,12 +25,12 @@
         }
         public function createForm(){
           $data = $_POST["data"];
-          $data[2]=randomAlpha('15');
+          $data[3]=randomAlpha('15');
           $fecha=date('Ymdhis');
           $result=$this->BlogM->readFecha($fecha);
-          $data[3]=$result["bli_id"];
-          $data[4]=date('Ymd');
-          $data[5]=0;
+          $data[4]=$result["bli_id"];
+          $data[5]=date('Ymd');
+          $data[6]=0;
           $this->BlogM->createForm($data);
           $this->BlogM->updateFormImg($data);
           $i=0;
@@ -66,7 +66,7 @@
           if (empty($data[0]) || empty($data[1])) {
             $return = array(true,"Campos Nulo","");
           }else{
-            $data[2]=$_SESSION["blo_code"];
+            $data[3]=$_SESSION["blo_code"];
             $this->BlogM->updateBlog($data);
             $return = array(true,"Actualizo Con Exito","admin-blog");
           }

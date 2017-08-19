@@ -24,6 +24,20 @@
                                 <label for="" class="label--form">Descripción</label>
                                 <textarea class="textarea--form" id="blo_des_u" type="text" name="" required=""><?php echo $blog['blo_descripcion'];?></textarea>
                             </div>
+                            <div class="input-container">
+                                <label for="" class="label--form">ESTADO</label>
+                                <select id="blo_sel_u" class="input--form select--form" name="" required>
+                                  <?php
+                                  if ($blog['blo_estado']=="BORRADOR"){
+                                    $estado = "PUBLICADO";
+                                  }else{
+                                    $estado = "BORRADOR";
+                                  }
+                                   ?>
+                                  <option value="<?php echo $blog['blo_estado'] ?>"><?php echo $blog['blo_estado'] ?></option>
+                                  <option value="<?php echo $estado ?>"><?php echo $estado ?></option>
+                                </select>
+                            </div>
                             <div class="button-container">
                                 <button class="button--form" id="btn--blo_up">Modificar</button>
                             </div>

@@ -65,7 +65,8 @@ $("#frm_ban").submit(function(e){
 $("#frm_blog").submit(function(e){
       e.preventDefault();
       var data = [$("#tit_blo").val(),
-                  $("#des_blo").val()];
+                  $("#des_blo").val(),
+                  $("#sel_blo").val()];
       $.post("crear-blog",{data:data},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
@@ -77,7 +78,8 @@ $("#frm_blog").submit(function(e){
 $("#frm_blo_up").submit(function(e){
       e.preventDefault();
       var data = [$("#blo_tit_u").val(),
-                  $("#blo_des_u").val()];
+                  $("#blo_des_u").val(),
+                  $("#blo_sel_u").val()];
       $.post("update-blog-admin",{data:data},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
