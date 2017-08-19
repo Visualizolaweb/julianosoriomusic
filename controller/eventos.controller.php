@@ -41,7 +41,7 @@
 
         public function createEvents(){
             $data = $_POST["data"];
-            $data[7] = randomAlpha('15');
+            $data[8] = randomAlpha('15');
             $eventos = $this->EventosM->createEvents($data);
             $return = array(true,"admin-eventos", "Datos ingresados correctamente");
             echo json_encode($return);
@@ -49,7 +49,7 @@
 
         public function updateData(){
             $data = $_POST["data"];
-            $data[7] = $_SESSION["event_code"];
+            $data[8] = $_SESSION["event_code"];
             $result = $this->EventosM->updateEvents($data);
             $return = array(true,"admin-eventos", "Datos actualizados correctamente");
             echo json_encode($return);

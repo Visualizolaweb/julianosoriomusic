@@ -96,7 +96,7 @@
 
         public function readUpcomingEvents(){
             try{
-        		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio >= CURDATE() ORDER BY evento_fecha_inicio ASC LIMIT 3";
+        		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio >= CURDATE() AND evento_estado = 'PUBLICADO' ORDER BY evento_fecha_inicio ASC LIMIT 3";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -132,7 +132,7 @@
 
         public function readUpcomingBlogs(){
             try{
-        		$sql = "SELECT blog.blo_id, blo_titulo, blo_descripcion, blo_fecha, blog_imagen.bli_ruta, blo_lectura, COUNT(com_id) FROM blog LEFT JOIN blog_imagen ON blog.bli_id = blog_imagen.bli_id LEFT JOIN blog_comentario ON blog.blo_id = blog_comentario.blo_id WHERE blo_fecha <= CURDATE() GROUP BY blog.blo_id ORDER BY blo_fecha DESC LIMIT 3";
+        		$sql = "SELECT blog.blo_id, blo_titulo, blo_descripcion, blo_fecha, blog_imagen.bli_ruta, blo_lectura, COUNT(com_id) FROM blog LEFT JOIN blog_imagen ON blog.bli_id = blog_imagen.bli_id LEFT JOIN blog_comentario ON blog.blo_id = blog_comentario.blo_id WHERE blo_fecha <= CURDATE() AND blo_estado = 'PUBLICADO' GROUP BY blog.blo_id ORDER BY blo_fecha DESC LIMIT 3";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);

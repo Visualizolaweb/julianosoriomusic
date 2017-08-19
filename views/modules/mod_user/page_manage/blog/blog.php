@@ -14,11 +14,19 @@
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Titulo</label>
-                                <input id="tit_blo" class="input--form" type="text" name="data" value="">
+                                <input id="tit_blo" class="input--form" type="text" name="data" value="" required>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Descripción</label>
-                                <textarea id="des_blo" class="input--form textarea--form" name="data" value=""></textarea>
+                                <textarea id="des_blo" class="input--form textarea--form" name="data" value="" required></textarea>
+                            </div>
+                            <div class="input-container">
+                                <label for="" class="label--form">ESTADO</label>
+                                <select id="sel_blo" class="input--form select--form" name="" required>
+                                  <option value="">SELECCIONE UNA OPCION</option>
+                                  <option value="BORRADOR">BORRADOR</option>
+                                  <option value="PUBLICADO">PUBLICADO</option>
+                                </select>
                             </div>
                             <div class="button-container">
                                 <button type="submit" class="button--form">Ingresar</button>
@@ -63,6 +71,7 @@
                                 <th>Número</th>
                                 <th>Titulo</th>
                                 <th>Imagen</th>
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -75,6 +84,7 @@
                                 <td><?php echo $item++; ?></td>
                                 <td><?php echo $row["blo_titulo"]; ?></td>
                                 <td><img src="views/assets/img/blog/<?php echo $row['bli_ruta']; ?>"></td>
+                                <td><?php echo $row["blo_estado"]; ?></td>
                                 <td>
                                     <a href="actualizar-blog&token=<?php echo $row['blo_id'] ?>">
                                         <i class="material-icons">mode_edit</i>

@@ -38,6 +38,14 @@
                                 <label for="" class="label--form">Descripción</label>
                                 <textarea class="textarea--form" id="eventDescription" type="text" name="data" required=""></textarea>
                             </div>
+                            <div class="input-container">
+                                <label for="" class="label--form">ESTADO</label>
+                                <select id="eventEstado" class="input--form select--form" name="" required>
+                                  <option value="">SELECCIONE UNA OPCION</option>
+                                  <option value="BORRADOR">BORRADOR</option>
+                                  <option value="PUBLICADO">PUBLICADO</option>
+                                </select>
+                            </div>
                             <div class="button-container">
                                 <button class="button--form" id="btn--events">Ingresar</button>
                             </div>
@@ -81,6 +89,7 @@
                                 <th>Número</th>
                                 <th>Título</th>
                                 <th>Dirección</th>
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -93,6 +102,7 @@
                                 <td><?php echo $item++; ?></td>
                                 <td><?php echo $row["evento_nombre"]; ?></td>
                                 <td><?php echo $row["evento_direccion"]; ?></td>
+                                <td><?php echo $row["evento_estado"]; ?></td>
                                 <td>
                                     <a href="actualizar-evento&token=<?php echo $row['evento_code'];?>">
                                         <i class="icon--update material-icons">mode_edit</i>

@@ -42,6 +42,20 @@
                                 <label for="" class="label--form">Descripción</label>
                                 <textarea class="textarea--form" id="eventDesc" type="text" name="data[1]" required="" value=""><?php echo $eventos['evento_descripcion'];?></textarea>
                             </div>
+                            <div class="input-container">
+                                <label for="" class="label--form">ESTADO</label>
+                                <?php
+                                if ($eventos['evento_estado']=="BORRADOR"){
+                                  $estado = "PUBLICADO";
+                                }else{
+                                  $estado = "BORRADOR";
+                                }
+                                 ?>
+                                <select id="eventEstado" class="input--form select--form" name="" required>
+                                  <option value="<?php echo $eventos['evento_estado'] ?>"><?php echo $eventos['evento_estado'] ?></option>
+                                  <option value="<?php echo $estado ?>"><?php echo $estado ?></option>
+                                </select>
+                            </div>
                             <div class="button-container">
                                 <button class="button--form" id="btn--events_up">Modificar</button>
                             </div>

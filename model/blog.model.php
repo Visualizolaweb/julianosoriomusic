@@ -20,9 +20,9 @@
         }
         public function createForm($data){
           try {
-            $sql="INSERT INTO blog VALUES(?,?,?,?,?,?)";
+            $sql="INSERT INTO blog VALUES(?,?,?,?,?,?,?)";
             $query=$this->pdo->prepare($sql);
-            $query->execute(array($data[2],$data[0],$data[1],$data[3],$data[4],$data[5]));
+            $query->execute(array($data[3],$data[0],$data[1],$data[2],$data[4],$data[5],$data[6]));
           } catch (PDOException $e) {
             die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
           }
@@ -84,7 +84,7 @@
           try {
             $sql="UPDATE blog_imagen SET bli_formulario = 'SI' WHERE bli_id = ?";
             $query=$this->pdo->prepare($sql);
-            $query->execute(array($data[3]));
+            $query->execute(array($data[4]));
           } catch (PDOException $e) {
             die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
           }
@@ -102,9 +102,9 @@
         }
         public function updateBlog($data){
           try {
-            $sql="UPDATE blog SET blo_titulo = ?, blo_descripcion = ? WHERE blo_id = ?";
+            $sql="UPDATE blog SET blo_titulo = ?, blo_descripcion = ?,blo_estado = ? WHERE blo_id = ?";
             $query=$this->pdo->prepare($sql);
-            $query->execute(array($data[0],$data[1],$data[2]));
+            $query->execute(array($data[0],$data[1],$data[2],$data[3]));
           } catch (PDOException $e) {
             die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
           }
