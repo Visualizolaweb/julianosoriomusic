@@ -5,7 +5,6 @@
 //     bgColor:"#dd2b43",
 //     spinner:"spinner1"
 // });
-
 $('.ancla--link').click(function(e){
 		e.preventDefault();
 		var strAncla = $(this).attr('href');
@@ -137,3 +136,7 @@ $('.events--article__link').click(function(e){
     var value = $(this).attr("href");
     document.location.href = "eventos&token="+value;
 })
+
+// $(".mejs__play button[title='Play']").click(function(){
+// 		$(".album--vinilo").toggleClass("album--rotate");
+// })
