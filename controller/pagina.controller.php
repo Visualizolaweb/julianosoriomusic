@@ -143,6 +143,7 @@
             $songs[] = array(
                             $row["blo_titulo"],
                             $row["blo_descripcion"],
+                            $row["bli_ruta"],
                             $days." de ".convertMonthBlogsA($months)
                             );
           }
