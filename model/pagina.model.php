@@ -10,6 +10,30 @@
             }
         }
 
+        public function readBlogAndroid(){
+          try{
+      			$sql = "SELECT blog.blo_id, blo_titulo, blo_descripcion, blo_fecha, blog_imagen.bli_ruta, blo_lectura FROM blog LEFT JOIN blog_imagen ON blog.bli_id = blog_imagen.bli_id WHERE blo_fecha <= CURDATE() AND blo_estado = 'PUBLICADO' ORDER BY blo_fecha DESC";
+            $query = $this->pdo->prepare($sql);
+            $query->execute();
+            $result = $query->fetchALL(PDO::FETCH_BOTH);
+          }catch (Exception $e){
+            die($e->getMessage()."".$e->getLine()."".$e->getFile());
+          }
+          return $result;
+        }
+
+        public function readUpcomingEventsAndroid(){
+          try{
+        		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio >= CURDATE() AND evento_estado = 'PUBLICADO' ORDER BY evento_fecha_inicio ASC";
+            $query = $this->pdo->prepare($sql);
+            $query->execute();
+            $result = $query->fetchALL(PDO::FETCH_BOTH);
+          }catch (Exception $e){
+            die($e->getMessage()."".$e->getLine()."".$e->getFile());
+          }
+          return $result;
+        }
+
         public function readGaleria(){
           try{
       			$sql = "SELECT gal_ruta FROM galeria LIMIT 20";
@@ -24,7 +48,7 @@
 
         public function loadSongRandom(){
           try{
-      			$sql = "SELECT dis_titulo, dis_cancion FROM discografia";
+      			$sql = "SELECT dis_titulo, dis_cancion FROM discografia ORDER BY dis_num ASC";
             $query = $this->pdo->prepare($sql);
             $query->execute();
             $result = $query->fetchALL(PDO::FETCH_NUM);

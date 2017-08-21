@@ -66,6 +66,10 @@ h1, h2, h3, h4, h5, h6, p{
 ::-webkit-scrollbar-track {
   background: rgba(60,60,60,.7);
 }
+
+body{
+    overflow-x: hidden;
+}
 /*------- HEADER --------*/
 .header-container{
     width: 100%;
@@ -305,6 +309,7 @@ h1, h2, h3, h4, h5, h6, p{
     width: 90%;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 70px;
@@ -332,7 +337,7 @@ h1, h2, h3, h4, h5, h6, p{
 .album--vinilo{
     position: absolute;
     top: 0;
-    left: 40%;
+    left: 35%;
     z-index: 1;
     width: 65%;
     top: 10px;
@@ -376,10 +381,6 @@ h1, h2, h3, h4, h5, h6, p{
 
 .fa-facebook-official{
     color: #05276c;
-}
-
-.fa-list-alt{
-    margin-left: 40px;
 }
 
 .text--wrapper{
@@ -465,10 +466,6 @@ h1, h2, h3, h4, h5, h6, p{
     background-color: #eaeaea;
 }
 
-.blog--card{
-    min-height: 578px;
-}
-
 .blog--title{
     line-height: 1;
     color: #141414;
@@ -494,14 +491,6 @@ h1, h2, h3, h4, h5, h6, p{
     flex-wrap: wrap;
 }
 
-.blog--card__header, .blog--card__body{
-    border: 1px solid #d0d0d0;
-}
-
-.blog--card__body{
-    border-top: 0;
-}
-
 .blog--card__footer{
     align-items: center;
 }
@@ -519,6 +508,7 @@ h1, h2, h3, h4, h5, h6, p{
     position: relative;
     top: -60px;
     left: -10px;
+    width: 35%;
 }
 
 .blog--date__title{
@@ -806,13 +796,15 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .footer-text{
-    color: #ed2b45;
+    color: #9a9a9a;
     font-family: var(--family-lato);
     font-size: 16px;
     font-weight: 400;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .footer-logo{
@@ -1070,8 +1062,21 @@ h1, h2, h3, h4, h5, h6, p{
     }
 
     .header--button{
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 95%;
+    }
+
+    .mejs__duration-container{
+      display: none;
+    }
+
+    .album--vinilo{
+      top: 5px;
+    }
+
+    .song--item .mejs__time-rail{
+      padding-left: 8px;
     }
 
     .button--image{
@@ -1090,6 +1095,21 @@ h1, h2, h3, h4, h5, h6, p{
     .carousel-indicators{
         margin-top: 30px;
     }
+
+    .player--songs, .player--album{
+        width: 100%;
+    }
+    .song--name{
+      font-size: 16px;
+    }
+    .player--album{
+      padding-top: 20px;
+    }
+
+    .infinito-container{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 
 @media (min-width: 340px) {
@@ -1103,6 +1123,14 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
+    .player--songs, .player--album{
+        width: 100%;
+    }
+
+    .player--album{
+      padding-top: 20px;
+    }
+
     .header--text__title{
         font-size: 85px;
     }
@@ -1143,10 +1171,24 @@ h1, h2, h3, h4, h5, h6, p{
         width: 100%;
     }
 
+    .blog--date{
+        width: 20%;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
 
+  .player--songs, .player--album{
+      width: 100%;
+  }
+
+  .player--album{
+    padding-top: 20px;
+  }
+  .blog--date{
+      width: 30%;
+  }
     .events--article{
         width: 48%;
     }
@@ -1384,6 +1426,10 @@ h1, h2, h3, h4, h5, h6, p{
         font-size: 30px;
     }
 
+    .blog--date{
+        width: 30%;
+    }
+
     .blog--body{
         display: flex;
         justify-content: space-around;
@@ -1427,6 +1473,7 @@ h1, h2, h3, h4, h5, h6, p{
     .footer-text{
         font-size: 16px;
         text-align: left;
+        padding-left: 0;
     }
 
     .footer--copyright{
@@ -1852,5 +1899,9 @@ h1, h2, h3, h4, h5, h6, p{
         background: #111111;
         padding-bottom: 20px;
         padding-top: 20px;
+    }
+
+    .blog--date{
+        width: 25%;
     }
 }

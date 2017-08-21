@@ -71,6 +71,158 @@
           echo json_encode($songs);
         }
 
+        public function loadSongsAndroid(){
+          foreach ($this->PaginaM->loadSongsAsc() as $row) {
+            $songs[] = array(
+                            $row["dis_titulo"],
+                            "views/assets/musica/".$row["dis_cancion"]
+                            );
+          }
+          echo json_encode($songs);
+        }
+
+        public function loadBlogsAndroid(){
+          function convertMonthBlogsA($month){
+            switch ($month) {
+              case 'Jan':
+                $month = "Enero";
+                break;
+
+              case 'Feb':
+                $month = "Febrero";
+                break;
+
+              case 'Mar':
+                $month = "Marzo";
+                break;
+
+              case 'Apr':
+                $month = "Abril";
+                break;
+
+              case 'May':
+                $month = "Mayo";
+                break;
+
+              case 'Jun':
+                $month = "Junio";
+                break;
+
+              case 'Jul':
+                $month = "Julio";
+                break;
+
+              case 'Aug':
+                $month = "Agosto";
+                break;
+
+              case 'Sep':
+                $month = "Septiembre";
+                break;
+
+              case 'Oct':
+                $month = "Octubre";
+                break;
+
+              case 'Nov':
+                $month = "Noviembre";
+                break;
+
+              case 'Dec':
+                $month = "Diciembre";
+                break;
+
+              default:
+                $month = "Enero";
+                break;
+            }
+            return $month;
+          }
+          foreach ($this->PaginaM->readBlogAndroid() as $row) {
+            list($years, $months, $days) = explode("-", $row["blo_fecha"]);
+            $songs[] = array(
+                            $row["blo_titulo"],
+                            $row["blo_descripcion"],
+                            $row["bli_ruta"],
+                            $days." de ".convertMonthBlogsA($months)
+                            );
+          }
+          echo json_encode($songs);
+        }
+
+        public function loadEventsAndroid(){
+          function convertMonthEventsA($month){
+            switch ($month) {
+              case 'Jan':
+                $month = "Enero";
+                break;
+
+              case 'Feb':
+                $month = "Febrero";
+                break;
+
+              case 'Mar':
+                $month = "Marzo";
+                break;
+
+              case 'Apr':
+                $month = "Abril";
+                break;
+
+              case 'May':
+                $month = "Mayo";
+                break;
+
+              case 'Jun':
+                $month = "Junio";
+                break;
+
+              case 'Jul':
+                $month = "Julio";
+                break;
+
+              case 'Aug':
+                $month = "Agosto";
+                break;
+
+              case 'Sep':
+                $month = "Septiembre";
+                break;
+
+              case 'Oct':
+                $month = "Octubre";
+                break;
+
+              case 'Nov':
+                $month = "Noviembre";
+                break;
+
+              case 'Dec':
+                $month = "Diciembre";
+                break;
+
+              default:
+                $month = "Enero";
+                break;
+            }
+            return $month;
+          }
+          foreach ($this->PaginaM->readUpcomingEventsAndroid() as $row) {
+            list($years, $months, $days) = explode("-", $row["evento_fecha_inicio"]);
+            list($yearss, $monthss, $dayss) = explode("-", $row["evento_fecha_fin"]);
+            $songs[] = array(
+                            $row["evento_nombre"],
+                            $row["evento_direccion"],
+                            $row["evento_descripcion"],
+                            $days." de ".convertMonthEventsA($months),
+                            substr($row["evento_hora_inicio"], 3),
+                            $dayss." de ".convertMonthEventsA($monthss),
+                            substr($row["evento_hora_fin"], 3)
+                            );
+          }
+          echo json_encode($songs);
+        }
+
         public function sendEmailContact(){
             $mail = new PHPMailer();
             $mail->isSMTP();

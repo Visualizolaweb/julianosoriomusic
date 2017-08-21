@@ -85,7 +85,7 @@
            <div class="player--info">
                <h2 class="song--title">Canción para mentir</h2>
                <div class="player--text">
-                   <a class="player--link" href="#"><i class="icon--player fa fa-facebook-official"></i>Compartir en facebook</a>
+                   <!-- <a class="player--link" href="#"><i class="icon--player fa fa-facebook-official"></i>Compartir en facebook</a> -->
                    <button id="btnlyrics" class="player--link"  data-toggle="modal" ><i class="icon--player fa fa-list-alt"></i>Ver Letra</button>
                </div>
            </div>
@@ -229,7 +229,9 @@
     ?>
         <article class="blog--card">
           <div class="blog--card__header">
-            <img class="blog--card__image" src="<?php echo 'views/assets/img/blog/'.$row['bli_ruta'];?>" alt="">
+            <div class="image--container">
+              <img class="blog--card__image" src="<?php echo 'views/assets/img/blog/'.$row['bli_ruta'];?>" alt="">
+            <div>
             <div class="blog--date">
               <h4 class="blog--date__title">
                 <?php echo $days; ?>
@@ -264,7 +266,7 @@
               <?php echo $row["blo_titulo"]; ?>
             </div>
             <div class="blog--card__paragraph">
-              <?php echo substr($row["blo_descripcion"], 0, 235).'...'; ?>
+              <?php echo substr($row["blo_descripcion"], 0, 230).'...'; ?>
             </div>
             <div class="blog--card__footer">
               <div class="blog--button__container">
@@ -433,7 +435,7 @@
   </section>
 </main>
 <script type="text/javascript">
-window.onload = function() {
+  window.onload = function() {
     var active = $('.active--link').attr("href");
     $("#track").html('<source src="views/assets/musica/Sleep.mp3" type="audio/mp3">');
     $.post("get-events",{data:active},function(data){
@@ -443,5 +445,5 @@ window.onload = function() {
         var descripcion = data['evento_descripcion'].substring(0, 600);
         $(".events--2__text").html(descripcion);
     });
-}
+  }
 </script>
