@@ -42,6 +42,7 @@
               $_SESSION["blog"] = $_GET["token"];
               $blog = $this->PaginaM->readBlogByCode($code);
               $comments = $this->PaginaM->readCommentsInBlogByCode($code);
+              $blogU = $this->PaginaM->updateReadsInBlogs($code);
             ?>
               <h1 class="blog--content__title"><?php echo $blog["blo_titulo"]; ?></h1>
               <img class="blog--content__img" src="<?php echo 'views/assets/img/blog/'.$blog['bli_ruta']; ?>" alt="<?php echo $blog['blo_titulo']; ?>">

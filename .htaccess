@@ -1,7 +1,7 @@
 RewriteEngine on
 RewriteRule ^blogAndroid$                       index.php?c=pagina&a=loadBlogsAndroid
 RewriteRule ^eventsAndroid$                     index.php?c=pagina&a=loadEventsAndroid
-RewriteRule ^songsAndroid$                       index.php?c=pagina&a=loadSongsAndroid
+RewriteRule ^songsAndroid$                      index.php?c=pagina&a=loadSongsAndroid
 RewriteRule ^inicio$                            index.php?c=pagina
 RewriteRule ^get-events$                        index.php?c=pagina&a=getEvents
 RewriteRule ^galeria$                           index.php?c=pagina&a=gallery

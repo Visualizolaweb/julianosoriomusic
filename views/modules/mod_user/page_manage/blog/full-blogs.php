@@ -128,15 +128,10 @@
                 </div>
                 <div class="blog--card__footer">
                   <div class="blog--button__container">
-                    <a class="blog--button__text" href="<?php echo $row['blo_id']; ?>">
+                    <a class="blog--button__text" href="<?php echo "blog&token=".$row['blo_id']; ?>">
                       Leer Más
                       <i class="fa fa-chevron-right blog--button__icon"></i>
                     </a>
-                  </div>
-                  <div class="blog--social">
-                    <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
-                    <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
-                    <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
                   </div>
                 </div>
               </div>

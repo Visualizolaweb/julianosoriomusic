@@ -47,10 +47,8 @@
                 }else{
                   foreach ($contador as $row) {
                     $data[5]=$row["dis_num"]+1;
-                    echo $row["dis_num"];
                   }
                 }
-                echo $data[5];
                 $this->DiscografiaM->createDiscografia($data);
                 $msn="Subio Correctamente";
               }else{

@@ -23,7 +23,7 @@
 
         public function readBlog(){
             require_once 'views/include/header-website.php';
-            require_once 'views/modules/mod_user/page_manage/blog/read-blog.php';
+            require_once 'views/modules/mod_user/page_manage/blog/read_blog.php';
             require_once 'views/include/footer-website.php';
         }
 
@@ -54,8 +54,8 @@
         public function updateReadsInBlogs(){
             $data = $_POST["data"];
             $updateBlogs = $this->PaginaM->updateReadsInBlogs($data);
-            $return = array(true, "blog&token=$data");
-            echo json_encode($return);
+            // $return = array(true, "blog&token=$data");
+            // echo json_encode($return);
         }
 
         public function loadSongs(){

@@ -14,6 +14,10 @@
     font-size: var(--size);
 }
 
+body{
+  background-color: #eaeaea;
+}
+
 *,
 *:after,
 *:before {
@@ -551,7 +555,6 @@ body{
     padding: 0 16px;
     position: relative;
     top: -40px;
-    min-height: 240px;
 }
 
 .blog--card__footer{
@@ -611,9 +614,9 @@ body{
 
 .blog--container__one{
     width: 100%;
-    padding-top: 60px;
+    padding: 0 50px;
+    padding-top: 40px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     padding-bottom: 40px;
 }
@@ -627,14 +630,14 @@ body{
 }
 
 .blog--content__title{
-    color: #fafafa;
+    color: #212121;
     font-size: 32px;
     padding-bottom: 10px;
     font-family: var(--family-robotoC);
 }
 
 .blog--content__text{
-    color: #fafafa;
+    color: #212121;
     padding-top: 20px;
     font-family: var(--family-roboto);
     line-height: 1.25;
@@ -645,11 +648,12 @@ body{
     padding: 12px 8px;
     margin-bottom: 8px;
     margin-top: 12px;
+    border: 1px solid #dddddd;
     background-color: rgba(255,255,255,.85);
 }
 
 .comments--text{
-    color: black;
+    color: #212121;
     font-size: 18px;
 }
 
@@ -658,7 +662,7 @@ body{
 }
 
 .comments--title{
-    color: #fafafa;
+    color: #222222;
     padding-bottom: 0px;
     padding-top: 40px;
     text-transform: uppercase;
@@ -667,12 +671,47 @@ body{
 
 .textarea--blog{
     width: 100%;
+    border: 1px solid #dddddd;
     margin-top: 10px;
     margin-bottom: 8px;
     resize: none;
     height: 100px;
     padding: 8px 8px;
     background-color: rgba(255, 255, 255, .85);
+}
+
+.textarea--blog:hover, .textarea--blog:focus{
+    border: 1px solid #dddddd;
+}
+
+.recent--blogs{
+    background-color: rgba(255, 255, 255, .85);
+    margin-left: 3%;
+    height: 50%;
+    width: 25%;
+    padding: 20px;
+    border: 1px solid #dddddd;
+}
+
+.recent--link{
+    color: #626262;
+    padding-bottom: 2px;
+    font-family: var(--family-lato);
+    font-weight: bold;
+    display: block;
+    padding-bottom: 5px;
+}
+
+.recent--link:hover{
+    color: #080808;
+}
+
+.recent--text{
+  text-align: center;
+  padding: 8px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #080808;
+  margin-bottom: 8px;
 }
 
 .button--blog{
@@ -1268,6 +1307,7 @@ body{
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        padding-bottom: 20px;
     }
 
     .blog--card{
@@ -1435,6 +1475,7 @@ body{
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
+        padding-bottom: 20px;
     }
 
     .blog--card{
@@ -1650,6 +1691,7 @@ body{
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
+        padding-bottom: 20px;
     }
 
     .blog--card{

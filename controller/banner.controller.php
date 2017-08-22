@@ -29,7 +29,6 @@
           $imageName = time().'.png';
           file_put_contents('views/assets/img/banner/'.$imageName, $data);
           $this->BannerM->updateBannerImg($imageName);
-          header("Location:banner");
         }
         public function update(){
           $data = $_POST["data"];

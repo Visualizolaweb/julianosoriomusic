@@ -76,14 +76,14 @@
   </section>
   <section class="infinito-container" id="discografia">
     <div class="infinito--header">
-      <img src="views/assets/img/Recursos/header/header-Music.png" alt="">
-      <h4 class="infinito--subtitle">Elit neque ullamcorper eros</h4>
+      <img id="album" src="views/assets/img/Recursos/header/header-Music.png" alt="">
+      <!-- <h4 class="infinito--subtitle">Elit neque ullamcorper eros</h4> -->
       <h2 class="infinito--title">Infinito</h2>
     </div>
     <div class="infinito--player">
        <div class="player--songs">
            <div class="player--info">
-               <h2 class="song--title">Canción para mentir</h2>
+               <h2 class="song--title"><?php echo $song[0]; ?></h2>
                <div class="player--text">
                    <!-- <a class="player--link" href="#"><i class="icon--player fa fa-facebook-official"></i>Compartir en facebook</a> -->
                    <button id="btnlyrics" class="player--link"  data-toggle="modal" ><i class="icon--player fa fa-list-alt"></i>Ver Letra</button>
@@ -229,9 +229,7 @@
     ?>
         <article class="blog--card">
           <div class="blog--card__header">
-            <div class="image--container">
-              <img class="blog--card__image" src="<?php echo 'views/assets/img/blog/'.$row['bli_ruta'];?>" alt="">
-            <div>
+            <img class="blog--card__image" src="<?php echo 'views/assets/img/blog/'.$row['bli_ruta'];?>" alt="">
             <div class="blog--date">
               <h4 class="blog--date__title">
                 <?php echo $days; ?>
@@ -270,15 +268,10 @@
             </div>
             <div class="blog--card__footer">
               <div class="blog--button__container">
-                <a class="blog--button__text" href="<?php echo $row['blo_id']; ?>">
+                <a class="blog--button__text" href="<?php echo "blog&token=".$row['blo_id']; ?>">
                   Leer Más
                   <i class="fa fa-chevron-right blog--button__icon"></i>
                 </a>
-              </div>
-              <div class="blog--social">
-                <a href="#"><i class="fa fa-facebook blog--social__icon"></i></a>
-                <a href="#"><i class="fa fa-twitter blog--social__icon"></i></a>
-                <a href="#"><i class="fa fa-google-plus blog--social__icon"></i></a>
               </div>
             </div>
           </div>

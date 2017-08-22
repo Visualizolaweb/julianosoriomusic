@@ -25,7 +25,6 @@
           $imageName = time().'.png';
           file_put_contents('views/assets/img/sobre/'.$imageName, $data);
           $this->PerfilM->updateSobreImg($imageName);
-          header("Location:mi-perfil");
         }
 
         public function update(){

@@ -50,7 +50,7 @@ $ban = $this->BannerM->readBannerById(); ?>
                               </div>
                               <div class="modal-footer">
                                   <input class="input--form" type="file" id="upload" style="display: block; width: 100%;">
-                                  <button onclick="document.location.href='banner'" class="button--form upload-result">Recortar Imagen</button>
+                                  <button class="button--form upload-result">Recortar Imagen</button>
                               </div>
                             </div>
                           </div>
@@ -107,6 +107,7 @@ $('.upload-result').on('click', function (ev) {
                 html = '<img src="' + resp + '" />';
                 $('#imageCrop').modal('hide')
                 $("#wrap-result").html(html);
+                document.location.href="banner";
             }
         });
     });

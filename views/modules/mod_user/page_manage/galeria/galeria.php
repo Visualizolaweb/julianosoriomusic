@@ -31,7 +31,7 @@
                                   </div>
                                   <div class="modal-footer">
                                       <input class="input--form" type="file" id="upload" style="display: block; width: 100%;">
-                                      <button onclick="document.location.href='admin-galeria'" class="button--form upload-result">Recortar Imagen</button>
+                                      <button class="button--form upload-result">Recortar Imagen</button>
                                   </div>
                                 </div>
                               </div>
