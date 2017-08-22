@@ -21,9 +21,11 @@ RewriteRule ^admin-blog&msn=(.*)$               index.php?c=blog&msn=$1
 RewriteRule ^update-blog-admin$                 index.php?c=blog&a=update
 RewriteRule ^actualizar-blog&token=(.*)$        index.php?c=blog&a=updateData&token=$1
 RewriteRule ^delete-blog&token=(.*)$            index.php?c=blog&a=delete&token=$1
+RewriteRule ^delete-comentario&token=(.*)$      index.php?c=blog&a=Comentdelete&token=$1
 RewriteRule ^blog$                              index.php?c=pagina&a=fullBlogs
 RewriteRule ^crear-blog$                        index.php?c=blog&a=createForm
 RewriteRule ^create-comentario$                 index.php?c=blog&a=createComentario
+RewriteRule ^comentario-blog&token=(.*)$        index.php?c=blog&a=comentario&token=$1
 RewriteRule ^crear-evento$                      index.php?c=eventos&a=createEvents
 RewriteRule ^eliminar-evento&token=(.*)$        index.php?c=eventos&a=delete&token=$1
 RewriteRule ^actualizar-evento$                 index.php?c=eventos&a=updateData
