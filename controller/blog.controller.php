@@ -12,6 +12,12 @@
             require_once 'views/include/header.php';
             require_once 'views/modules/mod_user/page_manage/blog/blog.php';
         }
+        public function comentario(){
+            $field = $_GET["token"];
+            require_once 'views/include/header.php';
+            require_once 'views/modules/mod_user/page_manage/blog/comentario.php';
+            require_once 'views/include/footer.php';
+        }
         public function create(){
           $data = $_POST['image'];
           list($type, $data) = explode(';', $data);
@@ -77,6 +83,12 @@
           $archivo = $this->BlogM->readBlogaById($field);
           unlink("views/assets/img/blog/".$archivo["bli_ruta"]);
           $this->BlogM->deleteBlog($field);
+          $msn="Eliminado Correctamente";
+          header("Location: admin-blog&msn=$msn");
+        }
+        public function Comentdelete(){
+          $field = $_GET["token"];
+          $this->BlogM->deleteComentario($field);
           $msn="Eliminado Correctamente";
           header("Location: admin-blog&msn=$msn");
         }

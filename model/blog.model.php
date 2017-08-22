@@ -47,6 +47,17 @@
           }
           return $result;
         }
+        public function readComentario(){
+          try {
+            $sql="SELECT * FROM blog_comentario INNER JOIN blog ON(blog.blo_id=blog_comentario.blo_id)";
+            $query=$this->pdo->prepare($sql);
+            $query->execute();
+            $result=$query->fetchALL(PDO::FETCH_BOTH);
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+          return $result;
+        }
         public function readBlog(){
           try {
             $sql="SELECT * FROM blog INNER JOIN blog_imagen ON(blog.bli_id=blog_imagen.bli_id) ";
@@ -118,9 +129,9 @@
             die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
           }
         }
-        public function deleteBlog($field){
+        public function deleteComentario($field){
           try {
-            $sql="DELETE FROM blog_imagen WHERE bli_id = ?";
+            $sql="DELETE FROM blog_comentario WHERE com_id = ?";
             $query=$this->pdo->prepare($sql);
             $query->execute(array($field));
           } catch (PDOException $e) {

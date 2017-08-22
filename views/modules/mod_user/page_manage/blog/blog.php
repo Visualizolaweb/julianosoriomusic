@@ -72,6 +72,7 @@
                                 <th>Titulo</th>
                                 <th>Imagen</th>
                                 <th>Estado</th>
+                                <th>Comentarios</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -85,6 +86,8 @@
                                 <td><?php echo $row["blo_titulo"]; ?></td>
                                 <td><img src="views/assets/img/blog/<?php echo $row['bli_ruta']; ?>"></td>
                                 <td><?php echo $row["blo_estado"]; ?></td>
+                                <td><a href="comentario-blog&token=<?php echo $row['blo_id'] ?>">
+                                    <i class="material-icons">mode_edit</i></td>
                                 <td>
                                     <a href="actualizar-blog&token=<?php echo $row['blo_id'] ?>">
                                         <i class="material-icons">mode_edit</i>
