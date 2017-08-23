@@ -103,6 +103,9 @@ $('.upload-result').on('click', function (ev) {
             url: "index.php?c=banner&a=imagen",
             type: "POST",
             data: {"image":resp},
+            beforeSend: function(){
+              $(".upload-result").html("CARGANDO...");
+            },
             success: function (data) {
                 html = '<img src="' + resp + '" />';
                 $('#imageCrop').modal('hide')
