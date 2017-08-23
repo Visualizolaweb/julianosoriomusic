@@ -1,6 +1,7 @@
 <div id="fakeLoader"></div>
 <main class="main-container">
-  <header class="header-container">
+  <header class="header-container"
+  style="background-image: url('views/assets/img/banner/1502985213.png');">
     <div class="header--navbar">
       <div class="header--logo">
           <img src="views/assets/img/Recursos/logo/Logo.png" alt="" class="img--logo">
@@ -282,7 +283,7 @@
     </div>
   </section>
   <section class="events-container">
-    <div class="events--1">
+    <div class="events--1" style="background-image: url('views/assets/img/eventos/1502986049.png');">
         <div class="events--1__text">
             <h6 class="events--1__subtitle">
                 Conoce los proximos
