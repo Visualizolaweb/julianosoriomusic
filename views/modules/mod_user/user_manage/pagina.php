@@ -55,7 +55,11 @@
     <div class="player--main">
       <?php
         $randomSong = $this->PaginaM->loadSongRandom();
-        $song = $randomSong[rand(0, count($randomSong) - 1)];
+        if (count($randomSong) >= 1) {
+          $song = $randomSong[rand(0, count($randomSong) - 1)];
+        } else {
+          $song = ["No hay canciones",""];
+        }
       ?>
       <div class="text--wrapper">
         <h4 class="player--main__text"><?php echo $song[0]; ?></h4>
@@ -95,47 +99,53 @@
            </div>
            <ul class="container--songs">
               <?php
-              $item = 1;
-              foreach ($this->PaginaM->loadSongsAsc() as $row) {
-                $songs[] = array(
-                                $item,
-                                $row["dis_titulo"],
-                                "views/assets/musica/".$row["dis_cancion"],
-                                $row["dis_letra"]
-                                );
-                $item++;
-              }
-              foreach ($songs as $song) {
-                echo '<li class="song--item">
-                         <audio id="player" class="audio" preload="none" style="width:100%;">
-                             <source src="'.$song[2].'" type="audio/mp3">
-                         </audio>
-                     </li>';
+              $songsC = $this->PaginaM->loadSongsAsc();
+              if (count($songsC) >= 1) {
+                $item = 1;
+                foreach ($this->PaginaM->loadSongsAsc() as $row) {
+                  $songs[] = array(
+                    $item,
+                    $row["dis_titulo"],
+                    "views/assets/musica/".$row["dis_cancion"],
+                    $row["dis_letra"]
+                  );
+                  $item++;
+                }
+                foreach ($songs as $song) {
+                  echo '<li class="song--item">
+                  <audio id="player" class="audio" preload="none" style="width:100%;">
+                  <source src="'.$song[2].'" type="audio/mp3">
+                  </audio>
+                  </li>';
+                }
               }
               ?>
            </ul>
        </div>
 
        <?php
-        foreach ($songs as $letras) {
-          echo '<div class="modal fade" id="lyric_mep_'.$letras[0].'" tabindex="-1" role="dialog" aria-labelledby="imageCropTitle" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="imageCropTitle">'.$letras[1].'</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                    <div class="col-12">
-                        '.$letras[3].'
-                    </div>
-                </div>
-             </div>
-            </div>
-          </div>';
-        }
+       $songsC = $this->PaginaM->loadSongsAsc();
+       if (count($songsC) >= 1) {
+         foreach ($songs as $letras) {
+           echo '<div class="modal fade" id="lyric_mep_'.$letras[0].'" tabindex="-1" role="dialog" aria-labelledby="imageCropTitle" aria-hidden="true">
+           <div class="modal-dialog modal-lg" role="document">
+           <div class="modal-content">
+           <div class="modal-header">
+           <h5 class="modal-title" id="imageCropTitle">'.$letras[1].'</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+           </button>
+           </div>
+           <div class="modal-body">
+           <div class="col-12">
+           '.$letras[3].'
+           </div>
+           </div>
+           </div>
+           </div>
+           </div>';
+         }
+       }
        ?>
 
        <div class="player--album">
