@@ -86,14 +86,12 @@ body{
 .header-container{
     width: 100%;
     height: 100vh;
-    /*background-image: url(../img/Recursos/slide/Slide.png);*/
+    background-image: url(../img/Recursos/slide/Slide.png);
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-
-.header-image{}
 
 .header-container__other{
     background-image: url(../img/Recursos/background/BgContact.png);
