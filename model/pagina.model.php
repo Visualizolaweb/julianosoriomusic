@@ -118,6 +118,18 @@
             return $result;
         }
 
+        public function readEventoImagen(){
+            try{
+        		$sql = "SELECT * FROM eventos_imagen WHERE evi_id = 'mek0YRcGTvUsfIGnhGDUf6ExBOecKV'";
+                $query = $this->pdo->prepare($sql);
+                $query->execute();
+                $result = $query->fetch(PDO::FETCH_BOTH);
+              }catch (Exception $e){
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $result;
+        }
+
         public function readUpcomingEvents(){
             try{
         		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio >= CURDATE() AND evento_estado = 'PUBLICADO' ORDER BY evento_fecha_inicio ASC LIMIT 3";

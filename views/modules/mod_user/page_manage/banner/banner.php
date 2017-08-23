@@ -35,7 +35,7 @@ $ban = $this->BannerM->readBannerById(); ?>
                           Subir foto
                         </button>
                         <div class="modal fade" id="imageCrop" tabindex="-1" role="dialog" aria-labelledby="imageCropTitle" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
+                          <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <h5 class="modal-title" id="imageCropTitle">Recortar la imagen</h5>
@@ -71,12 +71,12 @@ $ban = $this->BannerM->readBannerById(); ?>
 $uploadCrop = $('#wrap-upload').croppie({
     enableExif: true,
     viewport: {
-        width: 200,
-        height: 200
+        width: 700,
+        height: 415
     },
     boundary: {
-        width: 300,
-        height: 300
+        width: 750,
+        height: 435
     }
 });
 
