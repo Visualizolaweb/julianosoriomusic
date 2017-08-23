@@ -6,6 +6,9 @@
 
         public function __CONSTRUCT(){
             $this->DiscografiaM = new DiscografiaModel();
+            if (!isset($_SESSION["user"])){
+              header("Location: inicio");
+            }
         }
 
         public function main(){

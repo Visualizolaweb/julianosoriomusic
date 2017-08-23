@@ -6,6 +6,9 @@
 
         public function __CONSTRUCT(){
             $this->BannerM = new BannerModel();
+            if (!isset($_SESSION["user"])){
+              header("Location: inicio");
+            }
         }
 
         public function main(){

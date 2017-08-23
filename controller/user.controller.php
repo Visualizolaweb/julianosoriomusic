@@ -9,15 +9,23 @@
         }
 
         public function main(){
+          if (isset($_SESSION["user"])){
+            header("Location: dashboard");
+          }else{
             require_once 'views/include/header.php';
             require_once 'views/modules/mod_user/user_manage/signIn.php';
             require_once 'views/include/footer.php';
+          }
         }
 
         public function dashboard(){
-            require_once 'views/include/header.php';
-            require_once 'views/modules/mod_user/user_manage/dashboard.php';
-            require_once 'views/include/footer.php';
+            if (!isset($_SESSION["user"])){
+              header("Location: inicio");
+            }else{
+              require_once 'views/include/header.php';
+              require_once 'views/modules/mod_user/user_manage/dashboard.php';
+              require_once 'views/include/footer.php';
+            }
         }
         public function valid(){
           $data[0] = $_POST["data"];

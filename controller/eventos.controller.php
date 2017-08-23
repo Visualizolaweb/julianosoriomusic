@@ -6,6 +6,9 @@
 
         public function __CONSTRUCT(){
             $this->EventosM = new EventosModel();
+            if (!isset($_SESSION["user"])){
+              header("Location: inicio");
+            }
         }
 
         public function main(){
