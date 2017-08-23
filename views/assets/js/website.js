@@ -53,6 +53,14 @@ $(document).ready(function(){
        	$("#mep_"+(i+1)+" .mejs__time-rail").html("<span class='song--name'>"+ data[i][1] +"</span>");
      	}
   });
+	var active = $('.active--link').attr("href");
+	$.post("get-events",{data:active},function(data){
+			var data = JSON.parse(data);
+			$(".events--2__title").html(data['evento_nombre']);
+			$(".events--2__subtitle").html(data['evento_direccion']);
+			var descripcion = data['evento_descripcion'].substring(0, 600);
+			$(".events--2__text").html(descripcion);
+	});
 });
 
 $('section.owl-carousel').owlCarousel({
@@ -128,7 +136,9 @@ $("#frm_read_blog").submit(function(e){
           var data = JSON.parse(data);
           if (data[0] == true) {
 						swal(data[1]);
-            document.location.href = data[2];
+						$('.confirm').click(function(){
+							document.location.href = data[2];
+						})
           }else{
 						swal(data[1]);
           }

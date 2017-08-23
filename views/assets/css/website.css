@@ -1,3 +1,7 @@
+.confirm{
+  background-color: var(--bg-accent) !important;
+}
+
 @keyframes preload-show-1 {
   from {
     transform: rotateZ(60deg) rotateY(-90deg) rotateX(0deg);

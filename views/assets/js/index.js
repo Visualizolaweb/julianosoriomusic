@@ -1,3 +1,6 @@
+window.onload = function() {
+	$('.loader').addClass('load');
+}
 $("#pas_log").focus(function(){
   $("#ema_log").siblings("span").remove();
   var email = $("#ema_log").val();
@@ -24,7 +27,9 @@ $("#frm_log").submit(function(e){
       $.post("login",{data:data},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
+            $('.confirm').click(function(){
               document.location.href = data[1];
+            })
           }else{
               $("#pas_log").after("<span>"+data[1]+"</span>");
           }
@@ -42,7 +47,9 @@ $("#frm_perfil").submit(function(e){
           var data = JSON.parse(data);
           if (data[0] == true) {
             swal(data[2]);
-            document.location.href = data[1];
+            $('.confirm').click(function(){
+              document.location.href = data[1];
+            })
           }else{
             swal(data[1]);
           }
@@ -56,7 +63,9 @@ $("#frm_ban").submit(function(e){
           var data = JSON.parse(data);
           if (data[0] == true) {
               swal(data[2]);
-              document.location.href = data[1];
+              $('.confirm').click(function(){
+                document.location.href = data[1];
+              })
           }else{
               swal(data[1]);
           }
@@ -71,7 +80,9 @@ $("#frm_blog").submit(function(e){
           var data = JSON.parse(data);
           if (data[0] == true) {
               swal(data[2]);
-              document.location.href = data[1];
+              $('.confirm').click(function(){
+                document.location.href = data[1];
+              })
           }
       });
 });
@@ -84,7 +95,9 @@ $("#frm_blo_up").submit(function(e){
           var data = JSON.parse(data);
           if (data[0] == true) {
               swal(data[1]);
-              document.location.href = data[2];
+              $('.confirm').click(function(){
+                document.location.href = data[1];
+              })
           }else{
             swal(data[1]);
           }
@@ -98,7 +111,9 @@ $("#frm_contacto").submit(function(e){
           var data = JSON.parse(data);
           if (data[0] == true) {
               swal(data[2]);
-              document.location.href = data[1];
+              $('.confirm').click(function(){
+                document.location.href = data[1];
+              })
           }else{
             swal(data[1]);
           }
@@ -187,8 +202,10 @@ $("#frm_eventos").submit(function(e){
       $.post("crear-evento",{data:data},function(resp){
         var resp = JSON.parse(resp);
         if (resp[0] == true) {
-            document.location.href = resp[1];
-            swal(resp[2]);
+          swal(resp[2]);
+          $('.confirm').click(function(){
+            document.location.href = data[1];
+          })
         }
       });
 });
@@ -208,8 +225,10 @@ $("#frm_eventos_up").submit(function(e){
       $.post("actualizar-evento",{data:JsonObj},function(resp){
         var resp = JSON.parse(resp);
         if (resp[0] == true) {
-            document.location.href = resp[1];
-            swal(resp[2]);
+          swal(resp[2]);
+          $('.confirm').click(function(){
+            document.location.href = data[1];
+          })
         }
       });
 });
@@ -222,7 +241,9 @@ $("#frm_perfil2").submit(function(e){
     var data = JSON.parse(data);
     if (data[0]==true) {
       swal(data[2]);
-      document.location.href=data[1];
+      $('.confirm').click(function(){
+        document.location.href = data[1];
+      })
     }else{
       swal(data[2]);
     }

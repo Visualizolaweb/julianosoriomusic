@@ -431,16 +431,3 @@
     </footer>
   </section>
 </main>
-<script type="text/javascript">
-  window.onload = function() {
-    var active = $('.active--link').attr("href");
-    $("#track").html('<source src="views/assets/musica/Sleep.mp3" type="audio/mp3">');
-    $.post("get-events",{data:active},function(data){
-        var data = JSON.parse(data);
-        $(".events--2__title").html(data['evento_nombre']);
-        $(".events--2__subtitle").html(data['evento_direccion']);
-        var descripcion = data['evento_descripcion'].substring(0, 600);
-        $(".events--2__text").html(descripcion);
-    });
-  }
-</script>
