@@ -138,6 +138,15 @@
             die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
           }
         }
+        public function deleteBlog($field){
+          try {
+            $sql="DELETE FROM blog WHERE blo_id = ?";
+            $query=$this->pdo->prepare($sql);
+            $query->execute(array($field));
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+        }
         public function __DESTRUCT(){
             DataBase::disconnect();
         }

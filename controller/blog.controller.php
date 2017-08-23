@@ -82,6 +82,7 @@
           $field = $_GET["token"];
           $archivo = $this->BlogM->readBlogaById($field);
           unlink("views/assets/img/blog/".$archivo["bli_ruta"]);
+          $field = $archivo["blo_id"];
           $this->BlogM->deleteBlog($field);
           $msn="Eliminado Correctamente";
           header("Location: admin-blog&msn=$msn");

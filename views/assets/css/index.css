@@ -60,6 +60,14 @@ table, th{
     border: none !important;
 }
 
+.material-icons:focus, .material-icons:active, .material-icons:visited{
+    color: #e53935 !important;
+}
+
+a .material-icons{
+    color: #e53935 !important;
+}
+
 .error{
     display: block;
     width: 100%;
