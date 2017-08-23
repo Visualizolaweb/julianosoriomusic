@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <title>Julian Osorio Music</title>
+        <link rel="icon" href="views/assets/img/logo.ico" sizes="16x16" type="image/png">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Roboto+Condensed:400,700|Roboto:300,400,700" >
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
@@ -13,3 +14,13 @@
         <link rel="stylesheet" href="views/assets/css/index.css">
     </head>
     <body>
+      <div class="loader">
+        <div class="preloader loading">
+          <span class="slice"></span>
+          <span class="slice"></span>
+          <span class="slice"></span>
+          <span class="slice"></span>
+          <span class="slice"></span>
+          <span class="slice"></span>
+        </div>
+      </div>

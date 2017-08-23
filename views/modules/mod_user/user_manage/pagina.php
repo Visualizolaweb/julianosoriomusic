@@ -1,4 +1,3 @@
-<div id="fakeLoader"></div>
 <main class="main-container">
   <?php
   $banner = $this->PaginaM->readBanner();
