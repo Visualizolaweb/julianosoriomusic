@@ -138,18 +138,6 @@ $("#frm_read_blog").submit(function(e){
           }
       });
 });
-// $('.blog--button__text').click(function(e){
-    // e.preventDefault();
-    // var value = $(this).attr("href");
-    // console.log(value);
-    // $.post("update-blog",{data:value},function(data){
-    //     var data = JSON.parse(data);
-    //     if (data[0] == true) {
-    //         document.location.href = data[1];
-    //     }
-    // });
-		// console.log("Oda");
-// })
 
 $('.events--article__link').click(function(e){
     e.preventDefault();

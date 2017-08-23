@@ -52,10 +52,10 @@
       <div class="recent--blogs">
         <h5 class="recent--text">Entradas recientes</h5>
         <?php
-        foreach ($this->PaginaM->readUpcomingBlogs() as $row) {
+        foreach ($this->PaginaM->readRecentBlogs() as $row) {
 
         ?>
-        <a class="recent--link" href="<?php echo "blog&token=".$row['blo_id'];?>">- <?php echo $row["blo_titulo"]; ?></a>
+        <a class="recent--link" href="<?php echo "blog&token=".$row['blo_id'];?>"><?php echo $row["blo_titulo"]; ?></a>
         <?php
         }
         ?>

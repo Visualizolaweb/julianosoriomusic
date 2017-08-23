@@ -56,6 +56,14 @@ h1, h2, h3, h4, h5, h6, p{
     margin: 0;
 }
 
+p{
+    margin-bottom: 0.8em;
+    font-family: var(--family-roboto);
+    font-size: 1em;
+    font-weight: 500;
+    color: #000000;
+}
+
 /* SCROLL */
 
 ::-webkit-scrollbar {
@@ -458,6 +466,7 @@ body{
     font-size: 16px;
     padding-top: 20px;
     text-align: justify-all;
+    color: #f3f3f3;
 }
 
 .about-me--paragraph:last-child{
@@ -650,12 +659,14 @@ body{
     margin-top: 12px;
     border: 1px solid #dddddd;
     background-color: rgba(255,255,255,.85);
+    border-left: 3px solid #ed2b45;
 }
 
 .comments--text{
     color: #212121;
-    font-size: 18px;
-    font-weight: normal;
+    font-size: 20px;
+    font-family: var(--family-roboto);
+    font-weight: 600;
 }
 
 .blog--content__img{
@@ -689,7 +700,7 @@ body{
     background-color: rgba(255, 255, 255, .85);
     margin-left: 3%;
     height: 50%;
-    width: 25%;
+    width: 27%;
     padding: 20px;
     border: 1px solid #dddddd;
 }
@@ -700,10 +711,15 @@ body{
     font-family: var(--family-lato);
     font-weight: bold;
     display: block;
-    padding-bottom: 5px;
+    border-bottom: 1px solid #c5c4c4;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    padding: 7px;
+    transition: .4s all;
 }
 
 .recent--link:hover{
+    border-color: #080808;
     color: #080808;
 }
 
@@ -711,7 +727,8 @@ body{
   text-align: center;
   padding: 8px 0;
   padding-bottom: 12px;
-  border-bottom: 1px solid #080808;
+  /*border-bottom: 1px solid #080808;*/
+  text-transform: uppercase;
   margin-bottom: 8px;
 }
 
@@ -1111,6 +1128,15 @@ body{
       display: none;
     }
 
+    .blog--container__one{
+        padding: 20px 16px;
+    }
+
+    .recent--blogs, .comments--content, .blog--content{
+      width: 100%;
+      margin-left: 0;
+    }
+
     .album--vinilo{
       top: 5px;
     }
@@ -1213,6 +1239,15 @@ body{
 
     .blog--date{
         width: 20%;
+    }
+
+    .blog--container__one{
+        padding: 20px 16px;
+    }
+
+    .recent--blogs, .comments--content, .blog--content{
+      width: 100%;
+      margin-left: 0;
     }
 
 }
@@ -1335,6 +1370,15 @@ body{
 
     .inputs-container-100{
         width: 100%;
+    }
+
+    .blog--container__one{
+        padding: 20px 16px;
+    }
+
+    .recent--blogs, .comments--content, .blog--content{
+      width: 100%;
+      margin-left: 0;
     }
 
 }
@@ -1553,6 +1597,15 @@ body{
         padding-bottom: 20px;
         padding-top: 20px;
     }
+
+    .blog--content{
+        width: 60%;
+    }
+
+    .recent--blogs{
+        width: 35%;
+        margin-left: 5%;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -1594,7 +1647,7 @@ body{
     }
 
     .header--button{
-        width: 50%;
+        width: 45%;
         margin-left: auto;
         margin-right: 10px;
     }
