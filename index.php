@@ -18,6 +18,6 @@
         $controller->main();
     }
     if (isset($_GET["msn"])) {
-        echo "<script>sweetAlert('".$_GET['msn']."')</script>";
+        echo "<script>swal('".$_GET['msn']."')</script>";
     }
 ?>
