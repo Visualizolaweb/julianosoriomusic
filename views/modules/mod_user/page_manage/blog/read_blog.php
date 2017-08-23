@@ -51,9 +51,14 @@
       </article>
       <div class="recent--blogs">
         <h5 class="recent--text">Entradas recientes</h5>
-        <a class="recent--link" href="#">- Un antioqueño murió en impresionante accidente de tránsito en España</a>
-        <a class="recent--link" href="#">- Tres heridos dejó motín en cárcel de Rionegro</a>
-        <a class="recent--link" href="#">- Maduro pedirá orden de captura internacional para exfiscal Ortega</a>
+        <?php
+        foreach ($this->PaginaM->readUpcomingBlogs() as $row) {
+
+        ?>
+        <a class="recent--link" href="<?php echo "blog&token=".$row['blo_id'];?>">- <?php echo $row["blo_titulo"]; ?></a>
+        <?php
+        }
+        ?>
       </div>
       <div class="comments--content">
             <div class="comments--content__title">

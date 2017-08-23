@@ -60,7 +60,7 @@
         }
         public function readBlog(){
           try {
-            $sql="SELECT * FROM blog INNER JOIN blog_imagen ON(blog.bli_id=blog_imagen.bli_id) ";
+            $sql="SELECT * FROM blog INNER JOIN blog_imagen ON(blog.bli_id=blog_imagen.bli_id) LIMIT 60";
             $query=$this->pdo->prepare($sql);
             $query->execute(array());
             $result=$query->fetchALL(PDO::FETCH_BOTH);

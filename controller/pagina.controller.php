@@ -64,6 +64,7 @@
             $songs[] = array(
                             $item,
                             $row["dis_titulo"],
+                            $row["dis_cancion"],
                             "views/assets/musica/".$row["dis_cancion"]
                             );
             $item++;

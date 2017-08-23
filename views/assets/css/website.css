@@ -655,6 +655,7 @@ body{
 .comments--text{
     color: #212121;
     font-size: 18px;
+    font-weight: normal;
 }
 
 .blog--content__img{

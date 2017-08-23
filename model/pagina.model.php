@@ -72,7 +72,7 @@
 
         public function readFullGaleria(){
           try{
-      			$sql = "SELECT gal_ruta FROM galeria";
+      			$sql = "SELECT gal_ruta FROM galeria LIMIT 80";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -132,7 +132,7 @@
 
         public function readPastEvents(){
             try{
-        		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio <= CURDATE() ORDER BY evento_fecha_inicio DESC";
+        		    $sql = "SELECT * FROM eventos WHERE evento_fecha_inicio <= CURDATE() ORDER BY evento_fecha_inicio DESC LIMIT 30";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -144,7 +144,7 @@
 
         public function readUpcomingEventsFull(){
             try{
-        		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio >= CURDATE() ORDER BY evento_fecha_inicio ASC";
+        		$sql = "SELECT * FROM eventos WHERE evento_fecha_inicio >= CURDATE() ORDER BY evento_fecha_inicio ASC LIMIT 12";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
