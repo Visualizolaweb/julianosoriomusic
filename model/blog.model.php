@@ -140,7 +140,7 @@
         }
         public function deleteBlog($field){
           try {
-            $sql="DELETE FROM blog WHERE blo_id = ?";
+            $sql="DELETE FROM blog WHERE blo_id = ? ";
             $query=$this->pdo->prepare($sql);
             $query->execute(array($field));
           } catch (PDOException $e) {

@@ -27,9 +27,7 @@ $("#frm_log").submit(function(e){
       $.post("login",{data:data},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
-            $('.confirm').click(function(){
               document.location.href = data[1];
-            })
           }else{
               $("#pas_log").after("<span>"+data[1]+"</span>");
           }
@@ -96,7 +94,7 @@ $("#frm_blo_up").submit(function(e){
           if (data[0] == true) {
               swal(data[1]);
               $('.confirm').click(function(){
-                document.location.href = data[1];
+                document.location.href = data[2];
               })
           }else{
             swal(data[1]);
@@ -204,7 +202,7 @@ $("#frm_eventos").submit(function(e){
         if (resp[0] == true) {
           swal(resp[2]);
           $('.confirm').click(function(){
-            document.location.href = data[1];
+            document.location.href = resp[1];
           })
         }
       });
@@ -227,7 +225,7 @@ $("#frm_eventos_up").submit(function(e){
         if (resp[0] == true) {
           swal(resp[2]);
           $('.confirm').click(function(){
-            document.location.href = data[1];
+            document.location.href = resp[1];
           })
         }
       });

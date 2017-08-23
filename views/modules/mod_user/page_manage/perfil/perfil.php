@@ -1,3 +1,4 @@
+<?php $usuario = $this->PerfilM->readUserByCode($_SESSION["user"]["id"]); ?>
 <div class="container--dashboard">
     <div class="container-fluid">
         <div class="row no-gutters">
@@ -14,15 +15,15 @@
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Correo</label>
-                                <input class="input--form" type="text" name="data" value="<?php echo $_SESSION['user']['email']; ?>">
+                                <input class="input--form" type="text" name="data" value="<?php echo $usuario['usu_email'] ?>" required>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Nueva Contraseña</label>
-                                <input class="input--form" type="password" name="data" value="">
+                                <input class="input--form" type="password" name="data" value="" required>
                             </div>
                             <div class="input-container">
                                 <label for="" class="label--form">Confirmar contraseña</label>
-                                <input class="input--form" type="password" name="data" value="">
+                                <input class="input--form" type="password" name="data" value="" required>
                             </div>
                             <div class="button-container">
                                 <button type="submit" class="button--form">Modificar</button>
@@ -141,7 +142,7 @@ $('.upload-result').on('click', function (ev) {
                 html = '<img src="' + resp + '" />';
                 $('#imageCrop').modal('hide')
                 $("#wrap-result").html(html);
-                alert('Subio Con Exito');
+                document.location.href="mi-perfil";
             }
         });
     });

@@ -176,6 +176,7 @@ $('.upload-result').on('click', function (ev) {
                 html = '<img src="' + resp + '" />';
                 $('#imageCrop').modal('hide')
                 $("#wrap-result").html(html);
+                document.location.href="admin-eventos";
             }
         });
     });

@@ -86,6 +86,9 @@
           $archivo = $this->BlogM->readBlogaById($field);
           unlink("views/assets/img/blog/".$archivo["bli_ruta"]);
           $field = $archivo["blo_id"];
+          $p[0]=$archivo["bli_id"];
+          $w=0;
+          $this->BlogM->deleteImg($p,$w);
           $this->BlogM->deleteBlog($field);
           $msn="Eliminado Correctamente";
           header("Location: admin-blog&msn=$msn");

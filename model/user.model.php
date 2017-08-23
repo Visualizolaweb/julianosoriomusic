@@ -38,19 +38,6 @@
             }
             return $result;
         }
-
-        public function readUserByCode($data){
-            try {
-                $sql = "SELECT * FROM user WHERE user_code = ?";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($data));
-                $result = $query->fetch(PDO::FETCH_BOTH);
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-            return $result;
-        }
-
         public function readUserByEmail($data){
             try {
                 $sql = "SELECT * FROM usuario WHERE usu_email = ?";

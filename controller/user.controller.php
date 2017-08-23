@@ -63,7 +63,7 @@
          $return = array(false,"Contraseñas Incorrectas","");
        }else{
          if ($p==1) {
-           $return = array(false,"Campos Nulos","");
+           $return = array(false,"Campo Nulo","");
          }else{
            $data[1]=password_hash($data[1],PASSWORD_DEFAULT);
            $data[3]=$_SESSION["user"]["id"];

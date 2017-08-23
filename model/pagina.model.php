@@ -48,7 +48,7 @@
 
         public function loadSongRandom(){
           try{
-      			$sql = "SELECT dis_titulo, dis_cancion FROM discografia ORDER BY dis_num ASC";
+      			$sql = "SELECT dis_titulo, dis_cancion FROM discografia WHERE dis_estado = 'Activo' ORDER BY dis_num ASC";
             $query = $this->pdo->prepare($sql);
             $query->execute();
             $result = $query->fetchALL(PDO::FETCH_NUM);
@@ -60,7 +60,7 @@
 
         public function loadSongsAsc(){
           try{
-      			$sql = "SELECT dis_titulo, dis_cancion, dis_letra FROM discografia ORDER BY dis_num ASC";
+      			$sql = "SELECT dis_titulo, dis_cancion, dis_letra FROM discografia WHERE dis_estado = 'Activo' ORDER BY dis_num ASC";
             $query = $this->pdo->prepare($sql);
             $query->execute();
             $result = $query->fetchALL(PDO::FETCH_ASSOC);
