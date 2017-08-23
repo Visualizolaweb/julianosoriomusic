@@ -15,7 +15,7 @@
                         <a class="banner-link blog" href="admin-blog">Blog</a>
                     </div>
                     <div class="banner-item banner-item-30">
-                        <a class="banner-link eventos" href="eventos">Eventos</a>
+                        <a class="banner-link eventos" href="admin-eventos">Eventos</a>
                     </div>
                     <div class="banner-item banner-item-30">
                         <a class="banner-link galeria" href="galeria">Galeria</a>

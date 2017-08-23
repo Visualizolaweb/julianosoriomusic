@@ -65,6 +65,12 @@
                             </div>
                         </div>
                     </div>
+                    <style>
+                    .dataTables_wrapper{
+                        margin-top: 40px;
+                        width: 80%;
+                    }
+                    </style>
                     <table id="table" class="table--container">
                         <thead class="table--header">
                             <tr>

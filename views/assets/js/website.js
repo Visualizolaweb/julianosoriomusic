@@ -131,10 +131,10 @@ $("#frm_read_blog").submit(function(e){
       $.post("create-comentario",{data:data},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
-						alert(data[1]);
+						swal(data[1]);
             document.location.href = data[2];
           }else{
-						alert(data[1]);
+						swal(data[1]);
           }
       });
 });

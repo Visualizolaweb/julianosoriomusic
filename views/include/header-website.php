@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="views/assets/css/owl.theme.default.min.css">
         <link rel="stylesheet" href="views/assets/css/mediaelement.min.css">
         <!-- <link rel="stylesheet" href="views/assets/css/loader.css"> -->
+        <link rel="stylesheet" href="views/assets/css/sweetalert.css">
         <link rel="stylesheet" href="views/assets/css/website.css">
     </head>
     <body>

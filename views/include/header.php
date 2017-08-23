@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="views/assets/css/croppie.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css">
+        <link rel="stylesheet" href="views/assets/css/sweetalert.css">
         <link rel="stylesheet" href="views/assets/css/index.css">
     </head>
     <body>

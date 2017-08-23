@@ -1,4 +1,5 @@
     <script src="views/assets/js/jquery.min.js"></script>
+    <script src="views/assets/js/sweetalert.min.js"></script>
     <script src="views/assets/js/owl.carousel.min.js"></script>
     <!-- <script src="views/assets/js/loader.min.js"></script> -->
     <script src="views/assets/js/tether.min.js"></script>

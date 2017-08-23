@@ -38,6 +38,16 @@
                             </div>
                         </div>
                     </div>
+                    <style>
+                    .dataTables_wrapper{
+                        margin-top: 40px;
+                        width: 80%;
+                    }
+
+                    td img{
+                        max-width: 200px;
+                    }
+                    </style>
                     <table id="table" class="table--container table--container__galeria">
                         <thead class="table--header">
                             <tr>

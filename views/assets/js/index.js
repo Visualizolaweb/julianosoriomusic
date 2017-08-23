@@ -41,10 +41,10 @@ $("#frm_perfil").submit(function(e){
       $.post("update-user",{data:JsonObj},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
-            alert(data[2]);
+            swal(data[2]);
             document.location.href = data[1];
           }else{
-            alert(data[1]);
+            swal(data[1]);
           }
       });
 });
@@ -55,10 +55,10 @@ $("#frm_ban").submit(function(e){
       $.post("update-banner",{data:data},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
-              alert(data[2]);
+              swal(data[2]);
               document.location.href = data[1];
           }else{
-              alert(data[1]);
+              swal(data[1]);
           }
       });
 });
@@ -70,7 +70,7 @@ $("#frm_blog").submit(function(e){
       $.post("crear-blog",{data:data},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
-              alert(data[2]);
+              swal(data[2]);
               document.location.href = data[1];
           }
       });
@@ -83,10 +83,10 @@ $("#frm_blo_up").submit(function(e){
       $.post("update-blog-admin",{data:data},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
-              alert(data[1]);
+              swal(data[1]);
               document.location.href = data[2];
           }else{
-            alert(data[1]);
+            swal(data[1]);
           }
       });
 });
@@ -97,10 +97,10 @@ $("#frm_contacto").submit(function(e){
       $.post("update-contacto",{data:data},function(data){
           var data = JSON.parse(data);
           if (data[0] == true) {
-              alert(data[2]);
+              swal(data[2]);
               document.location.href = data[1];
           }else{
-            alert(data[1]);
+            swal(data[1]);
           }
       });
 });
@@ -188,7 +188,7 @@ $("#frm_eventos").submit(function(e){
         var resp = JSON.parse(resp);
         if (resp[0] == true) {
             document.location.href = resp[1];
-            alert(resp[2]);
+            swal(resp[2]);
         }
       });
 });
@@ -209,7 +209,7 @@ $("#frm_eventos_up").submit(function(e){
         var resp = JSON.parse(resp);
         if (resp[0] == true) {
             document.location.href = resp[1];
-            alert(resp[2]);
+            swal(resp[2]);
         }
       });
 });
@@ -221,10 +221,10 @@ $("#frm_perfil2").submit(function(e){
   $.post("update-perfil",{data:data},function(data){
     var data = JSON.parse(data);
     if (data[0]==true) {
-      alert(data[2]);
+      swal(data[2]);
       document.location.href=data[1];
     }else{
-      alert(data[2]);
+      swal(data[2]);
     }
   });
 });
