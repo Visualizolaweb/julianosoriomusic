@@ -1383,6 +1383,23 @@ body{
   background-color: #212121;
 }
 
+.event--content{
+    background-color: #fafafa;
+    padding: 16px;
+}
+
+.blog--content__subtitle{
+    font-size: 24px;
+    font-family: var(--family-robotoC);
+    padding-bottom: 15px;
+}
+
+.blog--datetime{
+    font-size: 18px;
+    font-family: var(--family-robotoC);
+    padding-bottom: 5px;
+}
+
 @media (max-width: 575px) {
     .gallery--item__main{
         width: 100%;
